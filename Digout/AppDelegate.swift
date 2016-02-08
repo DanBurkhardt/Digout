@@ -13,7 +13,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    let api = APIInfo()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -33,7 +36,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        return true
+        
+        // Activate FBSDK
+        FBSDKAppEvents.activateApp()
+        
+        let accessToken = FBSDKAccessToken.currentAccessToken()
+        
+        if accessToken != nil {
+            
+            defaults.setBool(true, forKey: "isUserLoggedIn")
+            
+        }else{
+            
+            defaults.setBool(false, forKey: "isUserLoggedIn")
+        }
+        
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
+
+        //return true
+    }
+    
+    
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?) -> Bool {
+            return FBSDKApplicationDelegate.sharedInstance().application(
+                application,
+                openURL: url,
+                sourceApplication: sourceApplication,
+                annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
