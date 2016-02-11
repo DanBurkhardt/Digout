@@ -38,11 +38,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     let request = URLRequest()
     /// User Object Model
     var userObject = NSMutableDictionary()
+    
+    
 
-   
 
     // MARK: UI Object Outlets and Actions
     
+
     @IBOutlet weak var loginMessage: UILabel!
 
     @IBOutlet weak var buttonStack: UIStackView!
@@ -51,6 +53,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func returnToMain(segue: UIStoryboardSegue) {
         print("back to main vc")
+        
+    }
+    
+    @IBAction func settingsButton(sender: AnyObject) {
+        
         
     }
     
@@ -136,7 +143,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Set light status bar
         settings.setLightStatusbar()
         
-
+    
     }
     
     

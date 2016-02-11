@@ -21,6 +21,7 @@ pod 'Parse'
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
 
+pod 'Onboard'
 end
 
 target 'DigoutTests' do

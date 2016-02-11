@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
-               BuildableName = "Digout.app"
+               BuildableName = "digout.app"
                BlueprintName = "Digout"
-               ReferencedContainer = "container:Digout.xcodeproj">
+               ReferencedContainer = "container:digout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9A302D81C651C7700A2EB7F"
-               BuildableName = "DigoutTests.xctest"
+               BuildableName = "digout.temp_caseinsensitive_rename.xctest"
                BlueprintName = "DigoutTests"
-               ReferencedContainer = "container:Digout.xcodeproj">
+               ReferencedContainer = "container:digout.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9A302E31C651C7700A2EB7F"
-               BuildableName = "DigoutUITests.xctest"
+               BuildableName = "digout.temp_caseinsensitive_rename.xctest"
                BlueprintName = "DigoutUITests"
-               ReferencedContainer = "container:Digout.xcodeproj">
+               ReferencedContainer = "container:digout.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
-            BuildableName = "Digout.app"
+            BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:Digout.xcodeproj">
+            ReferencedContainer = "container:digout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
-            BuildableName = "Digout.app"
+            BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:Digout.xcodeproj">
+            ReferencedContainer = "container:digout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
-            BuildableName = "Digout.app"
+            BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:Digout.xcodeproj">
+            ReferencedContainer = "container:digout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

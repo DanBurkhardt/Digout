@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C903F1011C651DA600897C55 /* Q4M.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1001C651DA600897C55 /* Q4M.framework */; };
+		1A00BFF71C66339C005CC28D /* LocalMappingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00BFF61C66339C005CC28D /* LocalMappingData.swift */; };
+		1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F88431C65F2AE00FE6BBE /* UserObjectModel.swift */; };
+		1A58F5E31C65BA7E00FFA70A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F5E21C65BA7E00FFA70A /* RequestViewController.swift */; };
+		1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F5E41C65BB6200FFA70A /* APIInfo.swift */; };
+		1A7D78ED1C656A1B007CAFE4 /* Q4M.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */; };
+		1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */; };
+		1A7D78F21C659911007CAFE4 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F11C659911007CAFE4 /* URLRequest.swift */; };
+		1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */; };
+		44627D6D1E26122C8967283A /* libPods-Digout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D573306BC53719637A9825 /* libPods-Digout.a */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
 		C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1061C651E4900897C55 /* AVFoundation.framework */; };
@@ -23,6 +31,7 @@
 		C903F11B1C651E9000897C55 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F11A1C651E9000897C55 /* Security.framework */; };
 		C903F11D1C651E9800897C55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F11C1C651E9800897C55 /* SystemConfiguration.framework */; };
 		C903F1241C65218A00897C55 /* MQAExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C903F1231C65218A00897C55 /* MQAExceptionHandler.m */; };
+		C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97BC3521C6D174A00930C1B /* SettingsViewController.swift */; };
 		C9A302C91C651C7700A2EB7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302C81C651C7700A2EB7F /* AppDelegate.swift */; };
 		C9A302CB1C651C7700A2EB7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302CA1C651C7700A2EB7F /* ViewController.swift */; };
 		C9A302CE1C651C7700A2EB7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A302CC1C651C7700A2EB7F /* Main.storyboard */; };
@@ -50,7 +59,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C903F1001C651DA600897C55 /* Q4M.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Q4M.framework; sourceTree = "<group>"; };
+		18D573306BC53719637A9825 /* libPods-Digout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Digout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A00BFF61C66339C005CC28D /* LocalMappingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMappingData.swift; sourceTree = "<group>"; };
+		1A3F88431C65F2AE00FE6BBE /* UserObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObjectModel.swift; sourceTree = "<group>"; };
+		1A58F5E21C65BA7E00FFA70A /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		1A58F5E41C65BB6200FFA70A /* APIInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
+		1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Q4M.framework; sourceTree = "<group>"; };
+		1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefaults.swift; sourceTree = "<group>"; };
+		1A7D78F11C659911007CAFE4 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
+		C4301EEA048112AA8104821B /* Pods-Digout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.debug.xcconfig"; sourceTree = "<group>"; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C903F1041C651E4300897C55 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C903F1061C651E4900897C55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -68,19 +86,21 @@
 		C903F11F1C651F9000897C55 /* Digout-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Digout-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		C903F1221C65214100897C55 /* MQAExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQAExceptionHandler.h; sourceTree = "<group>"; };
 		C903F1231C65218A00897C55 /* MQAExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAExceptionHandler.m; sourceTree = "<group>"; };
-		C9A302C51C651C7700A2EB7F /* Digout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97BC3521C6D174A00930C1B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Digout/SettingsViewController.swift; sourceTree = "<group>"; };
+		C9A302C51C651C7700A2EB7F /* digout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A302C81C651C7700A2EB7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A302CA1C651C7700A2EB7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9A302CD1C651C7700A2EB7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9A302CF1C651C7700A2EB7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9A302D21C651C7700A2EB7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9A302D41C651C7700A2EB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9A302D91C651C7700A2EB7F /* DigoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A302D91C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = digout.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A302DD1C651C7700A2EB7F /* DigoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigoutTests.swift; sourceTree = "<group>"; };
 		C9A302DF1C651C7700A2EB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9A302E41C651C7700A2EB7F /* DigoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A302E41C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = digout.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A302E81C651C7700A2EB7F /* DigoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigoutUITests.swift; sourceTree = "<group>"; };
 		C9A302EA1C651C7700A2EB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAA828ADFBE3B16814FFCA2 /* Pods-Digout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +119,11 @@
 				C903F10D1C651E6100897C55 /* CoreMedia.framework in Frameworks */,
 				C903F10B1C651E5A00897C55 /* CoreLocation.framework in Frameworks */,
 				C903F1091C651E5100897C55 /* CoreData.framework in Frameworks */,
+				1A7D78ED1C656A1B007CAFE4 /* Q4M.framework in Frameworks */,
 				C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */,
 				C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */,
 				C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */,
-				C903F1011C651DA600897C55 /* Q4M.framework in Frameworks */,
+				44627D6D1E26122C8967283A /* libPods-Digout.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,9 +144,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7D78F01C65985C007CAFE4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D78F11C659911007CAFE4 /* URLRequest.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		1A7D78F31C65991B007CAFE4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1A58F5E41C65BB6200FFA70A /* APIInfo.swift */,
+				1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		3ED7D58F92DE2010E2CD33B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4301EEA048112AA8104821B /* Pods-Digout.debug.xcconfig */,
+				EAAA828ADFBE3B16814FFCA2 /* Pods-Digout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C903F0FF1C651D8D00897C55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */,
 				C903F11C1C651E9800897C55 /* SystemConfiguration.framework */,
 				C903F11A1C651E9000897C55 /* Security.framework */,
 				C903F1181C651E8B00897C55 /* QuartzCore.framework */,
@@ -140,7 +188,7 @@
 				C903F1061C651E4900897C55 /* AVFoundation.framework */,
 				C903F1041C651E4300897C55 /* AudioToolbox.framework */,
 				C903F1021C651E3900897C55 /* AssetsLibrary.framework */,
-				C903F1001C651DA600897C55 /* Q4M.framework */,
+				18D573306BC53719637A9825 /* libPods-Digout.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C903F11F1C651F9000897C55 /* Digout-Bridging-Header.h */,
+				1A3F88431C65F2AE00FE6BBE /* UserObjectModel.swift */,
 				C903F1221C65214100897C55 /* MQAExceptionHandler.h */,
 				C903F1231C65218A00897C55 /* MQAExceptionHandler.m */,
 			);
@@ -159,6 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				C9A302CA1C651C7700A2EB7F /* ViewController.swift */,
+				1A00BFF61C66339C005CC28D /* LocalMappingData.swift */,
+				1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */,
+				1A58F5E21C65BA7E00FFA70A /* RequestViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -175,20 +227,22 @@
 		C9A302BC1C651C7700A2EB7F = {
 			isa = PBXGroup;
 			children = (
+				C97BC3521C6D174A00930C1B /* SettingsViewController.swift */,
 				C9A302C71C651C7700A2EB7F /* Digout */,
 				C9A302DC1C651C7700A2EB7F /* DigoutTests */,
 				C9A302E71C651C7700A2EB7F /* DigoutUITests */,
 				C9A302C61C651C7700A2EB7F /* Products */,
 				C903F0FF1C651D8D00897C55 /* Frameworks */,
+				3ED7D58F92DE2010E2CD33B1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		C9A302C61C651C7700A2EB7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C9A302C51C651C7700A2EB7F /* Digout.app */,
-				C9A302D91C651C7700A2EB7F /* DigoutTests.xctest */,
-				C9A302E41C651C7700A2EB7F /* DigoutUITests.xctest */,
+				C9A302C51C651C7700A2EB7F /* digout.app */,
+				C9A302D91C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */,
+				C9A302E41C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				C9A302C81C651C7700A2EB7F /* AppDelegate.swift */,
+				1A7D78F31C65991B007CAFE4 /* Global */,
+				1A7D78F01C65985C007CAFE4 /* Utilities */,
 				C903F1271C6528A700897C55 /* Storyboards */,
 				C903F1261C65249800897C55 /* View Controllers */,
 				C903F1251C65248A00897C55 /* Obj-C */,
@@ -231,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9A302ED1C651C7700A2EB7F /* Build configuration list for PBXNativeTarget "Digout" */;
 			buildPhases = (
+				C26E939DCAA8BD6819F04681 /* Check Pods Manifest.lock */,
 				C9A302C11C651C7700A2EB7F /* Sources */,
 				C9A302C21C651C7700A2EB7F /* Frameworks */,
 				C9A302C31C651C7700A2EB7F /* Resources */,
+				69A95806AE578C2077BD362E /* Copy Pods Resources */,
+				F0F29A9BDDF4408AB6B30F03 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,7 +300,7 @@
 			);
 			name = Digout;
 			productName = Digout;
-			productReference = C9A302C51C651C7700A2EB7F /* Digout.app */;
+			productReference = C9A302C51C651C7700A2EB7F /* digout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C9A302D81C651C7700A2EB7F /* DigoutTests */ = {
@@ -259,7 +318,7 @@
 			);
 			name = DigoutTests;
 			productName = DigoutTests;
-			productReference = C9A302D91C651C7700A2EB7F /* DigoutTests.xctest */;
+			productReference = C9A302D91C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C9A302E31C651C7700A2EB7F /* DigoutUITests */ = {
@@ -277,7 +336,7 @@
 			);
 			name = DigoutUITests;
 			productName = DigoutUITests;
-			productReference = C9A302E41C651C7700A2EB7F /* DigoutUITests.xctest */;
+			productReference = C9A302E41C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -292,6 +351,7 @@
 				TargetAttributes = {
 					C9A302C41C651C7700A2EB7F = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 6F9773F85D;
 					};
 					C9A302D81C651C7700A2EB7F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -303,7 +363,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */;
+			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -350,14 +410,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69A95806AE578C2077BD362E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digout/Pods-Digout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C26E939DCAA8BD6819F04681 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F29A9BDDF4408AB6B30F03 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digout/Pods-Digout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C9A302C11C651C7700A2EB7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */,
+				1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */,
+				C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */,
+				1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */,
+				1A58F5E31C65BA7E00FFA70A /* RequestViewController.swift in Sources */,
 				C903F1241C65218A00897C55 /* MQAExceptionHandler.m in Sources */,
 				C9A302CB1C651C7700A2EB7F /* ViewController.swift in Sources */,
 				C9A302C91C651C7700A2EB7F /* AppDelegate.swift in Sources */,
+				1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */,
+				1A00BFF71C66339C005CC28D /* LocalMappingData.swift in Sources */,
+				1A7D78F21C659911007CAFE4 /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = digout;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -488,6 +605,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = digout;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -495,48 +613,60 @@
 		};
 		C9A302EE1C651C7700A2EB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4301EEA048112AA8104821B /* Pods-Digout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC.",
+					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "-D Debug";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D Debug";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.Digout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Digout-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digout;
+				PRODUCT_NAME = digout;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Digout-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 armv7s arm6 arm64";
 			};
 			name = Debug;
 		};
 		C9A302EF1C651C7700A2EB7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAAA828ADFBE3B16814FFCA2 /* Pods-Digout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC.",
+					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "-D Release";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D Release";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.Digout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Digout-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digout;
+				PRODUCT_NAME = digout;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Digout-Bridging-Header.h";
+				VALID_ARCHS = "armv7 armv7s arm6 arm64";
 			};
 			name = Release;
 		};
@@ -547,8 +677,8 @@
 				INFOPLIST_FILE = DigoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.DigoutTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digout.app/Digout";
+				PRODUCT_NAME = digout.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digout.temp_caseinsensitive_rename.app/digout.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -559,8 +689,8 @@
 				INFOPLIST_FILE = DigoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.DigoutTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digout.app/Digout";
+				PRODUCT_NAME = digout.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digout.temp_caseinsensitive_rename.app/digout.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -570,7 +700,7 @@
 				INFOPLIST_FILE = DigoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.DigoutUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = digout.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = Digout;
 				USES_XCTRUNNER = YES;
 			};
@@ -582,7 +712,7 @@
 				INFOPLIST_FILE = DigoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.DigoutUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = digout.temp_caseinsensitive_rename;
 				TEST_TARGET_NAME = Digout;
 				USES_XCTRUNNER = YES;
 			};
@@ -591,7 +721,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */ = {
+		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9A302EB1C651C7700A2EB7F /* Debug */,

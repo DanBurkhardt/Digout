@@ -7,6 +7,8 @@
 #import <Devise/Devise.h>
 #import <Devise/DVSFacebookAuthenticator.h>
 #import <Devise/DVSFacebookAccountStore.h> 
+#import <Onboard/OnboardingViewController.h>
+#import <Onboard/OnboardingContentViewController.h>
 
 
 //#import <Parse/Parse.h>

@@ -8,6 +8,9 @@
 
 import UIKit
 
+var storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+var initialViewControllerRoot: AnyObject = storyboard.instantiateInitialViewController()!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +20,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     let api = APIInfo()
+    
+    let userHasOnboardedKey = "user_has_onboarded"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        //        self.window!.backgroundColor = UIColor.whiteColor()
+        // Override point for customization after application launch.
+        
+        
+        self.setupNormalRootVC(false)
+        
+        
+        // Determine if the user has completed onboarding yet or not
+        let userHasOnboardedAlready = NSUserDefaults.standardUserDefaults().boolForKey(userHasOnboardedKey);
+        
+        
+        // If the user has already onboarded, setup the normal root view controller for the application
+        // without animation like you normally would if you weren't doing any onboarding
+        
+        if userHasOnboardedAlready {
+            //self.window!.rootViewController = self.generateOnboardingViewController()
+            self.setupNormalRootVC(false);
+        }
+            
+            // Otherwise the user hasn't onboarded yet, so set the root view controller for the application to the
+            // onboarding view controller generated and returned by this method.
+        else {
+            self.window!.rootViewController = self.generateOnboardingViewController()
+        }
+        
+        self.window!.makeKeyAndVisible()
+        
+        
+        
+        
+        
         
         //Set the SDK mode Market vs QA for Production and Pre-Production
         #if Debug
@@ -58,6 +98,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //return true
     }
     
+    
+    func setupNormalRootVC(animated : Bool) {
+        // Here I'm just creating a generic view controller to represent the root of my application.
+        let mainVC = UIViewController()
+        mainVC.title = "RootView"
+        
+        // If we want to animate it, animate the transition - in this case we're fading, but you can do it
+        // however you want.
+        if animated {
+            UIView.transitionWithView(self.window!, duration: 0.5, options:.TransitionCrossDissolve, animations: { () -> Void in
+                self.window!.rootViewController = initialViewControllerRoot as? UIViewController
+                }, completion:nil)
+        }
+            
+            // Otherwise we just want to set the root view controller normally.
+        else {
+            self.window?.rootViewController = initialViewControllerRoot as? UIViewController;
+        }
+    }
+    
+    func generateOnboardingViewController() -> OnboardingViewController {
+        // Generate the first page...
+        
+        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "one", body: "", image: UIImage(named:
+            ""), buttonText: "") {}
+        
+        
+        // Generate the second page...
+        let secondPage: OnboardingContentViewController = OnboardingContentViewController(title: "two", body: "", image: UIImage(named:
+            ""), buttonText: "") {}
+        
+        // Generate the third page, and when the user hits the button we want to handle that the onboarding
+        // process has been completed.
+        let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "three", body: "", image: UIImage(named:
+            ""), buttonText: "") {}
+        
+        let fourthPage: OnboardingContentViewController = OnboardingContentViewController(title: "four", body: "", image: UIImage(named:
+            ""), buttonText: "Get Started") {
+                self.handleOnboardingCompletion()
+        }
+        // process has been completed.
+        
+        let bounds: CGRect = UIScreen.mainScreen().bounds
+        let ScreenSize = bounds.size.width
+        let blockImages = ["mtnblock","flagblock","bsktballblock"]
+        
+        //TEMPORARY FUNCS GO HERE
+        
+        // Create the onboarding controller with the pages and return it.
+        let onboardingVC: OnboardingViewController = OnboardingViewController(backgroundImage: UIImage(named: "iTunesArtwork"), contents: [firstPage, secondPage, thirdPage, fourthPage])
+        
+        return onboardingVC
+    }
+    
+    func handleOnboardingCompletion() {
+        // Now that we are done onboarding, we can set in our NSUserDefaults that we've onboarded now, so in the
+        // future when we launch the application we won't see the onboarding again.
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: userHasOnboardedKey)
+        
+        // Setup the normal root view controller of the application, and set that we want to do it animated so that
+        // the transition looks nice from onboarding to normal app.
+        setupNormalRootVC(true)
+    }
     
     func application(application: UIApplication,
         openURL url: NSURL,
