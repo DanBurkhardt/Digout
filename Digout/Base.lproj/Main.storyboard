@@ -107,6 +107,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="mS4-Ra-CoH">
+                                <rect key="frame" x="377" y="699" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="UMs-go-wL9"/>
+                                    <constraint firstAttribute="height" constant="29" id="f3i-7e-Gbx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,6 +121,7 @@
                             <constraint firstItem="nJU-XR-TFF" firstAttribute="centerX" secondItem="LuV-HN-P7Q" secondAttribute="centerX" id="32y-cK-mGr"/>
                             <constraint firstItem="nJU-XR-TFF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="81" id="4cw-k6-meY"/>
                             <constraint firstItem="d8C-BT-h3d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="6MJ-w0-XUx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mS4-Ra-CoH" secondAttribute="bottom" constant="8" id="9J9-LG-47q"/>
                             <constraint firstItem="72J-4y-Tby" firstAttribute="centerX" secondItem="d8C-BT-h3d" secondAttribute="centerX" id="AS0-vO-mVc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nJU-XR-TFF" secondAttribute="bottom" constant="84" id="CXS-OE-eTq"/>
                             <constraint firstItem="nJU-XR-TFF" firstAttribute="centerX" secondItem="72J-4y-Tby" secondAttribute="centerX" id="DYh-tu-Q1S"/>
@@ -122,6 +130,7 @@
                             <constraint firstItem="LuV-HN-P7Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="evB-mb-fWr"/>
                             <constraint firstItem="LuV-HN-P7Q" firstAttribute="top" secondItem="d8C-BT-h3d" secondAttribute="bottom" constant="32" id="sIR-nM-VlI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LuV-HN-P7Q" secondAttribute="trailing" constant="64" id="vo0-z4-Hbo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mS4-Ra-CoH" secondAttribute="trailing" constant="-12" id="w3W-OK-sEw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rz7-bI-Hya" secondAttribute="bottom" constant="38" id="wkK-Xe-dGf"/>
                             <constraint firstItem="rz7-bI-Hya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zpa-Is-cPk"/>
                         </constraints>
@@ -326,6 +335,7 @@
     <resources>
         <image name="checkround" width="500" height="500"/>
         <image name="down" width="128" height="128"/>
+        <image name="settings" width="256" height="256"/>
         <image name="shovel" width="256" height="256"/>
         <image name="snow" width="256" height="256"/>
         <image name="wandCircle" width="500" height="500"/>
