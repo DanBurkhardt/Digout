@@ -31,6 +31,7 @@
 		C903F11B1C651E9000897C55 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F11A1C651E9000897C55 /* Security.framework */; };
 		C903F11D1C651E9800897C55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F11C1C651E9800897C55 /* SystemConfiguration.framework */; };
 		C903F1241C65218A00897C55 /* MQAExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C903F1231C65218A00897C55 /* MQAExceptionHandler.m */; };
+		C9619E121C6D83D900A46153 /* snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9619E111C6D83D900A46153 /* snow.mp4 */; };
 		C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97BC3521C6D174A00930C1B /* SettingsViewController.swift */; };
 		C9A302C91C651C7700A2EB7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302C81C651C7700A2EB7F /* AppDelegate.swift */; };
 		C9A302CB1C651C7700A2EB7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302CA1C651C7700A2EB7F /* ViewController.swift */; };
@@ -86,6 +87,7 @@
 		C903F11F1C651F9000897C55 /* Digout-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Digout-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		C903F1221C65214100897C55 /* MQAExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQAExceptionHandler.h; sourceTree = "<group>"; };
 		C903F1231C65218A00897C55 /* MQAExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAExceptionHandler.m; sourceTree = "<group>"; };
+		C9619E111C6D83D900A46153 /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = snow.mp4; path = ../../../Desktop/SnowFalling/Exports/snow.mp4; sourceTree = "<group>"; };
 		C97BC3521C6D174A00930C1B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Digout/SettingsViewController.swift; sourceTree = "<group>"; };
 		C9A302C51C651C7700A2EB7F /* digout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A302C81C651C7700A2EB7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,9 +226,18 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		C9619E0C1C6D7D2000A46153 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				C9619E111C6D83D900A46153 /* snow.mp4 */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		C9A302BC1C651C7700A2EB7F = {
 			isa = PBXGroup;
 			children = (
+				C9619E0C1C6D7D2000A46153 /* Video */,
 				C97BC3521C6D174A00930C1B /* SettingsViewController.swift */,
 				C9A302C71C651C7700A2EB7F /* Digout */,
 				C9A302DC1C651C7700A2EB7F /* DigoutTests */,
@@ -390,6 +401,7 @@
 			files = (
 				C9A302D31C651C7700A2EB7F /* LaunchScreen.storyboard in Resources */,
 				C9A302D01C651C7700A2EB7F /* Assets.xcassets in Resources */,
+				C9619E121C6D83D900A46153 /* snow.mp4 in Resources */,
 				C9A302CE1C651C7700A2EB7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -22,11 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let api = APIInfo()
     
     let userHasOnboardedKey = "user_has_onboarded"
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        
+        // Set status bar to the light theme
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        return true
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         
+        //*********************************
+        // ONBOARD COCOAPOD SETUP
+        //*********************************
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         //        self.window!.backgroundColor = UIColor.whiteColor()
@@ -57,9 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
         
         
-        
-        
-        
+        //*********************************
+        // MOBILE QUALITY ASSURANCE SETUP
+        //*********************************
         
         //Set the SDK mode Market vs QA for Production and Pre-Production
         #if Debug
@@ -75,7 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
         
         
-        
+        //*********************************
+        // FACEBOOK SDK SETUP
+        //*********************************
         
         // Activate FBSDK
         FBSDKAppEvents.activateApp()
@@ -99,6 +114,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    
+    // MARK: Onboard Cocoapod Setup Methods
+    
     func setupNormalRootVC(animated : Bool) {
         // Here I'm just creating a generic view controller to represent the root of my application.
         let mainVC = UIViewController()
@@ -118,26 +136,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    
     func generateOnboardingViewController() -> OnboardingViewController {
         // Generate the first page...
         
-        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "one", body: "", image: UIImage(named:
-            ""), buttonText: "") {}
+        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "this is an onboarding sequence", image: UIImage(named:
+            "shovel"), buttonText: "") {}
         
         
         // Generate the second page...
-        let secondPage: OnboardingContentViewController = OnboardingContentViewController(title: "two", body: "", image: UIImage(named:
-            ""), buttonText: "") {}
+        let secondPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to my app", image: UIImage(named:
+            "snow"), buttonText: "") {}
         
         // Generate the third page, and when the user hits the button we want to handle that the onboarding
         // process has been completed.
-        let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "three", body: "", image: UIImage(named:
-            ""), buttonText: "") {}
+        let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to the future", image: UIImage(named:
+            "wand"), buttonText: "Get Started") { self.handleOnboardingCompletion() }
         
-        let fourthPage: OnboardingContentViewController = OnboardingContentViewController(title: "four", body: "", image: UIImage(named:
-            ""), buttonText: "Get Started") {
-                self.handleOnboardingCompletion()
-        }
+        
         // process has been completed.
         
         let bounds: CGRect = UIScreen.mainScreen().bounds
@@ -146,8 +162,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //TEMPORARY FUNCS GO HERE
         
-        // Create the onboarding controller with the pages and return it.
-        let onboardingVC: OnboardingViewController = OnboardingViewController(backgroundImage: UIImage(named: "iTunesArtwork"), contents: [firstPage, secondPage, thirdPage, fourthPage])
+        // Video
+        let bundle = NSBundle.mainBundle()
+        let moviePath = bundle.pathForResource("snow", ofType: "mp4")
+        let movieURL = NSURL(fileURLWithPath: moviePath!)
+        
+        let onboardingVC = OnboardingViewController(backgroundVideoURL: movieURL, contents: [firstPage, secondPage, thirdPage])
+        
+        onboardingVC.shouldMaskBackground = false
+        onboardingVC.allowSkipping = true
+        
         
         return onboardingVC
     }
@@ -162,6 +186,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNormalRootVC(true)
     }
     
+    
+    
+    // MARK: Facebook SDK Setup Methods
+    
     func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
@@ -172,6 +200,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 sourceApplication: sourceApplication,
                 annotation: annotation)
     }
+    
+    
+    
+    // MARK: Default App Delegate Methods
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

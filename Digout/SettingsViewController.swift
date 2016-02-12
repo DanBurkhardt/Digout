@@ -12,5 +12,13 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     
+    @IBAction func backButton(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            print("dimissed")
+        }
+
+    }
+    
 
 }
