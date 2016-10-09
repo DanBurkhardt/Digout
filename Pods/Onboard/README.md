@@ -1,6 +1,7 @@
 #Onboard
 
 [![Build Status](https://travis-ci.org/mamaral/Onboard.svg?branch=master)](https://travis-ci.org/mamaral/Onboard)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 ![Badge w/ Version](https://img.shields.io/cocoapods/v/Onboard.svg)
 
@@ -21,7 +22,7 @@ Adding the following to your `Podfile` and running `pod install` should do the t
 pod 'Onboard'
 ```
 
-*If you don't want to use CocoaPods*, you can grab the files located in the *Source* folder and pull them into your project manually.
+*If you don't want to use CocoaPods*, you can use Carthage or grab the files located in the *Source* folder and pull them into your project manually.
 
 Each onboarding experience is comprised of two primary components - the background and the content pages. The background includes the static background image/video, the page control, and the skip button. The content pages are made up of four pieces, an image/icon, title, body, and action button.
 
@@ -57,13 +58,13 @@ OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBa
 ####Swift
 ```swift
 // Image
-OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:[UIImage imageNamed:@"background"] contents:@[firstPage, secondPage, thirdPage]];
+let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "background"), contents: [firstPage, secondPage, thirdPage])
 
 // Video
 let bundle = NSBundle.mainBundle()
 let moviePath = bundle.pathForResource("yourVid", ofType: "mp4")
 let movieURL = NSURL(fileURLWithPath: moviePath!)
-    
+
 let onboardingVC = OnboardingViewController(backgroundVideoURL: movieUrl, contents: [firstPage, secondPage, thirdPage])
 ```
 
@@ -74,13 +75,9 @@ With only a few lines of code you have a beautiful, end-to-end onboarding proces
 Customization
 =============
 
-The content pages can be customized by setting the provided padding, font, and size properties on either the pages individually (if you want something different on each) or on the OnboardingViewController itself, which will pass those properties to all of the content view controllers.
+The `iconImageView`, `titleLabel`, `bodyLabel`, and `actionButton` properties are exposed for customizing fonts, sizing, etc., and the spacing between elements on the content pages can be customized as well:
 
 ```objective-c
-OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage contents:yourContentsArray];
-onboardingVC.fontName = @"Helvetica-Light";
-onboardingVC.titleFontSize = 28;
-onboardingVC.bodyFontSize = 22;
 onboardingVC.topPadding = 20;
 onboardingVC.underIconPadding = 10;
 onboardingVC.underTitlePadding = 15;
@@ -110,6 +107,8 @@ Apply a fade effect to the icons, text, and buttons, while transitioning between
 ```objective-c
 onboardingVC.shouldFadeTransitions = YES; // defaults to NO
 ```
+
+***Note:*** Ensure you do not cause the onboard view controller's view to be loaded prior to setting these properties, as these values only take effect when the view controller's `viewDidLoad` is called, so doing something like setting your `onboardingVC.view.backgroundColor = [UIColor whiteColor];` before setting this values would lead to the setting of these to not take effect.
 
 You can tweak these settings in a few different combinations to get your desired effect:
 

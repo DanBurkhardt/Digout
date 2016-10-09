@@ -196,7 +196,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
+        postLoginNavProcess()
+        hideLoginInfo()
+ 
+        /*
         let cancelled = result.isCancelled
+        
         
         if cancelled != true{
             
@@ -229,7 +234,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 print("test")
             }
-        }
+        }*/
     }
     
     func signIntoBackend(){
@@ -338,7 +343,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print(self.userObject)
                     
                     // Fire off sign-in request
-                    self.signIntoBackend()
+                    //self.signIntoBackend()
                 }
             })
             
