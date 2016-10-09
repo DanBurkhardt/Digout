@@ -1,1 +1,0 @@
-../../../../Devise/Frameworks/GoogleOpenSource.framework/Versions/A/Headers/GTMObjC2Runtime.h

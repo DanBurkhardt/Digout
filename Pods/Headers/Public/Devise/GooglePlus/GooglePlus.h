@@ -1,1 +1,0 @@
-../../../../Devise/Frameworks/GooglePlus.framework/Versions/A/Headers/GooglePlus.h

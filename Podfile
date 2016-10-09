@@ -11,18 +11,12 @@ target 'Digout' do
 #pod 'CDTDatastore'
 #Uncomment for Azure pod
 #pod 'AzureSDK-iOS'
-pod 'Devise', '~> 1.1.0'
 
 
-pod 'Parse'
-    pod 'ParseUI'
-    pod 'ParseFacebookUtilsV4'
-    pod 'ParseTwitterUtils'
-    pod 'FBSDKCoreKit'
-    pod 'FBSDKLoginKit'
-    pod 'Alamofire'
-    pod 'SwiftyJSON'
+pod 'Alamofire'
+pod 'SwiftyJSON'
 pod 'Onboard'
+
 end
 
 target 'DigoutTests' do

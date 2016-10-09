@@ -85,33 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Digout/Alamofire.framework"
-  install_framework "Pods-Digout/Bolts.framework"
-  install_framework "Pods-Digout/Devise.framework"
-  install_framework "Pods-Digout/FBSDKCoreKit.framework"
-  install_framework "Pods-Digout/FBSDKLoginKit.framework"
   install_framework "Pods-Digout/Onboard.framework"
-  install_framework "Pods-Digout/Parse.framework"
-  install_framework "Pods-Digout/ParseFacebookUtilsV4.framework"
-  install_framework "Pods-Digout/ParseTwitterUtils.framework"
-  install_framework "Pods-Digout/ParseUI.framework"
   install_framework "Pods-Digout/SwiftyJSON.framework"
-  install_framework "Pods-Digout/UICKeyChainStore.framework"
-  install_framework "Pods-Digout/XLForm.framework"
-  install_framework "Pods-Digout/NGRValidator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Digout/Alamofire.framework"
-  install_framework "Pods-Digout/Bolts.framework"
-  install_framework "Pods-Digout/Devise.framework"
-  install_framework "Pods-Digout/FBSDKCoreKit.framework"
-  install_framework "Pods-Digout/FBSDKLoginKit.framework"
   install_framework "Pods-Digout/Onboard.framework"
-  install_framework "Pods-Digout/Parse.framework"
-  install_framework "Pods-Digout/ParseFacebookUtilsV4.framework"
-  install_framework "Pods-Digout/ParseTwitterUtils.framework"
-  install_framework "Pods-Digout/ParseUI.framework"
   install_framework "Pods-Digout/SwiftyJSON.framework"
-  install_framework "Pods-Digout/UICKeyChainStore.framework"
-  install_framework "Pods-Digout/XLForm.framework"
-  install_framework "Pods-Digout/NGRValidator.framework"
 fi
