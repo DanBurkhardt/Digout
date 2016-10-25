@@ -18,27 +18,27 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBOutlet weak var mapView: MKMapView!
   
     @IBOutlet weak var finishButton: UIButton!
-    @IBAction func pinPlacementFinished(sender: AnyObject) {
+    @IBAction func pinPlacementFinished(_ sender: AnyObject) {
         for pin in localPinArray{
             
             lMapData.requestorPins.append(pin)
             
         }
         
-        let alert = UIAlertController(title: "Saved!", message:"Your important crossings have been saved. We will alert you when a volunteer clears your path. Stay warm!", preferredStyle: .Alert)
-        let action = UIAlertAction(title: "mmk", style: .Default) { _ in
+        let alert = UIAlertController(title: "Saved!", message:"Your important crossings have been saved. We will alert you when a volunteer clears your path. Stay warm!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "mmk", style: .default) { _ in
             // Put here any code that you would like to execute when
             // the user taps that OK button (may be empty in your case if that's just
             // an informative alert)
         }
         alert.addAction(action)
-        self.presentViewController(alert, animated: true){}
+        self.present(alert, animated: true){}
         
     }
     
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBAction func cancelPinPlacement(sender: AnyObject) {
+    @IBAction func cancelPinPlacement(_ sender: AnyObject) {
         
         // remove all pins except user
         let userLocation = mapView.userLocation
@@ -51,9 +51,9 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.localPinArray = [CLLocationCoordinate2D]()
     }
     
-    @IBAction func backButton(sender: AnyObject) {
+    @IBAction func backButton(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.dismiss(animated: true) { () -> Void in
             print("dimissed")
         }
     }
@@ -70,7 +70,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.manager.desiredAccuracy = kCLLocationAccuracyBest
         
         var status = CLLocationManager.authorizationStatus()
-        if status == .NotDetermined || status == .Denied || status == .AuthorizedWhenInUse{
+        if status == .notDetermined || status == .denied || status == .authorizedWhenInUse{
             print("status was not approved for location services")
             
             self.manager.requestAlwaysAuthorization()
@@ -83,28 +83,28 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Setup Mapview
         self.mapView.delegate = self
-        self.mapView.mapType = MKMapType.Standard
+        self.mapView.mapType = MKMapType.standard
         self.mapView.showsUserLocation = true
 
         
         self.view.backgroundColor = styles.standardBlue
         
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(RequestViewController.handleLongPress(_:)))
         
         longPressGestureRecognizer.minimumPressDuration = 0.5
         self.mapView.addGestureRecognizer(longPressGestureRecognizer)
     }
     
-    func handleLongPress(gestureRecognizer : UIGestureRecognizer){
+    func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
         
-        if gestureRecognizer.state != .Began {return}
+        if gestureRecognizer.state != .began {return}
         
-        self.finishButton.hidden = false
-        self.cancelButton.hidden = false
+        self.finishButton.isHidden = false
+        self.cancelButton.isHidden = false
         
         // Get the pin dropped
-        let touchPoint = gestureRecognizer.locationInView(self.mapView)
-        let touchMapCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
+        let touchPoint = gestureRecognizer.location(in: self.mapView)
+        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
         // Push into the local array of pins
         localPinArray.append(touchMapCoordinate)
@@ -124,7 +124,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     // MARK: MapView Delegate Methods
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         self.mapView.showAnnotations([userLocation], animated: true)
     }
     

@@ -13,8 +13,6 @@ target 'Digout' do
 #pod 'AzureSDK-iOS'
 
 
-pod 'Alamofire'
-pod 'SwiftyJSON'
 pod 'Onboard'
 
 end

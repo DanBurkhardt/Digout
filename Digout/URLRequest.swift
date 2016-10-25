@@ -11,12 +11,14 @@ import Foundation
 class URLRequest {
     
     /// Place for storing the raw response
-    private var requestData = NSData()
+    fileprivate var requestData = Data()
     
     init(){
         //Something on init
     }
     
+    
+    /*
     ///Function for URL call with optional dictionary of headers (String:String)?
     ///Passes back a completion value called "finished" which can then be used to block processing until request returns
     ///
@@ -24,23 +26,23 @@ class URLRequest {
     /// - parameter url: `String()` param that is the url/endpoint from which to request data
     /// - parameter requestType: `String()` param that is the url/endpoint from which to request data
     /// - returns: `Bool()`
-    func executeRequestFromURL(url: String, headerDictionary: NSDictionary?, requestType: String, completion: (finished: Bool) -> Void){
+    func executeRequestFromURL(_ url: String, headerDictionary: NSDictionary?, requestType: String, completion: @escaping (_ finished: Bool) -> Void){
         
         // Create the request objects
-        let providedURLAsNSURL = NSURL(string: url)
-        let request = NSMutableURLRequest(URL: providedURLAsNSURL!)
+        let providedURLAsNSURL = URL(string: url)
+        let request = NSMutableURLRequest(url: providedURLAsNSURL!)
         
         // Add the custom method type from passed string
         // TODO: make this a selection from a `struct` instead of a string to be less error prone
-        request.HTTPMethod = requestType
+        request.httpMethod = requestType
         
-        let postData = try! NSJSONSerialization.dataWithJSONObject(headerDictionary!, options: [])
+        let postData = try! JSONSerialization.data(withJSONObject: headerDictionary!, options: [])
         
-        let jsonString = NSString(data: postData, encoding: NSUTF8StringEncoding)! as String
+        let jsonString = NSString(data: postData, encoding: String.Encoding.utf8.rawValue)! as String
         
         print(jsonString)
         
-        let dataString = NSData(contentsOfFile: jsonString)
+        let dataString = try? Data(contentsOf: URL(fileURLWithPath: jsonString))
         
         //request.HTTPBody = jsonString
         /*
@@ -54,7 +56,7 @@ class URLRequest {
         }*/
         
         // Actual asynchronous URL request for remote data
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main) { (response, data, error) -> Void in
             
             // Return the proper code depending on the error status
             if error == nil{
@@ -86,10 +88,10 @@ class URLRequest {
     /// Accessor method for retrieving the raw request data post-success
     ///
     /// - returns: `NSData()`
-    func retrieveData() -> NSData{
+    func retrieveData() -> Data{
         return requestData
     }
     
     // TODO: Create a method that functions as a debug mode selector that turns on print statements if debug mode is enabled
-    
+    */
 }

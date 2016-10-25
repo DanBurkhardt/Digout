@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Onboard
 
 var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -19,21 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     let api = APIInfo()
     
     let userHasOnboardedKey = "user_has_onboarded"
     
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Set status bar to the light theme
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         return true
     }
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
@@ -41,16 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ONBOARD COCOAPOD SETUP
         //*********************************
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         //        self.window!.backgroundColor = UIColor.whiteColor()
         // Override point for customization after application launch.
         
         
         self.setupNormalRootVC(false)
-        
+
         
         // Determine if the user has completed onboarding yet or not
-        let userHasOnboardedAlready = NSUserDefaults.standardUserDefaults().boolForKey(userHasOnboardedKey);
+        let userHasOnboardedAlready = UserDefaults.standard.bool(forKey: userHasOnboardedKey);
         
         
         // If the user has already onboarded, setup the normal root view controller for the application
@@ -58,13 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if userHasOnboardedAlready {
             //self.window!.rootViewController = self.generateOnboardingViewController()
-            self.setupNormalRootVC(false);
+            
+            setupNormalRootVC(false)
         }
             
             // Otherwise the user hasn't onboarded yet, so set the root view controller for the application to the
             // onboarding view controller generated and returned by this method.
         else {
-            self.window!.rootViewController = self.generateOnboardingViewController()
+            self.window!.rootViewController = generateOnboardingViewController()
         }
         
         self.window!.makeKeyAndVisible()
@@ -82,16 +84,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         // Set the application key
-        MQALogger.startNewSessionWithApplicationKey("1g035b18aa74520487825fc124c7e4f468253d2c46g0g1g1cfc0c30")
+        MQALogger.startNewSession(withApplicationKey: "1g3ae27c9e4871fcb5374f9be546ad60081746c46ag0g2g39bf0cfd")
         
         // Set MQA uncaught exception handler for crashes
         NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
+        
         
         
         //*********************************
         // FACEBOOK SDK SETUP
         //*********************************
         
+        /*
         // Activate FBSDK
         FBSDKAppEvents.activateApp()
         
@@ -99,25 +103,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if accessToken != nil {
             
-            defaults.setBool(true, forKey: "isUserLoggedIn")
+            defaults.set(true, forKey: "isUserLoggedIn")
             
         }else{
             
-            defaults.setBool(false, forKey: "isUserLoggedIn")
+            defaults.set(false, forKey: "isUserLoggedIn")
         }
         
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-
-        //return true
+         */
+        return true
     }
     
     
     
     // MARK: Onboard Cocoapod Setup Methods
     
-    func setupNormalRootVC(animated : Bool) {
+    func setupNormalRootVC(_ animated : Bool) {
         // Here I'm just creating a generic view controller to represent the root of my application.
         let mainVC = UIViewController()
         mainVC.title = "RootView"
@@ -125,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If we want to animate it, animate the transition - in this case we're fading, but you can do it
         // however you want.
         if animated {
-            UIView.transitionWithView(self.window!, duration: 0.5, options:.TransitionCrossDissolve, animations: { () -> Void in
+            UIView.transition(with: self.window!, duration: 0.5, options:.transitionCrossDissolve, animations: { () -> Void in
                 self.window!.rootViewController = initialViewControllerRoot as? UIViewController
                 }, completion:nil)
         }
@@ -151,35 +154,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Generate the third page, and when the user hits the button we want to handle that the onboarding
         // process has been completed.
         let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to the future", image: UIImage(named:
-            "wand"), buttonText: "Get Started") { self.handleOnboardingCompletion() }
+            "wand"), buttonText: "Get Started") {
+                self.handleOnboardingCompletion()
+        }
         
         
         // process has been completed.
         
-        let bounds: CGRect = UIScreen.mainScreen().bounds
+        let bounds: CGRect = UIScreen.main.bounds
         let ScreenSize = bounds.size.width
         let blockImages = ["mtnblock","flagblock","bsktballblock"]
         
         //TEMPORARY FUNCS GO HERE
         
         // Video
-        let bundle = NSBundle.mainBundle()
-        let moviePath = bundle.pathForResource("snow", ofType: "mp4")
-        let movieURL = NSURL(fileURLWithPath: moviePath!)
+        let bundle = Bundle.main
+        let moviePath = bundle.path(forResource: "snow", ofType: "mp4")
+        let movieURL = URL(fileURLWithPath: moviePath!)
         
         let onboardingVC = OnboardingViewController(backgroundVideoURL: movieURL, contents: [firstPage, secondPage, thirdPage])
         
-        onboardingVC.shouldMaskBackground = false
-        onboardingVC.allowSkipping = true
+        onboardingVC?.shouldMaskBackground = false
+        onboardingVC?.allowSkipping = true
         
         
-        return onboardingVC
+        return onboardingVC!
     }
     
     func handleOnboardingCompletion() {
         // Now that we are done onboarding, we can set in our NSUserDefaults that we've onboarded now, so in the
         // future when we launch the application we won't see the onboarding again.
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: userHasOnboardedKey)
+        UserDefaults.standard.set(true, forKey: userHasOnboardedKey)
         
         // Setup the normal root view controller of the application, and set that we want to do it animated so that
         // the transition looks nice from onboarding to normal app.
@@ -190,40 +195,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Facebook SDK Setup Methods
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
+        /*
+    func application(_ application: UIApplication,
+        open url: URL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
+        annotation: Any) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(
                 application,
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
-    }
+    }*/
     
     
     
     // MARK: Default App Delegate Methods
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 

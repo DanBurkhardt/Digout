@@ -11,7 +11,7 @@ import UIKit
 
 
 /// Global Variable for User Defaults
-let defaults = NSUserDefaults.standardUserDefaults()
+let defaults = UserDefaults.standard
 /// Global Styles
 let styles = GlobalDefaults.styles()
 /// Global Defaults
@@ -21,7 +21,7 @@ let apis = APIInfo()
 /// Global var for storing mapping data
 let lMapData = LocalMappingData()
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController {
 
     
     // MARK: Class Variables
@@ -33,9 +33,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     /// Var for the last selected user option
     var lastTouchedOption = String()
     /// Facebook login button
-    let loginView : FBSDKLoginButton = FBSDKLoginButton()
+    //let loginView : FBSDKLoginButton = FBSDKLoginButton()
     /// URL Request
-    let request = URLRequest()
+    //let request = URLRequest()
     /// User Object Model
     var userObject = NSMutableDictionary()
     
@@ -51,23 +51,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var heyMessage: UILabel!
     
-    @IBAction func returnToMain(segue: UIStoryboardSegue) {
+    @IBAction func returnToMain(_ segue: UIStoryboardSegue) {
         print("back to main vc")
         
     }
     
-    @IBAction func settingsButton(sender: AnyObject) {
+    @IBAction func settingsButton(_ sender: AnyObject) {
         
         
     }
     
     /// Actions for when the user is requesting help
-    @IBAction func requestButton(sender: AnyObject) {
+    @IBAction func requestButton(_ sender: AnyObject) {
         
-        if self.userLoggedIn == true{
-            
             // Grab VC obj
-            let requestControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("requestVC") as? RequestViewController
+            let requestControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "requestVC") as? RequestViewController
             
             // Nav
             //volunteerControllerObj?.modalTransitionStyle = UIModalTransitionStyle.
@@ -75,29 +73,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Logs event for tap
             //logger.logTapEvent("DensityFeature")
             
-            presentViewController(requestControllerObj!, animated: true, completion: nil)
-            
-        }else{
-            // DO IT
-            setupFBButton()
-            
-            // Show login info
-            unhideLoginInfo()
-            
-            // Set the this as the last touched option
-            self.lastTouchedOption = "request"
-            
-        }
+            present(requestControllerObj!, animated: true, completion: nil)
         
     }
     
     /// Actions for when the user is volunteering
-    @IBAction func volunteerButton(sender: AnyObject) {
-        
-        if self.userLoggedIn == true{
+    @IBAction func volunteerButton(_ sender: AnyObject) {
             
             // Grab VC obj
-            let volunteerControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("volunteerVC") as? VolunteerViewController
+            let volunteerControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "volunteerVC") as? VolunteerViewController
             
             // Nav
             //volunteerControllerObj?.modalTransitionStyle = UIModalTransitionStyle.
@@ -105,21 +89,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Logs event for tap
             //logger.logTapEvent("DensityFeature")
             
-            presentViewController(volunteerControllerObj!, animated: true, completion: nil)
+            present(volunteerControllerObj!, animated: true, completion: nil)
             
-        }else{
-            // DO IT
-            setupFBButton()
-            
-            // Show login info
-           unhideLoginInfo()
-            
-            // Set the this as the last touched option
-            self.lastTouchedOption = "volunteer"
-            
-        }
-        
-        
     }
     
     
@@ -135,7 +106,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         //self.loginView.hidden = true
         
         // Get user data if it has already been auth'd
-        returnUserData()
+        //returnUserData()
         
         // Set bg color
         self.view.backgroundColor = styles.standardBlue
@@ -155,38 +126,39 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // MARK: Programmer Defined Methods
     
+    
+    //TODO: Remove all legacy FB related fucntions below
+    /*
     func setupFBButton(){
     
         // Clip FB button to main view
-        self.view.addSubview(loginView)
+        //self.view.addSubview(loginView)
         // Get main bounds
-        let mainScreen = UIScreen.mainScreen().bounds
+        let mainScreen = UIScreen.main.bounds
         // Set the frame size and location of the FB button
-        self.loginView.frame = CGRect(x: (mainScreen.width/2 - self.loginView.frame.width/2), y: (mainScreen.height - loginView.frame.height - 70), width: self.loginView.frame.width, height: self.loginView.frame.height)
+        //self.loginView.frame = CGRect(x: (mainScreen.width/2 - self.loginView.frame.width/2), y: (mainScreen.height - loginView.frame.height - 70), width: self.loginView.frame.width, height: self.loginView.frame.height)
         
-        loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        //loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        loginView.delegate = self
+        //loginView.delegate = self
     
-    }
+    }*/
+    
     
     
     func unhideLoginInfo(){
         
-        // Handle the case where the user is not logged in
-        self.loginView.hidden = false
-        self.buttonStack.hidden = true
-        self.loginMessage.hidden = false
+        self.buttonStack.isHidden = true
+        self.loginMessage.isHidden = false
 
     }
     
     
+    
     func hideLoginInfo(){
         
-        // Handle the case where the user is not logged in
-        self.loginView.hidden = true
-        self.buttonStack.hidden = false
-        self.loginMessage.hidden = true
+        self.buttonStack.isHidden = false
+        self.loginMessage.isHidden = true
         
     }
     
@@ -194,7 +166,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // MARK: Facebook delegate methods
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    /*
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
         postLoginNavProcess()
         hideLoginInfo()
@@ -235,8 +208,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("test")
             }
         }*/
-    }
+    }*/
     
+    /*
     func signIntoBackend(){
         
         request.executeRequestFromURL(apis.signInUrl, headerDictionary: self.userObject, requestType: "POST", completion: { (finished) -> Void in
@@ -260,7 +234,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             
         })
-    }
+    }*/
     
     /// Function for post-login navigation
     func postLoginNavProcess(){
@@ -268,7 +242,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         if lastTouchedOption == "volunteer"{
             
             // Grab VC obj
-            let volunteerControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("volunteerVC") as? VolunteerViewController
+            let volunteerControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "volunteerVC") as? VolunteerViewController
             
             // Nav options
             //volunteerControllerObj?.modalTransitionStyle = UIModalTransitionStyle.
@@ -277,11 +251,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             // logger invocation
             
             // Nav
-            presentViewController(volunteerControllerObj!, animated: true, completion: nil)
+            present(volunteerControllerObj!, animated: true, completion: nil)
             
         }else if lastTouchedOption == "request"{
             // Grab VC obj
-            let requestControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("requestVC") as? RequestViewController
+            let requestControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "requestVC") as? RequestViewController
             
             // Nav options
             //volunteerControllerObj?.modalTransitionStyle = UIModalTransitionStyle.
@@ -290,7 +264,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             // logger invocation
             
             // Nav
-           presentViewController(requestControllerObj!, animated: true, completion: nil)
+           present(requestControllerObj!, animated: true, completion: nil)
         }else{
             // Nothing
         }
@@ -298,7 +272,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+    
+    
+    //TODO: Remove all legacy FB related fucntions below
+    
+    /*
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
     }
     
@@ -353,7 +332,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             self.userLoggedIn = false
             
         }
-    }
+    }*/
 
 
 }

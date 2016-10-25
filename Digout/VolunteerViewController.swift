@@ -21,20 +21,20 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     //MARK: UI Obhect Outlets and Actions
     
-    @IBAction func magicButton(sender: AnyObject) {
+    @IBAction func magicButton(_ sender: AnyObject) {
         
         var pointArray = lMapData.requestorPins
         
-        var polyline = MKPolyline(coordinates: &pointArray, count: lMapData.requestorPins.count)
+        let polyline = MKPolyline(coordinates: &pointArray, count: lMapData.requestorPins.count)
         
-        self.mapView.addOverlay(polyline)
+        self.mapView.add(polyline)
     }
     
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBAction func backButton(sender: AnyObject) {
+    @IBAction func backButton(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.dismiss(animated: true) { () -> Void in
             print("dimissed")
         }
     }
@@ -51,13 +51,13 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.manager.desiredAccuracy = kCLLocationAccuracyBest
         
         var status = CLLocationManager.authorizationStatus()
-        if status == .NotDetermined || status == .Denied || status == .AuthorizedWhenInUse{
+        if status == .notDetermined || status == .denied || status == .authorizedWhenInUse{
             print("status was not approved for location services")
             
             self.manager.requestAlwaysAuthorization()
             self.manager.startUpdatingLocation()
 
-        }else if status == .AuthorizedAlways{
+        }else if status == .authorizedAlways{
             
         
             
@@ -70,7 +70,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
         // Setup Mapview
         self.mapView.delegate = self
-        self.mapView.mapType = MKMapType.Standard
+        self.mapView.mapType = MKMapType.standard
         self.mapView.showsUserLocation = true
         
         
@@ -84,7 +84,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     // MARK: Programmer Defined Methods
-    func saveUserLocation(location: CLLocationCoordinate2D){
+    func saveUserLocation(_ location: CLLocationCoordinate2D){
         
         let long = location.longitude
         let lat = location.latitude
@@ -95,35 +95,35 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         pair.setValue(lat, forKey: "lat")
         
         print(pair)
-        defaults.setObject(pair, forKey: "currentUserLocation")
+        defaults.set(pair, forKey: "currentUserLocation")
         
     }
     
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         var polylineRenderer = MKPolylineRenderer(overlay: overlay)
         polylineRenderer.strokeColor = styles.standardBlue
         polylineRenderer.lineWidth = 5
         return polylineRenderer
     }
     // MARK: MapView Delegate Methods
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         self.mapView.showAnnotations([userLocation], animated: true)
     }
     
-    func mapViewDidFinishLoadingMap(mapView: MKMapView) {
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         print("Map load finished")
     }
     
-    func mapViewDidFinishRenderingMap(mapView: MKMapView, fullyRendered: Bool) {
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
         print("Map rendering finished")
         placeMapPins()
     }
     
-    func mapViewDidStopLocatingUser(mapView: MKMapView) {
+    func mapViewDidStopLocatingUser(_ mapView: MKMapView) {
         print("Stopped location user")
     }
     
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         let currentAnnotation = view.annotation
         
@@ -131,15 +131,15 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
         var pointArray = lMapData.requestorPins
         
-        var polyline = MKPolyline(coordinates: &pointArray, count: lMapData.requestorPins.count)
+        let polyline = MKPolyline(coordinates: &pointArray, count: lMapData.requestorPins.count)
         
-        self.mapView.addOverlay(polyline)
+        self.mapView.add(polyline)
 
     }
     
     
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if userLocationUpdated == false{
             userLocation = manager.location!.coordinate
@@ -157,7 +157,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
         for pin in lMapData.requestorPins{
             
-            var annotation = MKPointAnnotation()
+            let annotation = MKPointAnnotation()
             
             print("Placing map pin")
             annotation.title = "this crossing is clear!"

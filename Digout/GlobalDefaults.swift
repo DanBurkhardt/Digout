@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GlobalDefaults {
     
@@ -14,6 +15,7 @@ class GlobalDefaults {
     struct styles {
         
         var standardBlue = UIColor(red: 0.09, green: 0.494, blue: 1, alpha: 1)
+        
     }
     
     
@@ -21,12 +23,12 @@ class GlobalDefaults {
     func setLightStatusbar(){
         
         // Set status bar to the light theme
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     }
     func setDarkStatusBar(){
         
         // Set status bar to the dark theme
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
     // All of the things
