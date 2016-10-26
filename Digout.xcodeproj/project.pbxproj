@@ -15,6 +15,12 @@
 		1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */; };
 		1A7D78F21C659911007CAFE4 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F11C659911007CAFE4 /* URLRequest.swift */; };
 		1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */; };
+		1AEA4E861DC03F220029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
+		1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
+		1AEA4E881DC03F5C0029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
+		1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
+		1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C7D12F5C2B8A0DC1AC369FA /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C430903BB443666C544BBC46 /* Pods_Digout.framework */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
@@ -59,6 +65,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1AEA4E8A1DC03F5C0029AA3A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */,
+				1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A00BFF61C66339C005CC28D /* LocalMappingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMappingData.swift; sourceTree = "<group>"; };
 		1A3F88431C65F2AE00FE6BBE /* UserObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObjectModel.swift; sourceTree = "<group>"; };
@@ -68,6 +89,8 @@
 		1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefaults.swift; sourceTree = "<group>"; };
 		1A7D78F11C659911007CAFE4 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
+		1AEA4E841DC03F220029AA3A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		C4301EEA048112AA8104821B /* Pods-Digout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.debug.xcconfig"; sourceTree = "<group>"; };
 		C430903BB443666C544BBC46 /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -112,13 +135,17 @@
 			files = (
 				C903F11D1C651E9800897C55 /* SystemConfiguration.framework in Frameworks */,
 				C903F11B1C651E9000897C55 /* Security.framework in Frameworks */,
+				1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */,
 				C903F1191C651E8B00897C55 /* QuartzCore.framework in Frameworks */,
+				1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */,
 				C903F1171C651E8500897C55 /* MediaPlayer.framework in Frameworks */,
+				1AEA4E861DC03F220029AA3A /* Alamofire.framework in Frameworks */,
 				C903F1151C651E7E00897C55 /* CoreVideo.framework in Frameworks */,
 				C903F1131C651E7700897C55 /* CoreText.framework in Frameworks */,
 				C903F1111C651E7000897C55 /* CoreTelephony.framework in Frameworks */,
 				C903F10F1C651E6900897C55 /* CoreMotion.framework in Frameworks */,
 				C903F10D1C651E6100897C55 /* CoreMedia.framework in Frameworks */,
+				1AEA4E881DC03F5C0029AA3A /* Alamofire.framework in Frameworks */,
 				C903F10B1C651E5A00897C55 /* CoreLocation.framework in Frameworks */,
 				C903F1091C651E5100897C55 /* CoreData.framework in Frameworks */,
 				1A7D78ED1C656A1B007CAFE4 /* Q4M.framework in Frameworks */,
@@ -175,6 +202,8 @@
 		C903F0FF1C651D8D00897C55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AEA4E841DC03F220029AA3A /* Alamofire.framework */,
+				1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */,
 				1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */,
 				C903F11C1C651E9800897C55 /* SystemConfiguration.framework */,
 				C903F11A1C651E9000897C55 /* Security.framework */,
@@ -304,6 +333,7 @@
 				C9A302C31C651C7700A2EB7F /* Resources */,
 				69A95806AE578C2077BD362E /* Copy Pods Resources */,
 				F0F29A9BDDF4408AB6B30F03 /* Embed Pods Frameworks */,
+				1AEA4E8A1DC03F5C0029AA3A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -638,6 +668,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -669,6 +700,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

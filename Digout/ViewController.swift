@@ -21,6 +21,9 @@ let apis = APIInfo()
 /// Global var for storing mapping data
 let lMapData = LocalMappingData()
 
+import Alamofire
+
+
 class ViewController: UIViewController {
 
     
