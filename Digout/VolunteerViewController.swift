@@ -18,6 +18,8 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     var userLocationUpdated = false
     
+    var requestFetcher = RequestFetcher()
+    
     
     //MARK: UI Obhect Outlets and Actions
     
@@ -117,6 +119,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
         print("Map rendering finished")
         placeMapPins()
+        requestFetcher.getRequests()
     }
     
     func mapViewDidStopLocatingUser(_ mapView: MKMapView) {

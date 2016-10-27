@@ -24,6 +24,7 @@
 		23D8FBDB2666D8380833FA72 /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E76F4EFABAD3DE19E168F5 /* Pods_Digout.framework */; };
 		5A42B48CBAB5135A42BC6372 /* Pods_DigoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68D1A18E891A53E537BF268 /* Pods_DigoutTests.framework */; };
 		6228543F76A83795BB2C2CD4 /* Pods_DigoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEF2D2E2C15352FA48007D /* Pods_DigoutUITests.framework */; };
+		76ADBA2E1DC1A53600AF99CC /* RequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
 		C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1061C651E4900897C55 /* AVFoundation.framework */; };
@@ -97,6 +98,7 @@
 		1B39E0B5B926B5BB5B8A4BDB /* Pods-DigoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66E76F4EFABAD3DE19E168F5 /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7628D7DAD885A4615032E41B /* Pods-Digout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.release.xcconfig"; sourceTree = "<group>"; };
+		76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFetcher.swift; sourceTree = "<group>"; };
 		89D8B1FF6677893E2588DB82 /* Pods-DigoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		ACFFE2080ECA9FF97995ABA6 /* Pods-DigoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1A7D78F11C659911007CAFE4 /* URLRequest.swift */,
+				76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */,
+				76ADBA2E1DC1A53600AF99CC /* RequestFetcher.swift in Sources */,
 				1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */,
 				C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */,
 				1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */,
