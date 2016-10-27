@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "868258A9E5772224F87C39E7C8F46F24"
+               BlueprintIdentifier = "F138F62EB9D7463BA995CB9A973CE031"
                BuildableName = "Pods_Digout.framework"
                BlueprintName = "Pods-Digout"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "868258A9E5772224F87C39E7C8F46F24"
+            BlueprintIdentifier = "F138F62EB9D7463BA995CB9A973CE031"
             BuildableName = "Pods_Digout.framework"
             BlueprintName = "Pods-Digout"
             ReferencedContainer = "container:Pods.xcodeproj">

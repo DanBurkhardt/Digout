@@ -5,14 +5,6 @@
 
 target 'Digout' do
 
-#Uncomment for bluemix pod
-#pod 'IBMBluemix'
-#Uncomment for cloudant datastore pod
-#pod 'CDTDatastore'
-#Uncomment for Azure pod
-#pod 'AzureSDK-iOS'
-
-
 pod 'Onboard'
 
 end
