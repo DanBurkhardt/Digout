@@ -20,6 +20,9 @@ class RequestFetcher {
         Alamofire.request(fullURL).responseJSON { response in
             print(response.response)
             print(response.data)
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
         }
         
     }
