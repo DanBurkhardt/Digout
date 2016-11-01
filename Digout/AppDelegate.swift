@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let userHasOnboardedKey = "user_has_onboarded"
     
+    let onboardSetup = OnboardingSetup()
+    
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Set status bar to the light theme
@@ -93,28 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        //*********************************
-        // FACEBOOK SDK SETUP
-        //*********************************
-        
-        /*
-        // Activate FBSDK
-        FBSDKAppEvents.activateApp()
-        
-        let accessToken = FBSDKAccessToken.currentAccessToken()
-        
-        if accessToken != nil {
-            
-            defaults.set(true, forKey: "isUserLoggedIn")
-            
-        }else{
-            
-            defaults.set(false, forKey: "isUserLoggedIn")
-        }
-        
-        
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-         */
         return true
     }
     
@@ -145,8 +125,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func generateOnboardingViewController() -> OnboardingViewController {
         // Generate the first page...
         
-        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "this is an onboarding sequence", image: UIImage(named:
-            "shovel"), buttonText: "") {}
+        
+        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "", body: "", image: UIImage(named:
+            ""), buttonText: "Ok") {
+            self.handleOnboardingCompletion()
+        }
+        
+        let testView = UIView()
+        testView.backgroundColor = UIColor.black
+        testView.translatesAutoresizingMaskIntoConstraints = false
+        
+        firstPage.view.addSubview(testView)
+        
+        var constraints = self.onboardSetup.setupTestConstraints(firstPage: firstPage, testView: testView)
+        
+        for constraint in constraints{
+            firstPage.view.addConstraint(constraint)
+        }
+        
+        
         
         
         // Generate the second page...
@@ -157,8 +154,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // process has been completed.
         let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to the future", image: UIImage(named:
             "wand"), buttonText: "Get Started") {
+                
+                // Callback func on the final page of the onboarding process
                 self.handleOnboardingCompletion()
         }
+ 
         
         
         // process has been completed.
@@ -174,7 +174,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let moviePath = bundle.path(forResource: "snow", ofType: "mp4")
         let movieURL = URL(fileURLWithPath: moviePath!)
         
-        let onboardingVC = OnboardingViewController(backgroundVideoURL: movieURL, contents: [firstPage, secondPage, thirdPage])
+        let onboardingVC = OnboardingViewController(backgroundVideoURL: movieURL, contents: [firstPage])
         
         onboardingVC?.shouldMaskBackground = false
         onboardingVC?.allowSkipping = true
@@ -192,22 +192,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // the transition looks nice from onboarding to normal app.
         setupNormalRootVC(true)
     }
-    
-    
-    
-    // MARK: Facebook SDK Setup Methods
-    
-        /*
-    func application(_ application: UIApplication,
-        open url: URL,
-        sourceApplication: String?,
-        annotation: Any) -> Bool {
-            return FBSDKApplicationDelegate.sharedInstance().application(
-                application,
-                openURL: url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
-    }*/
     
     
     
