@@ -12,20 +12,11 @@ class APIInfo {
     
     // API Requests for back-end access
     // All POST requests
-    var signInUrl = "http://digout.ngrok.com/auth/sign_in"
-    var signUpUrl = "http://digout.ngrok.com/auth"
+    
+    // This is used for all signup/login requests
+    // use a "GET" for login and "POST" for signups
+    // User object is passed within the body
+    var accountsURL = "https://digout-py.mybluemix.net/account"
     
     
-    /*
-    Signup Object
-        fb_id
-        name
-        email
-        image (url)
-        volunteer (bool)
-    
-    Signin Object
-        email
-        fb_id
-    */
-}
+    }

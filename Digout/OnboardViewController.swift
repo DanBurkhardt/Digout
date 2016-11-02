@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardSecondPageViewController: UIViewController {
+class OnboardViewController: UIViewController {
 
     @IBAction func signupButton(_ sender: AnyObject) {
          self.performSegue(withIdentifier: "navSignupView", sender: self)

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class OnboardingSignupViewController: UIViewController {
+
+class OnboardSignupViewController: UIViewController {
 
     ///MARK: Outlets & Actions
     
@@ -27,7 +28,7 @@ class OnboardingSignupViewController: UIViewController {
         checkForFieldCompletion()
     }
     
-    /// MARK: Class Variables
+    ///MARK: Class Variables
     let accountManager = UserAccountManager()
     
     

@@ -13,7 +13,6 @@
 		1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F5E41C65BB6200FFA70A /* APIInfo.swift */; };
 		1A7D78ED1C656A1B007CAFE4 /* Q4M.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */; };
 		1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */; };
-		1A7D78F21C659911007CAFE4 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F11C659911007CAFE4 /* URLRequest.swift */; };
 		1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */; };
 		1AEA4E861DC03F220029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
 		1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
@@ -24,7 +23,7 @@
 		23D8FBDB2666D8380833FA72 /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E76F4EFABAD3DE19E168F5 /* Pods_Digout.framework */; };
 		5A42B48CBAB5135A42BC6372 /* Pods_DigoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68D1A18E891A53E537BF268 /* Pods_DigoutTests.framework */; };
 		6228543F76A83795BB2C2CD4 /* Pods_DigoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEF2D2E2C15352FA48007D /* Pods_DigoutUITests.framework */; };
-		76ADBA2E1DC1A53600AF99CC /* RequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */; };
+		76ADBA2E1DC1A53600AF99CC /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
 		C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1061C651E4900897C55 /* AVFoundation.framework */; };
@@ -41,12 +40,10 @@
 		C903F11D1C651E9800897C55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F11C1C651E9800897C55 /* SystemConfiguration.framework */; };
 		C903F1241C65218A00897C55 /* MQAExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C903F1231C65218A00897C55 /* MQAExceptionHandler.m */; };
 		C91F08CA1DC25D5100BAFABF /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08C91DC25D5100BAFABF /* OnboardingSetup.swift */; };
-		C91F08D41DC29B4A00BAFABF /* OnboardingFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D31DC29B4A00BAFABF /* OnboardingFirstPageViewController.swift */; };
-		C91F08D61DC2A2D200BAFABF /* OnboardingSecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D51DC2A2D200BAFABF /* OnboardingSecondPageViewController.swift */; };
-		C91F08D81DC2A8D400BAFABF /* OnboardingSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D71DC2A8D400BAFABF /* OnboardingSignupViewController.swift */; };
-		C91F08DA1DC2A92800BAFABF /* OnboardingLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D91DC2A92800BAFABF /* OnboardingLoginViewController.swift */; };
+		C91F08D41DC29B4A00BAFABF /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D31DC29B4A00BAFABF /* OnboardViewController.swift */; };
+		C91F08D81DC2A8D400BAFABF /* OnboardSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D71DC2A8D400BAFABF /* OnboardSignupViewController.swift */; };
+		C91F08DA1DC2A92800BAFABF /* OnboardLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D91DC2A92800BAFABF /* OnboardLoginViewController.swift */; };
 		C91F08DE1DC2B3E100BAFABF /* RightToLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08DD1DC2B3E100BAFABF /* RightToLeftSegue.swift */; };
-		C91F08E01DC365D600BAFABF /* OnboardSecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08DF1DC365D600BAFABF /* OnboardSecondPageViewController.swift */; };
 		C91F08E21DC38E5200BAFABF /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */; };
 		C9619E121C6D83D900A46153 /* snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9619E111C6D83D900A46153 /* snow.mp4 */; };
 		C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97BC3521C6D174A00930C1B /* SettingsViewController.swift */; };
@@ -99,14 +96,13 @@
 		1A58F5E41C65BB6200FFA70A /* APIInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Q4M.framework; sourceTree = "<group>"; };
 		1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefaults.swift; sourceTree = "<group>"; };
-		1A7D78F11C659911007CAFE4 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		1AEA4E841DC03F220029AA3A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		1B39E0B5B926B5BB5B8A4BDB /* Pods-DigoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66E76F4EFABAD3DE19E168F5 /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7628D7DAD885A4615032E41B /* Pods-Digout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.release.xcconfig"; sourceTree = "<group>"; };
-		76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFetcher.swift; sourceTree = "<group>"; };
+		76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		89D8B1FF6677893E2588DB82 /* Pods-DigoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		ACFFE2080ECA9FF97995ABA6 /* Pods-DigoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -127,12 +123,10 @@
 		C903F1221C65214100897C55 /* MQAExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQAExceptionHandler.h; sourceTree = "<group>"; };
 		C903F1231C65218A00897C55 /* MQAExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAExceptionHandler.m; sourceTree = "<group>"; };
 		C91F08C91DC25D5100BAFABF /* OnboardingSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
-		C91F08D31DC29B4A00BAFABF /* OnboardingFirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFirstPageViewController.swift; sourceTree = "<group>"; };
-		C91F08D51DC2A2D200BAFABF /* OnboardingSecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSecondPageViewController.swift; sourceTree = "<group>"; };
-		C91F08D71DC2A8D400BAFABF /* OnboardingSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSignupViewController.swift; sourceTree = "<group>"; };
-		C91F08D91DC2A92800BAFABF /* OnboardingLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewController.swift; sourceTree = "<group>"; };
+		C91F08D31DC29B4A00BAFABF /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		C91F08D71DC2A8D400BAFABF /* OnboardSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardSignupViewController.swift; sourceTree = "<group>"; };
+		C91F08D91DC2A92800BAFABF /* OnboardLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardLoginViewController.swift; sourceTree = "<group>"; };
 		C91F08DD1DC2B3E100BAFABF /* RightToLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeftSegue.swift; sourceTree = "<group>"; };
-		C91F08DF1DC365D600BAFABF /* OnboardSecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardSecondPageViewController.swift; sourceTree = "<group>"; };
 		C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
 		C9619E111C6D83D900A46153 /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snow.mp4; sourceTree = "<group>"; };
 		C97BC3521C6D174A00930C1B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Digout/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -217,8 +211,7 @@
 		1A7D78F01C65985C007CAFE4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1A7D78F11C659911007CAFE4 /* URLRequest.swift */,
-				76ADBA2D1DC1A53600AF99CC /* RequestFetcher.swift */,
+				76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */,
 				C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */,
 			);
 			name = Utilities;
@@ -304,11 +297,9 @@
 		C91F08DB1DC2ACA300BAFABF /* OnboardingVCs */ = {
 			isa = PBXGroup;
 			children = (
-				C91F08D51DC2A2D200BAFABF /* OnboardingSecondPageViewController.swift */,
-				C91F08D31DC29B4A00BAFABF /* OnboardingFirstPageViewController.swift */,
-				C91F08D71DC2A8D400BAFABF /* OnboardingSignupViewController.swift */,
-				C91F08D91DC2A92800BAFABF /* OnboardingLoginViewController.swift */,
-				C91F08DF1DC365D600BAFABF /* OnboardSecondPageViewController.swift */,
+				C91F08D31DC29B4A00BAFABF /* OnboardViewController.swift */,
+				C91F08D71DC2A8D400BAFABF /* OnboardSignupViewController.swift */,
+				C91F08D91DC2A92800BAFABF /* OnboardLoginViewController.swift */,
 			);
 			name = OnboardingVCs;
 			sourceTree = "<group>";
@@ -480,7 +471,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */;
+			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -657,25 +648,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */,
-				76ADBA2E1DC1A53600AF99CC /* RequestFetcher.swift in Sources */,
+				76ADBA2E1DC1A53600AF99CC /* URLRequest.swift in Sources */,
 				1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */,
-				C91F08DA1DC2A92800BAFABF /* OnboardingLoginViewController.swift in Sources */,
+				C91F08DA1DC2A92800BAFABF /* OnboardLoginViewController.swift in Sources */,
 				C97BC3531C6D174A00930C1B /* SettingsViewController.swift in Sources */,
 				1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */,
 				C91F08E21DC38E5200BAFABF /* UserAccountManager.swift in Sources */,
 				C91F08DE1DC2B3E100BAFABF /* RightToLeftSegue.swift in Sources */,
 				1A58F5E31C65BA7E00FFA70A /* RequestViewController.swift in Sources */,
-				C91F08D61DC2A2D200BAFABF /* OnboardingSecondPageViewController.swift in Sources */,
-				C91F08D81DC2A8D400BAFABF /* OnboardingSignupViewController.swift in Sources */,
+				C91F08D81DC2A8D400BAFABF /* OnboardSignupViewController.swift in Sources */,
 				C903F1241C65218A00897C55 /* MQAExceptionHandler.m in Sources */,
 				C91F08CA1DC25D5100BAFABF /* OnboardingSetup.swift in Sources */,
 				C9A302CB1C651C7700A2EB7F /* ViewController.swift in Sources */,
 				C9A302C91C651C7700A2EB7F /* AppDelegate.swift in Sources */,
 				1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */,
-				C91F08D41DC29B4A00BAFABF /* OnboardingFirstPageViewController.swift in Sources */,
+				C91F08D41DC29B4A00BAFABF /* OnboardViewController.swift in Sources */,
 				1A00BFF71C66339C005CC28D /* LocalMappingData.swift in Sources */,
-				1A7D78F21C659911007CAFE4 /* URLRequest.swift in Sources */,
-				C91F08E01DC365D600BAFABF /* OnboardSecondPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,7 +925,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */ = {
+		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9A302EB1C651C7700A2EB7F /* Debug */,

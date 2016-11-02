@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingFirstPageViewController: UIViewController {
+class OnboardViewController: UIViewController {
 
     @IBAction func getStarted(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "navSecondPage", sender: self)
