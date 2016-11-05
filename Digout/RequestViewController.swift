@@ -11,29 +11,15 @@ import MapKit
 
 class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    let manager = CLLocationManager()
-    
-    var localPinArray = [CLLocationCoordinate2D]()
-    
+    // MARK: Class outlets and actions
     @IBOutlet weak var mapView: MKMapView!
   
     @IBOutlet weak var finishButton: UIButton!
+    
     @IBAction func pinPlacementFinished(_ sender: AnyObject) {
-        for pin in localPinArray{
-            
-            lMapData.requestorPins.append(pin)
-            
-        }
         
-        let alert = UIAlertController(title: "Saved!", message:"Your important crossings have been saved. We will alert you when a volunteer clears your path. Stay warm!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "mmk", style: .default) { _ in
-            // Put here any code that you would like to execute when
-            // the user taps that OK button (may be empty in your case if that's just
-            // an informative alert)
-        }
-        alert.addAction(action)
-        self.present(alert, animated: true){}
-        
+        // Submit the digout request to the backend
+        self.submitDigoutRequest()
     }
     
     @IBOutlet weak var cancelButton: UIButton!
@@ -57,6 +43,67 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             print("dimissed")
         }
     }
+    
+    //MARK: Class Variables
+    let manager = CLLocationManager()
+    var localPinArray = [CLLocationCoordinate2D]()
+    var requestManager = DigoutRequestManager()
+    
+    
+    //MARK: Programmer defined functions
+    
+    func submitDigoutRequest(){
+        
+        self.requestManager.createDigoutRequest(locations: localPinArray, rating: 3){ (success) in
+            
+            if success{
+                print("digout request success")
+                let alert = UIAlertController(title: "Saved!", message:"Your important crossings have been saved. We will alert you when a volunteer clears your path. Stay warm!", preferredStyle: .alert)
+                let action = UIAlertAction(title: "mmk", style: .default) { _ in
+                    // Put here any code that you would like to execute when
+                    // the user taps that OK button
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true){}
+            }else{
+                print("digout request failed")
+                let alert = UIAlertController(title: "Failed!", message:"Your request could not be processed successfully. Check the logs", preferredStyle: .alert)
+                let action = UIAlertAction(title: "mmk", style: .default) { _ in
+                    // Put here any code that you would like to execute when
+                    // the user taps that OK button 
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true){}
+            }
+            
+        }
+    }// END CREATE DIGOUT REQUEST
+    
+    
+    
+    func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
+        
+        if gestureRecognizer.state != .began {return}
+        
+        self.finishButton.isHidden = false
+        self.cancelButton.isHidden = false
+        
+        // Get the pin dropped
+        let touchPoint = gestureRecognizer.location(in: self.mapView)
+        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        
+        // Push into the local array of pins
+        localPinArray.append(touchMapCoordinate)
+        
+        let annotation = MKPointAnnotation()
+        
+        //annotation.title = "test"
+        
+        annotation.coordinate = touchMapCoordinate
+        
+        mapView.addAnnotation(annotation)
+    }
+    
     
     // MARK: Default Class Methods
     override func viewDidLoad() {
@@ -95,28 +142,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.mapView.addGestureRecognizer(longPressGestureRecognizer)
     }
     
-    func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
-        
-        if gestureRecognizer.state != .began {return}
-        
-        self.finishButton.isHidden = false
-        self.cancelButton.isHidden = false
-        
-        // Get the pin dropped
-        let touchPoint = gestureRecognizer.location(in: self.mapView)
-        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        
-        // Push into the local array of pins
-        localPinArray.append(touchMapCoordinate)
-        
-        let annotation = MKPointAnnotation()
-        
-        //annotation.title = "test"
-        
-        annotation.coordinate = touchMapCoordinate
-        
-        mapView.addAnnotation(annotation)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

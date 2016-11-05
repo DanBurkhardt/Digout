@@ -36,10 +36,13 @@ class URLRequest {
             //TODO: build the ability to check for error code
             //TODO: return a boolean status based on the error code
             print(response.response)
+            let string = response.description
+            print(string)
             print(response.data)
             
             // Edit this to complete for both conditions
             completion(false)
+            // Returns false for now becuase the backend is not complete. Once implemented we'll have to build some error code checking into this
         }
         
         

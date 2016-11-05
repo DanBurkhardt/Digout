@@ -19,7 +19,6 @@ class UserAccountManager {
 
     
     //MARK: Functions concerning new user signups and loggin a user into the system
-
     ///Function for creating the user profile object
     func createUserObject(username: String, email: String, rawPassword: String, completion: @escaping (_ success: Bool) -> Void){
         
@@ -62,6 +61,7 @@ class UserAccountManager {
                 // Complete the etire process by returning a bool to the parent function
                 completion(true)
             }else{
+                self.storeUserProfileObject(username: username, data: userProfileObject)
                 // Error should have been displayed or passed in another way
                 // Return the status
                 completion(false)
@@ -70,7 +70,7 @@ class UserAccountManager {
     }//END CREATE USER FUNCTION
     
     
-    
+    //TODO: Bayard - Create function for loggin the user into the system
     
     
     //MARK: Functions for interacting with the local system
@@ -78,7 +78,16 @@ class UserAccountManager {
     ///Function for storing the user profile object locally
     func storeUserProfileObject(username: String, data: JSON){
         
-        defaults.set(data, forKey: username)
+        var rawData = Data()
+        do{
+            let rawJSONData = try data.rawData()
+            rawData = rawJSONData
+        }catch{
+            print("There was no ability to convert from JSON object to raw datatype")
+        }
+        
+        defaults.set(rawData, forKey: username)
+        defaults.set(data["username"].string, forKey: "username")
         
         // Also add a bool locally to enable the user to cache login status
         defaults.set(true, forKey: "userIsLoggedIn")
@@ -86,8 +95,14 @@ class UserAccountManager {
     
     
     ///Function for retriving the user profile object locally
-    func getLocalProfileObject(username: String) -> JSON {
-        let userObject: JSON = defaults.object(forKey: username) as! JSON
+    func getLocalProfileObject() -> JSON {
+        
+        // Pull stored username as a key for data
+        let username = defaults.object(forKey: "username") as! String
+
+        // Grab data
+        let rawData = defaults.object(forKey: username) as! Data
+        let userObject: JSON = JSON(data: rawData)
         
         return userObject
     }
@@ -106,12 +121,6 @@ class UserAccountManager {
      passhash
      timestamp (epoch)
      
-     Request object format
-     account_id
-     timestamp (epoch)
-     difficulty_rating
-     request_locations (array of long lat pairs)
-     username
      */
 
 }

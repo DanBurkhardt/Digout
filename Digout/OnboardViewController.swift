@@ -32,8 +32,14 @@ class OnboardViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if (defaults.object(forKey: "userIsAuthenticated") != nil){
+            
+            print("USER IS AUTHENTICATED")
             self.performSegue(withIdentifier: "navHome", sender: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     override func didReceiveMemoryWarning() {
