@@ -5,6 +5,8 @@
 
 target 'Digout' do
 
+pod 'SwiftyJSON'
+
 pod 'Onboard'
 
 end

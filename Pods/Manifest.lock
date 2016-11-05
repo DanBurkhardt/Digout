@@ -1,12 +1,13 @@
 PODS:
   - Onboard (2.3.1)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Onboard
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 67a9b73f0738b2b21e70fffff61d5dffcf228ea3
-
-COCOAPODS: 1.0.0
+COCOAPODS: 0.39.0

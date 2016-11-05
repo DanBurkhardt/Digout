@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //*********************************
         // ONBOARD COCOAPOD SETUP
         //*********************************
-        
+        /*
         self.window = UIWindow(frame: UIScreen.main.bounds)
         //        self.window!.backgroundColor = UIColor.whiteColor()
         // Override point for customization after application launch.
@@ -74,12 +74,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.window!.makeKeyAndVisible()
-        
+        */
         
         //*********************************
         // MOBILE QUALITY ASSURANCE SETUP
         //*********************************
         
+        /*
         //Set the SDK mode Market vs QA for Production and Pre-Production
         #if Debug
             MQALogger.settings().mode = MQAMode.QA
@@ -92,8 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set MQA uncaught exception handler for crashes
         NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
-        
-        
+        */
         
         return true
     }

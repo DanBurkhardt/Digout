@@ -269,7 +269,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="4Hi-ev-yXG" kind="custom" identifier="navHome" customClass="RightToLeftSegue" customModule="digout" customModuleProvider="target" id="UcQ-S6-8ze"/>
+                        <segue destination="4Hi-ev-yXG" kind="show" identifier="navHome" id="UcQ-S6-8ze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBa-5K-TQj" userLabel="First Responder" sceneMemberID="firstResponder"/>

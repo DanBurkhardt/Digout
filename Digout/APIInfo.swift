@@ -16,7 +16,7 @@ class APIInfo {
     // This is used for all signup/login requests
     // use a "GET" for login and "POST" for signups
     // User object is passed within the body
-    var accountsURL = "https://digout-py.mybluemix.net/account"
+    var accountsURL = "https://digout-py.mybluemix.net/api/account"
     
     
     }

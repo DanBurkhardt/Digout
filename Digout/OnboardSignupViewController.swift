@@ -31,6 +31,7 @@ class OnboardSignupViewController: UIViewController {
     ///MARK: Class Variables
     let accountManager = UserAccountManager()
     
+    let defaults = UserDefaults.standard
     
     ///MARK: Programmer Defined Functions
     
@@ -56,7 +57,6 @@ class OnboardSignupViewController: UIViewController {
     
     /// Compares passwords for verification
     func comparePasswords(){
-        //TODO: Add logic for comparing passwords here
         if passwordField.text != confirmPasswordField.text{
             self.modifyErrorMessage(message: "passwords do not match")
         }else{
@@ -68,8 +68,13 @@ class OnboardSignupViewController: UIViewController {
     func makeUserObject(){
         
         // Submit to the user profile object class
-        self.accountManager.createUserObject(username: usernameField.text!, email: emailField.text!, rawPassword: passwordField.text!)
-
+        self.accountManager.createUserObject(username: usernameField.text!, email: emailField.text!, rawPassword: passwordField.text!){ (success) in
+            
+            print("proces has returned for user account creation: \(success)")
+            
+            self.defaults.set(true, forKey: "userIsAuthenticated")
+        }
+        
     }
     
     

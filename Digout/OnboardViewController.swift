@@ -10,15 +10,32 @@ import UIKit
 
 class OnboardViewController: UIViewController {
 
+    ///MARK: Class variables
+    let defaults = UserDefaults.standard
+
+    
+    ///MARK: Outlets and actions
     @IBAction func signupButton(_ sender: AnyObject) {
          self.performSegue(withIdentifier: "navSignupView", sender: self)
     }
+    
+    
+    
+    ///MARK: Programmer defined functions
+    
+    
+    
+    
+    ///MARK: Default class functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        if (defaults.object(forKey: "userIsAuthenticated") != nil){
+            self.performSegue(withIdentifier: "navHome", sender: self)
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

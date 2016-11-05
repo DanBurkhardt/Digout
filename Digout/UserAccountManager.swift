@@ -21,7 +21,7 @@ class UserAccountManager {
     //MARK: Functions concerning new user signups and loggin a user into the system
 
     ///Function for creating the user profile object
-    func createUserObject(username: String, email: String, rawPassword: String, completion: (_ success: Bool) -> Void){
+    func createUserObject(username: String, email: String, rawPassword: String, completion: @escaping (_ success: Bool) -> Void){
         
         // Empty JSON object
         var userProfileObject: JSON = [:]
@@ -31,7 +31,7 @@ class UserAccountManager {
         userProfileObject["email"].string = email
         
         // Get and set the passhash
-        var passhash = rawPassword.sha256()
+        let passhash = rawPassword.sha256()
         userProfileObject["passhash"].string = passhash
         
         
@@ -54,10 +54,10 @@ class UserAccountManager {
         
         // posts the user profile object to the server
         self.request.postRequest(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
-            
+            print("posting user profile object")
             if success == true{
                 // Store in defaults
-                storeUserProfileObject(username: username, data: userProfileObject)
+                self.storeUserProfileObject(username: username, data: userProfileObject)
                 
                 // Complete the etire process by returning a bool to the parent function
                 completion(true)
@@ -79,6 +79,9 @@ class UserAccountManager {
     func storeUserProfileObject(username: String, data: JSON){
         
         defaults.set(data, forKey: username)
+        
+        // Also add a bool locally to enable the user to cache login status
+        defaults.set(true, forKey: "userIsLoggedIn")
     }
     
     
@@ -100,7 +103,8 @@ class UserAccountManager {
      
      Signin Object
      email
-     fb_id
+     passhash
+     timestamp (epoch)
      
      Request object format
      account_id
