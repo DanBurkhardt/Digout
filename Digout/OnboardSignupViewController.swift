@@ -67,14 +67,28 @@ class OnboardSignupViewController: UIViewController {
     /// Uses the `UserAccountManager` class to prepare and submit a user profile object
     func makeUserObject(){
         
-        // Submit to the user profile object class
+        // Submit the user profile object
         self.accountManager.createUserObject(username: usernameField.text!, email: emailField.text!, rawPassword: passwordField.text!){ (success) in
             
-            print("proces has returned for user account creation: \(success)")
+            print("process has returned for user account creation: \(success)")
             
-            self.defaults.set(true, forKey: "userIsAuthenticated")
+            if success == true {
+                // Get a login token for the user
+                self.accountManager.authenticateUser(email: self.emailField.text!, rawPassword: self.passwordField.text!){ (success) in
+                    
+                    // Should always be true if the account creation was successful
+                    print("process has returned for user authentication: \(success)")
+                    
+                    if success == true {
+                        self.defaults.set(true, forKey: "userIsAuthenticated")
+                    }else{
+                        self.defaults.set(false, forKey: "userIsAuthenticated")
+                    }
+                }
+            }else{
+                self.defaults.set(false, forKey: "userIsAuthenticated")
+            }
         }
-        
     }
     
     

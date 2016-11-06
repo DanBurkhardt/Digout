@@ -21,6 +21,8 @@ class URLRequest {
             //TODO: build the ability to check for error code
             //TODO: return a boolean status based on the error code
             print(response.response)
+            let string = response.description
+            print(string)
             print(response.data)
             
             // Edit this to complete for both conditions

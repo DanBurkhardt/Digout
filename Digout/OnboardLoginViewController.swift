@@ -12,9 +12,9 @@ class OnboardLoginViewController: UIViewController {
 
     ///MARK: Outlets & Actions
     
-    @IBOutlet weak var emailInputField: UITextField!
-    
-    @IBOutlet weak var passwordInputField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+
+    @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var errorMessage: UILabel!
     
@@ -24,7 +24,7 @@ class OnboardLoginViewController: UIViewController {
     
     
     @IBAction func doneButton(_ sender: AnyObject) {
-        
+        checkForFieldCompletion()
     }
     
     
@@ -32,11 +32,48 @@ class OnboardLoginViewController: UIViewController {
     
     /// Class var for accessing user defaults
     let defaults = UserDefaults.standard
+    let accountManager = UserAccountManager()
     
     ///MARK: Programmer Defined Functions
     
     
-    //TODO: Make function for checking completion
+    /// Checks to make sure all fields are complete
+    func checkForFieldCompletion(){
+        // Checking for completion
+        if self.emailField.text == ""{
+            modifyErrorMessage(message: "email cannot be blank")
+        }else if self.passwordField.text == ""{
+            modifyErrorMessage(message: "password field cannot be blank")
+        }else{
+            // only do so if all fields are filled out
+            clearErrorMessage()
+            initiateLogin()
+        }
+        
+    }
+    
+    func modifyErrorMessage(message: String) {
+        self.errorMessage.text = message
+    }
+    
+    func clearErrorMessage(){
+        self.errorMessage.text = ""
+    }
+    
+    func initiateLogin() {
+        // Submit the user profile object
+        self.accountManager.authenticateUser(email: emailField.text!, rawPassword: passwordField.text!){ (success) in
+            
+            print("process has returned for user authentication: \(success)")
+            
+            if success == true {
+                self.defaults.set(true, forKey: "userIsAuthenticated")
+            }else{
+                self.defaults.set(false, forKey: "userIsAuthenticated")
+            }
+        }
+    }
+
     //TODO: Make function for calling user accounts class for authentication with a completion handler
     //TODO: Add activity indicator "show" function to unhide overlay while processing
     //TODO: Add activity indicator "hide" function to hide overlay after the processing is complete

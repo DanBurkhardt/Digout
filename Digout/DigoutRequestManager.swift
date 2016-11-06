@@ -28,8 +28,8 @@ class DigoutRequestManager{
         var digoutRequestObject: JSON = [:]
         
         // Start forming the object
-        let userAcct = userAcctManager.getLocalProfileObject()
-        digoutRequestObject["username"].string = userAcct["username"].string
+        let userAcct = userAcctManager.getUserLogin()
+        digoutRequestObject["email"].string = userAcct["email"]
         digoutRequestObject["timestamp"].double = utilities.getEpochTime()
         
         // Make an empty array of JSON objects

@@ -16,9 +16,10 @@ class UserAccountManager {
     let apiInfo = APIInfo()
     let request = URLRequest()
     let defaults = UserDefaults.standard
+    let utilities = Utilities()
 
     
-    //MARK: Functions concerning new user signups and loggin a user into the system
+    //MARK: Functions concerning new user signups and login a user into the system
     ///Function for creating the user profile object
     func createUserObject(username: String, email: String, rawPassword: String, completion: @escaping (_ success: Bool) -> Void){
         
@@ -49,45 +50,76 @@ class UserAccountManager {
             userProfileObject["idfa"].string  = ""
         }
         
-        //TODO: Set the "timestamp" field on the object
+        // Add timestamp
+        userProfileObject["timestamp"].double = utilities.getEpochTime()
         
         // posts the user profile object to the server
         self.request.postRequest(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
             print("posting user profile object")
+            completion(success)
+        }
+    }//END CREATE USER FUNCTION
+    
+    ///Function for logging in a user
+    func authenticateUser(email: String, rawPassword: String, completion: @escaping (_ success: Bool) -> Void){
+        
+        // Empty JSON object
+        var userLoginObject: JSON = [:]
+        
+        // Initial object fields
+        userLoginObject["email"].string = email
+        
+        // Get and set the passhash
+        let passhash = rawPassword.sha256()
+        userLoginObject["passhash"].string = passhash
+        
+        // Add timestamp
+        userLoginObject["timestamp"].double = utilities.getEpochTime()
+        
+        // Attempts to authenticate the user
+        self.request.getRequest(apiInfo.accountsURL, JSON: userLoginObject) { (success) in
+            print("attempting to authenticate user")
             if success == true{
                 // Store in defaults
-                self.storeUserProfileObject(username: username, data: userProfileObject)
+                self.storeUserLogin(email: email, passhash: passhash)
                 
-                // Complete the etire process by returning a bool to the parent function
+                // Complete the entire process by returning a bool to the parent function
                 completion(true)
             }else{
-                self.storeUserProfileObject(username: username, data: userProfileObject)
                 // Error should have been displayed or passed in another way
                 // Return the status
                 completion(false)
             }
         }
-    }//END CREATE USER FUNCTION
+    }//END USER AUTHENTICATION FUNCTION
     
-    
-    //TODO: Bayard - Create function for loggin the user into the system
+    ///Function for reauthenticating the saved user (if the login token expires)
+    func reauthenticateUser(completion: @escaping (_ success: Bool) -> Void) {
+        let savedUserLogin = self.getUserLogin()
+        
+        // Empty JSON object
+        var userLoginObject: JSON = [:]
+        
+        // Initial object fields
+        userLoginObject["email"].string = savedUserLogin["email"]
+        userLoginObject["passhash"].string = savedUserLogin["passhash"]
+        userLoginObject["timestamp"].double = utilities.getEpochTime()
+        
+        // Attempts to reauthenticate the user
+        self.request.getRequest(apiInfo.accountsURL, JSON: userLoginObject) { (success) in
+            print("attempting to reauthenticate user")
+            completion(success)
+        }
+    }//END USER REAUTHENTICATION FUNCTION
     
     
     //MARK: Functions for interacting with the local system
     
     ///Function for storing the user profile object locally
-    func storeUserProfileObject(username: String, data: JSON){
-        
-        var rawData = Data()
-        do{
-            let rawJSONData = try data.rawData()
-            rawData = rawJSONData
-        }catch{
-            print("There was no ability to convert from JSON object to raw datatype")
-        }
-        
-        defaults.set(rawData, forKey: username)
-        defaults.set(data["username"].string, forKey: "username")
+    func storeUserLogin(email: String, passhash: String){
+        // Create and store dictionary of user login details
+        let userLogin = ["email": email, "passhash": passhash]
+        defaults.set(userLogin, forKey: "userLogin")
         
         // Also add a bool locally to enable the user to cache login status
         defaults.set(true, forKey: "userIsLoggedIn")
@@ -95,17 +127,10 @@ class UserAccountManager {
     
     
     ///Function for retriving the user profile object locally
-    func getLocalProfileObject() -> JSON {
-        
-        // Pull stored username as a key for data
-        let username = defaults.object(forKey: "username") as! String
-
-        // Grab data
-        let rawData = defaults.object(forKey: username) as! Data
-        let userObject: JSON = JSON(data: rawData)
-        
-        return userObject
+    func getUserLogin() -> [String:String] {
+        return defaults.object(forKey: "userLogin") as! [String:String]
     }
+
 
     
     /* Noted after our team planning meeting on 10/1
