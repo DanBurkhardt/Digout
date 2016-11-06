@@ -22,11 +22,17 @@ class OnboardLoginViewController: UIViewController {
         // Returning here during iteration 2
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func doneButton(_ sender: AnyObject) {
         checkForFieldCompletion()
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true) { () -> Void in
+            print("dimissed")
+        }
+    }
     
     ///MARK: Class Variables
     
@@ -61,14 +67,19 @@ class OnboardLoginViewController: UIViewController {
     }
     
     func initiateLogin() {
+        
+        self.activityIndicator.isHidden = false
+        
         // Submit the user profile object
         self.accountManager.authenticateUser(email: emailField.text!, rawPassword: passwordField.text!){ (success) in
             
             print("process has returned for user authentication: \(success)")
             
             if success == true {
+                self.activityIndicator.isHidden = true
                 self.defaults.set(true, forKey: "userIsAuthenticated")
             }else{
+                self.activityIndicator.isHidden = true
                 self.defaults.set(false, forKey: "userIsAuthenticated")
             }
         }

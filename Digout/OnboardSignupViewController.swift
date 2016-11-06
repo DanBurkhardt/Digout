@@ -23,6 +23,8 @@ class OnboardSignupViewController: UIViewController {
     
     @IBOutlet weak var errorMessage: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBAction func doneButton(_ sender: AnyObject) {
         // Start verification and submission chain of events
         checkForFieldCompletion()
@@ -39,6 +41,8 @@ class OnboardSignupViewController: UIViewController {
     func checkForFieldCompletion(){
         //TODO: add logic for checking that all fields are filled out
         
+        self.activityIndicator.isHidden = false
+        
         // Checking for completion
         if self.usernameField.text == ""{
             modifyErrorMessage(message: "username cannot be blank")
@@ -53,6 +57,13 @@ class OnboardSignupViewController: UIViewController {
             comparePasswords()
         }
         
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        
+        self.dismiss(animated: true) { () -> Void in
+            print("dimissed")
+        }
     }
     
     /// Compares passwords for verification
@@ -84,9 +95,15 @@ class OnboardSignupViewController: UIViewController {
                     }else{
                         self.defaults.set(false, forKey: "userIsAuthenticated")
                     }
+                    
+                    self.activityIndicator.isHidden = true
                 }
             }else{
+                
+                // Temporarily set to enable further development
                 self.defaults.set(false, forKey: "userIsAuthenticated")
+                self.performSegue(withIdentifier: "navToHome", sender: self)
+                self.activityIndicator.isHidden = true
             }
         }
     }
@@ -106,6 +123,7 @@ class OnboardSignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.activityIndicator.isHidden = true
         // Do any additional setup after loading the view.
     }
 

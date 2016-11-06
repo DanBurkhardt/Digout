@@ -37,13 +37,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.localPinArray = [CLLocationCoordinate2D]()
     }
     
-    @IBAction func backButton(_ sender: AnyObject) {
-        
-        self.dismiss(animated: true) { () -> Void in
-            print("dimissed")
-        }
-    }
-    
     //MARK: Class Variables
     let manager = CLLocationManager()
     var localPinArray = [CLLocationCoordinate2D]()

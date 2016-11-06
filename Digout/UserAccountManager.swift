@@ -56,6 +56,7 @@ class UserAccountManager {
         // posts the user profile object to the server
         self.request.postRequest(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
             print("posting user profile object")
+            print(userProfileObject)
             completion(success)
         }
     }//END CREATE USER FUNCTION
@@ -88,6 +89,7 @@ class UserAccountManager {
             }else{
                 // Error should have been displayed or passed in another way
                 // Return the status
+                
                 completion(false)
             }
         }
