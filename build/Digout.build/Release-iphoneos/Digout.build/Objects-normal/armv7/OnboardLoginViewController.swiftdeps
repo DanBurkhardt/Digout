@@ -1,0 +1,735 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "OnboardLoginViewController"
+provides-nominal:
+- "C6digout26OnboardLoginViewController"
+provides-member:
+- ["C6digout26OnboardLoginViewController", ""]
+provides-dynamic-lookup:
+- "doneButton"
+- "defaults"
+- "passwordField"
+- "initiateLogin"
+- "modifyErrorMessage"
+- "clearErrorMessage"
+- "viewDidLoad"
+- "emailField"
+- "errorMessage"
+- "didReceiveMemoryWarning"
+- "forgotPasswordButton"
+- "activityIndicator"
+- "checkForFieldCompletion"
+- "backButton"
+depends-top-level:
+- "UIViewController"
+- "UserDefaults"
+- "OnboardLoginViewController"
+- !private "StringLiteralType"
+- "String"
+- !private "BooleanLiteralType"
+- "UIActivityIndicatorView"
+- "AnyObject"
+- !private "Void"
+- "UserAccountManager"
+- !private "print"
+- "UITextField"
+- "UILabel"
+- !private "=="
+- "AssignmentPrecedence"
+depends-member:
+- ["Ps9AnyObject", "UserAccountManager"]
+- ["Ps9AnyObject", "UserDefaults"]
+- ["Ps9AnyObject", "accountManager"]
+- ["Ps9AnyObject", "activityIndicator"]
+- !private ["Ps9AnyObject", "authenticateUser"]
+- ["Ps9AnyObject", "backButton"]
+- ["Ps9AnyObject", "checkForFieldCompletion"]
+- ["Ps9AnyObject", "clearErrorMessage"]
+- ["Ps9AnyObject", "defaults"]
+- ["Ps9AnyObject", "didReceiveMemoryWarning"]
+- !private ["Ps9AnyObject", "dismiss"]
+- ["Ps9AnyObject", "doneButton"]
+- ["Ps9AnyObject", "emailField"]
+- ["Ps9AnyObject", "errorMessage"]
+- ["Ps9AnyObject", "forgotPasswordButton"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "initiateLogin"]
+- !private ["Ps9AnyObject", "isHidden"]
+- ["Ps9AnyObject", "modifyErrorMessage"]
+- ["Ps9AnyObject", "passwordField"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "set"]
+- ["Ps9AnyObject", "standard"]
+- !private ["Ps9AnyObject", "text"]
+- ["Ps9AnyObject", "viewDidLoad"]
+- ["Ps9AnyObject", ""]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["PSo15CALayerDelegate", "isHidden"]
+- !private ["PSo15CALayerDelegate", "text"]
+- ["Ps7CVarArg", "UserAccountManager"]
+- ["Ps7CVarArg", "UserDefaults"]
+- ["Ps7CVarArg", "accountManager"]
+- ["Ps7CVarArg", "activityIndicator"]
+- ["Ps7CVarArg", "backButton"]
+- ["Ps7CVarArg", "checkForFieldCompletion"]
+- ["Ps7CVarArg", "clearErrorMessage"]
+- ["Ps7CVarArg", "defaults"]
+- ["Ps7CVarArg", "didReceiveMemoryWarning"]
+- !private ["Ps7CVarArg", "dismiss"]
+- ["Ps7CVarArg", "doneButton"]
+- ["Ps7CVarArg", "emailField"]
+- ["Ps7CVarArg", "errorMessage"]
+- ["Ps7CVarArg", "forgotPasswordButton"]
+- !private ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "initiateLogin"]
+- !private ["Ps7CVarArg", "isHidden"]
+- ["Ps7CVarArg", "modifyErrorMessage"]
+- ["Ps7CVarArg", "passwordField"]
+- !private ["Ps7CVarArg", "print"]
+- !private ["Ps7CVarArg", "set"]
+- ["Ps7CVarArg", "standard"]
+- !private ["Ps7CVarArg", "text"]
+- ["Ps7CVarArg", "viewDidLoad"]
+- ["Ps7CVarArg", ""]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "UserAccountManager"]
+- ["Ps28CustomDebugStringConvertible", "UserDefaults"]
+- ["Ps28CustomDebugStringConvertible", "accountManager"]
+- ["Ps28CustomDebugStringConvertible", "activityIndicator"]
+- ["Ps28CustomDebugStringConvertible", "backButton"]
+- ["Ps28CustomDebugStringConvertible", "checkForFieldCompletion"]
+- ["Ps28CustomDebugStringConvertible", "clearErrorMessage"]
+- ["Ps28CustomDebugStringConvertible", "defaults"]
+- ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps28CustomDebugStringConvertible", "dismiss"]
+- ["Ps28CustomDebugStringConvertible", "doneButton"]
+- ["Ps28CustomDebugStringConvertible", "emailField"]
+- ["Ps28CustomDebugStringConvertible", "errorMessage"]
+- ["Ps28CustomDebugStringConvertible", "forgotPasswordButton"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "initiateLogin"]
+- !private ["Ps28CustomDebugStringConvertible", "isHidden"]
+- ["Ps28CustomDebugStringConvertible", "modifyErrorMessage"]
+- ["Ps28CustomDebugStringConvertible", "passwordField"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "set"]
+- ["Ps28CustomDebugStringConvertible", "standard"]
+- !private ["Ps28CustomDebugStringConvertible", "text"]
+- ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "UserAccountManager"]
+- ["Ps23CustomStringConvertible", "UserDefaults"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "accountManager"]
+- ["Ps23CustomStringConvertible", "activityIndicator"]
+- ["Ps23CustomStringConvertible", "backButton"]
+- ["Ps23CustomStringConvertible", "checkForFieldCompletion"]
+- ["Ps23CustomStringConvertible", "clearErrorMessage"]
+- ["Ps23CustomStringConvertible", "defaults"]
+- ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps23CustomStringConvertible", "dismiss"]
+- ["Ps23CustomStringConvertible", "doneButton"]
+- ["Ps23CustomStringConvertible", "emailField"]
+- ["Ps23CustomStringConvertible", "errorMessage"]
+- ["Ps23CustomStringConvertible", "forgotPasswordButton"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "initiateLogin"]
+- !private ["Ps23CustomStringConvertible", "isHidden"]
+- ["Ps23CustomStringConvertible", "modifyErrorMessage"]
+- ["Ps23CustomStringConvertible", "passwordField"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "set"]
+- ["Ps23CustomStringConvertible", "standard"]
+- !private ["Ps23CustomStringConvertible", "text"]
+- ["Ps23CustomStringConvertible", "viewDidLoad"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Sd", "deinit"]
+- ["Ps9Equatable", "UserAccountManager"]
+- ["Ps9Equatable", "UserDefaults"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "accountManager"]
+- ["Ps9Equatable", "activityIndicator"]
+- ["Ps9Equatable", "backButton"]
+- ["Ps9Equatable", "checkForFieldCompletion"]
+- ["Ps9Equatable", "clearErrorMessage"]
+- ["Ps9Equatable", "defaults"]
+- ["Ps9Equatable", "didReceiveMemoryWarning"]
+- !private ["Ps9Equatable", "dismiss"]
+- ["Ps9Equatable", "doneButton"]
+- ["Ps9Equatable", "emailField"]
+- ["Ps9Equatable", "errorMessage"]
+- ["Ps9Equatable", "forgotPasswordButton"]
+- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "initiateLogin"]
+- !private ["Ps9Equatable", "isHidden"]
+- ["Ps9Equatable", "modifyErrorMessage"]
+- ["Ps9Equatable", "passwordField"]
+- !private ["Ps9Equatable", "print"]
+- !private ["Ps9Equatable", "set"]
+- ["Ps9Equatable", "standard"]
+- !private ["Ps9Equatable", "text"]
+- ["Ps9Equatable", "viewDidLoad"]
+- ["Ps9Equatable", ""]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Sf", "deinit"]
+- ["Ps8Hashable", "UserAccountManager"]
+- ["Ps8Hashable", "UserDefaults"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "accountManager"]
+- ["Ps8Hashable", "activityIndicator"]
+- ["Ps8Hashable", "backButton"]
+- ["Ps8Hashable", "checkForFieldCompletion"]
+- ["Ps8Hashable", "clearErrorMessage"]
+- ["Ps8Hashable", "defaults"]
+- ["Ps8Hashable", "didReceiveMemoryWarning"]
+- !private ["Ps8Hashable", "dismiss"]
+- ["Ps8Hashable", "doneButton"]
+- ["Ps8Hashable", "emailField"]
+- ["Ps8Hashable", "errorMessage"]
+- ["Ps8Hashable", "forgotPasswordButton"]
+- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "initiateLogin"]
+- !private ["Ps8Hashable", "isHidden"]
+- ["Ps8Hashable", "modifyErrorMessage"]
+- ["Ps8Hashable", "passwordField"]
+- !private ["Ps8Hashable", "print"]
+- !private ["Ps8Hashable", "set"]
+- ["Ps8Hashable", "standard"]
+- !private ["Ps8Hashable", "text"]
+- ["Ps8Hashable", "viewDidLoad"]
+- ["Ps8Hashable", ""]
+- ["SQ", "deinit"]
+- !private ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
+- ["CSo7NSCoder", "deinit"]
+- ["PSo8NSCoding", "UserAccountManager"]
+- ["PSo8NSCoding", "UserDefaults"]
+- ["PSo8NSCoding", "accountManager"]
+- ["PSo8NSCoding", "activityIndicator"]
+- ["PSo8NSCoding", "backButton"]
+- ["PSo8NSCoding", "checkForFieldCompletion"]
+- ["PSo8NSCoding", "clearErrorMessage"]
+- ["PSo8NSCoding", "defaults"]
+- ["PSo8NSCoding", "didReceiveMemoryWarning"]
+- !private ["PSo8NSCoding", "dismiss"]
+- ["PSo8NSCoding", "doneButton"]
+- ["PSo8NSCoding", "emailField"]
+- ["PSo8NSCoding", "errorMessage"]
+- ["PSo8NSCoding", "forgotPasswordButton"]
+- !private ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "initiateLogin"]
+- !private ["PSo8NSCoding", "isHidden"]
+- ["PSo8NSCoding", "modifyErrorMessage"]
+- ["PSo8NSCoding", "passwordField"]
+- !private ["PSo8NSCoding", "print"]
+- !private ["PSo8NSCoding", "text"]
+- ["PSo8NSCoding", "viewDidLoad"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "init"]
+- ["PSo26NSExtensionRequestHandling", "UserAccountManager"]
+- ["PSo26NSExtensionRequestHandling", "UserDefaults"]
+- ["PSo26NSExtensionRequestHandling", "accountManager"]
+- ["PSo26NSExtensionRequestHandling", "activityIndicator"]
+- ["PSo26NSExtensionRequestHandling", "backButton"]
+- ["PSo26NSExtensionRequestHandling", "checkForFieldCompletion"]
+- ["PSo26NSExtensionRequestHandling", "clearErrorMessage"]
+- ["PSo26NSExtensionRequestHandling", "defaults"]
+- ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
+- !private ["PSo26NSExtensionRequestHandling", "dismiss"]
+- ["PSo26NSExtensionRequestHandling", "doneButton"]
+- ["PSo26NSExtensionRequestHandling", "emailField"]
+- ["PSo26NSExtensionRequestHandling", "errorMessage"]
+- ["PSo26NSExtensionRequestHandling", "forgotPasswordButton"]
+- !private ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "initiateLogin"]
+- ["PSo26NSExtensionRequestHandling", "modifyErrorMessage"]
+- ["PSo26NSExtensionRequestHandling", "passwordField"]
+- !private ["PSo26NSExtensionRequestHandling", "print"]
+- ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- !private ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIActivityIndicatorView"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "UITextField"]
+- ["CSo8NSObject", "UserAccountManager"]
+- ["CSo8NSObject", "UserDefaults"]
+- !private ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "accountManager"]
+- ["CSo8NSObject", "activityIndicator"]
+- ["CSo8NSObject", "backButton"]
+- ["CSo8NSObject", "checkForFieldCompletion"]
+- ["CSo8NSObject", "clearErrorMessage"]
+- ["CSo8NSObject", "defaults"]
+- ["CSo8NSObject", "didReceiveMemoryWarning"]
+- !private ["CSo8NSObject", "dismiss"]
+- ["CSo8NSObject", "doneButton"]
+- ["CSo8NSObject", "emailField"]
+- ["CSo8NSObject", "errorMessage"]
+- ["CSo8NSObject", "forgotPasswordButton"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "initiateLogin"]
+- !private ["CSo8NSObject", "isHidden"]
+- ["CSo8NSObject", "modifyErrorMessage"]
+- ["CSo8NSObject", "passwordField"]
+- !private ["CSo8NSObject", "print"]
+- !private ["CSo8NSObject", "set"]
+- ["CSo8NSObject", "standard"]
+- !private ["CSo8NSObject", "text"]
+- ["CSo8NSObject", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", "UserAccountManager"]
+- ["PSo16NSObjectProtocol", "UserDefaults"]
+- ["PSo16NSObjectProtocol", "accountManager"]
+- ["PSo16NSObjectProtocol", "activityIndicator"]
+- ["PSo16NSObjectProtocol", "backButton"]
+- ["PSo16NSObjectProtocol", "checkForFieldCompletion"]
+- ["PSo16NSObjectProtocol", "clearErrorMessage"]
+- ["PSo16NSObjectProtocol", "defaults"]
+- ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
+- !private ["PSo16NSObjectProtocol", "dismiss"]
+- ["PSo16NSObjectProtocol", "doneButton"]
+- ["PSo16NSObjectProtocol", "emailField"]
+- ["PSo16NSObjectProtocol", "errorMessage"]
+- ["PSo16NSObjectProtocol", "forgotPasswordButton"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "initiateLogin"]
+- !private ["PSo16NSObjectProtocol", "isHidden"]
+- ["PSo16NSObjectProtocol", "modifyErrorMessage"]
+- ["PSo16NSObjectProtocol", "passwordField"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "set"]
+- ["PSo16NSObjectProtocol", "standard"]
+- !private ["PSo16NSObjectProtocol", "text"]
+- ["PSo16NSObjectProtocol", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "init"]
+- ["C6digout26OnboardLoginViewController", "AnyObject"]
+- ["C6digout26OnboardLoginViewController", "String"]
+- ["C6digout26OnboardLoginViewController", "UIActivityIndicatorView"]
+- ["C6digout26OnboardLoginViewController", "UILabel"]
+- ["C6digout26OnboardLoginViewController", "UITextField"]
+- ["C6digout26OnboardLoginViewController", "UserAccountManager"]
+- ["C6digout26OnboardLoginViewController", "UserDefaults"]
+- !private ["C6digout26OnboardLoginViewController", "Void"]
+- ["C6digout26OnboardLoginViewController", "accountManager"]
+- ["C6digout26OnboardLoginViewController", "activityIndicator"]
+- ["C6digout26OnboardLoginViewController", "backButton"]
+- ["C6digout26OnboardLoginViewController", "checkForFieldCompletion"]
+- ["C6digout26OnboardLoginViewController", "clearErrorMessage"]
+- ["C6digout26OnboardLoginViewController", "defaults"]
+- ["C6digout26OnboardLoginViewController", "deinit"]
+- ["C6digout26OnboardLoginViewController", "didReceiveMemoryWarning"]
+- !private ["C6digout26OnboardLoginViewController", "dismiss"]
+- ["C6digout26OnboardLoginViewController", "doneButton"]
+- ["C6digout26OnboardLoginViewController", "emailField"]
+- ["C6digout26OnboardLoginViewController", "errorMessage"]
+- ["C6digout26OnboardLoginViewController", "forgotPasswordButton"]
+- ["C6digout26OnboardLoginViewController", "init"]
+- ["C6digout26OnboardLoginViewController", "initiateLogin"]
+- ["C6digout26OnboardLoginViewController", "modifyErrorMessage"]
+- ["C6digout26OnboardLoginViewController", "passwordField"]
+- !private ["C6digout26OnboardLoginViewController", "print"]
+- ["C6digout26OnboardLoginViewController", "viewDidLoad"]
+- ["Sq", "deinit"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "isHidden"]
+- !private ["PSo29UIAccessibilityIdentification", "text"]
+- !private ["CSo23UIActivityIndicatorView", "isHidden"]
+- !private ["PSo12UIAppearance", "isHidden"]
+- !private ["PSo12UIAppearance", "text"]
+- ["PSo21UIAppearanceContainer", "UserAccountManager"]
+- ["PSo21UIAppearanceContainer", "UserDefaults"]
+- ["PSo21UIAppearanceContainer", "accountManager"]
+- ["PSo21UIAppearanceContainer", "activityIndicator"]
+- ["PSo21UIAppearanceContainer", "backButton"]
+- ["PSo21UIAppearanceContainer", "checkForFieldCompletion"]
+- ["PSo21UIAppearanceContainer", "clearErrorMessage"]
+- ["PSo21UIAppearanceContainer", "defaults"]
+- ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
+- !private ["PSo21UIAppearanceContainer", "dismiss"]
+- ["PSo21UIAppearanceContainer", "doneButton"]
+- ["PSo21UIAppearanceContainer", "emailField"]
+- ["PSo21UIAppearanceContainer", "errorMessage"]
+- ["PSo21UIAppearanceContainer", "forgotPasswordButton"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "initiateLogin"]
+- !private ["PSo21UIAppearanceContainer", "isHidden"]
+- ["PSo21UIAppearanceContainer", "modifyErrorMessage"]
+- ["PSo21UIAppearanceContainer", "passwordField"]
+- !private ["PSo21UIAppearanceContainer", "print"]
+- !private ["PSo21UIAppearanceContainer", "text"]
+- ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo18UIContentContainer", "UserAccountManager"]
+- ["PSo18UIContentContainer", "UserDefaults"]
+- ["PSo18UIContentContainer", "accountManager"]
+- ["PSo18UIContentContainer", "activityIndicator"]
+- ["PSo18UIContentContainer", "backButton"]
+- ["PSo18UIContentContainer", "checkForFieldCompletion"]
+- ["PSo18UIContentContainer", "clearErrorMessage"]
+- ["PSo18UIContentContainer", "defaults"]
+- ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
+- !private ["PSo18UIContentContainer", "dismiss"]
+- ["PSo18UIContentContainer", "doneButton"]
+- ["PSo18UIContentContainer", "emailField"]
+- ["PSo18UIContentContainer", "errorMessage"]
+- ["PSo18UIContentContainer", "forgotPasswordButton"]
+- !private ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "initiateLogin"]
+- ["PSo18UIContentContainer", "modifyErrorMessage"]
+- ["PSo18UIContentContainer", "passwordField"]
+- !private ["PSo18UIContentContainer", "print"]
+- ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", ""]
+- !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
+- !private ["CSo9UIControl", "text"]
+- !private ["PSo17UICoordinateSpace", "isHidden"]
+- !private ["PSo17UICoordinateSpace", "text"]
+- !private ["PSo13UIDynamicItem", "isHidden"]
+- !private ["PSo13UIDynamicItem", "text"]
+- ["PSo18UIFocusEnvironment", "UserAccountManager"]
+- ["PSo18UIFocusEnvironment", "UserDefaults"]
+- ["PSo18UIFocusEnvironment", "accountManager"]
+- ["PSo18UIFocusEnvironment", "activityIndicator"]
+- ["PSo18UIFocusEnvironment", "backButton"]
+- ["PSo18UIFocusEnvironment", "checkForFieldCompletion"]
+- ["PSo18UIFocusEnvironment", "clearErrorMessage"]
+- ["PSo18UIFocusEnvironment", "defaults"]
+- ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UIFocusEnvironment", "dismiss"]
+- ["PSo18UIFocusEnvironment", "doneButton"]
+- ["PSo18UIFocusEnvironment", "emailField"]
+- ["PSo18UIFocusEnvironment", "errorMessage"]
+- ["PSo18UIFocusEnvironment", "forgotPasswordButton"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "initiateLogin"]
+- !private ["PSo18UIFocusEnvironment", "isHidden"]
+- ["PSo18UIFocusEnvironment", "modifyErrorMessage"]
+- ["PSo18UIFocusEnvironment", "passwordField"]
+- !private ["PSo18UIFocusEnvironment", "print"]
+- !private ["PSo18UIFocusEnvironment", "text"]
+- ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "isHidden"]
+- !private ["PSo11UIFocusItem", "text"]
+- !private ["PSo10UIKeyInput", "text"]
+- !private ["CSo7UILabel", "text"]
+- ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UIActivityIndicatorView"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "UITextField"]
+- ["CSo11UIResponder", "UserAccountManager"]
+- ["CSo11UIResponder", "UserDefaults"]
+- !private ["CSo11UIResponder", "Void"]
+- ["CSo11UIResponder", "accountManager"]
+- ["CSo11UIResponder", "activityIndicator"]
+- ["CSo11UIResponder", "backButton"]
+- ["CSo11UIResponder", "checkForFieldCompletion"]
+- ["CSo11UIResponder", "clearErrorMessage"]
+- ["CSo11UIResponder", "defaults"]
+- ["CSo11UIResponder", "didReceiveMemoryWarning"]
+- !private ["CSo11UIResponder", "dismiss"]
+- ["CSo11UIResponder", "doneButton"]
+- ["CSo11UIResponder", "emailField"]
+- ["CSo11UIResponder", "errorMessage"]
+- ["CSo11UIResponder", "forgotPasswordButton"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "initiateLogin"]
+- !private ["CSo11UIResponder", "isHidden"]
+- ["CSo11UIResponder", "modifyErrorMessage"]
+- ["CSo11UIResponder", "passwordField"]
+- !private ["CSo11UIResponder", "print"]
+- !private ["CSo11UIResponder", "text"]
+- ["CSo11UIResponder", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", "UserAccountManager"]
+- ["PSo30UIResponderStandardEditActions", "UserDefaults"]
+- ["PSo30UIResponderStandardEditActions", "accountManager"]
+- ["PSo30UIResponderStandardEditActions", "activityIndicator"]
+- ["PSo30UIResponderStandardEditActions", "backButton"]
+- ["PSo30UIResponderStandardEditActions", "checkForFieldCompletion"]
+- ["PSo30UIResponderStandardEditActions", "clearErrorMessage"]
+- ["PSo30UIResponderStandardEditActions", "defaults"]
+- ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
+- !private ["PSo30UIResponderStandardEditActions", "dismiss"]
+- ["PSo30UIResponderStandardEditActions", "doneButton"]
+- ["PSo30UIResponderStandardEditActions", "emailField"]
+- ["PSo30UIResponderStandardEditActions", "errorMessage"]
+- ["PSo30UIResponderStandardEditActions", "forgotPasswordButton"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", "initiateLogin"]
+- !private ["PSo30UIResponderStandardEditActions", "isHidden"]
+- ["PSo30UIResponderStandardEditActions", "modifyErrorMessage"]
+- ["PSo30UIResponderStandardEditActions", "passwordField"]
+- !private ["PSo30UIResponderStandardEditActions", "print"]
+- !private ["PSo30UIResponderStandardEditActions", "text"]
+- ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- ["PSo16UIStateRestoring", "UserAccountManager"]
+- ["PSo16UIStateRestoring", "UserDefaults"]
+- ["PSo16UIStateRestoring", "accountManager"]
+- ["PSo16UIStateRestoring", "activityIndicator"]
+- ["PSo16UIStateRestoring", "backButton"]
+- ["PSo16UIStateRestoring", "checkForFieldCompletion"]
+- ["PSo16UIStateRestoring", "clearErrorMessage"]
+- ["PSo16UIStateRestoring", "defaults"]
+- ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
+- !private ["PSo16UIStateRestoring", "dismiss"]
+- ["PSo16UIStateRestoring", "doneButton"]
+- ["PSo16UIStateRestoring", "emailField"]
+- ["PSo16UIStateRestoring", "errorMessage"]
+- ["PSo16UIStateRestoring", "forgotPasswordButton"]
+- !private ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "initiateLogin"]
+- ["PSo16UIStateRestoring", "modifyErrorMessage"]
+- ["PSo16UIStateRestoring", "passwordField"]
+- !private ["PSo16UIStateRestoring", "print"]
+- ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", ""]
+- !private ["CSo11UITextField", "text"]
+- !private ["PSo11UITextInput", "text"]
+- !private ["PSo17UITextInputTraits", "text"]
+- ["PSo18UITraitEnvironment", "UserAccountManager"]
+- ["PSo18UITraitEnvironment", "UserDefaults"]
+- ["PSo18UITraitEnvironment", "accountManager"]
+- ["PSo18UITraitEnvironment", "activityIndicator"]
+- ["PSo18UITraitEnvironment", "backButton"]
+- ["PSo18UITraitEnvironment", "checkForFieldCompletion"]
+- ["PSo18UITraitEnvironment", "clearErrorMessage"]
+- ["PSo18UITraitEnvironment", "defaults"]
+- ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UITraitEnvironment", "dismiss"]
+- ["PSo18UITraitEnvironment", "doneButton"]
+- ["PSo18UITraitEnvironment", "emailField"]
+- ["PSo18UITraitEnvironment", "errorMessage"]
+- ["PSo18UITraitEnvironment", "forgotPasswordButton"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "initiateLogin"]
+- !private ["PSo18UITraitEnvironment", "isHidden"]
+- ["PSo18UITraitEnvironment", "modifyErrorMessage"]
+- ["PSo18UITraitEnvironment", "passwordField"]
+- !private ["PSo18UITraitEnvironment", "print"]
+- !private ["PSo18UITraitEnvironment", "text"]
+- ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "isHidden"]
+- !private ["CSo6UIView", "text"]
+- ["CSo16UIViewController", "AnyObject"]
+- ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UIActivityIndicatorView"]
+- ["CSo16UIViewController", "UILabel"]
+- ["CSo16UIViewController", "UITextField"]
+- ["CSo16UIViewController", "UserAccountManager"]
+- ["CSo16UIViewController", "UserDefaults"]
+- !private ["CSo16UIViewController", "Void"]
+- ["CSo16UIViewController", "accountManager"]
+- ["CSo16UIViewController", "activityIndicator"]
+- ["CSo16UIViewController", "backButton"]
+- ["CSo16UIViewController", "checkForFieldCompletion"]
+- ["CSo16UIViewController", "clearErrorMessage"]
+- ["CSo16UIViewController", "defaults"]
+- ["CSo16UIViewController", "deinit"]
+- ["CSo16UIViewController", "didReceiveMemoryWarning"]
+- !private ["CSo16UIViewController", "dismiss"]
+- ["CSo16UIViewController", "doneButton"]
+- ["CSo16UIViewController", "emailField"]
+- ["CSo16UIViewController", "errorMessage"]
+- ["CSo16UIViewController", "forgotPasswordButton"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "initiateLogin"]
+- ["CSo16UIViewController", "modifyErrorMessage"]
+- ["CSo16UIViewController", "passwordField"]
+- !private ["CSo16UIViewController", "print"]
+- ["CSo16UIViewController", "viewDidLoad"]
+- ["CSo16UIViewController", ""]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["V10Foundation3URL", "deinit"]
+- !private ["P9Alamofire14URLConvertible", "init"]
+- !private ["Sc", "deinit"]
+- !private ["C6digout18UserAccountManager", "authenticateUser"]
+- ["C6digout18UserAccountManager", "deinit"]
+- ["C6digout18UserAccountManager", "init"]
+- ["CSo12UserDefaults", "deinit"]
+- !private ["CSo12UserDefaults", "set"]
+- ["CSo12UserDefaults", "standard"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "isHidden"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps9_Hashable", "UserAccountManager"]
+- ["Ps9_Hashable", "UserDefaults"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "accountManager"]
+- ["Ps9_Hashable", "activityIndicator"]
+- ["Ps9_Hashable", "backButton"]
+- ["Ps9_Hashable", "checkForFieldCompletion"]
+- ["Ps9_Hashable", "clearErrorMessage"]
+- ["Ps9_Hashable", "defaults"]
+- ["Ps9_Hashable", "didReceiveMemoryWarning"]
+- !private ["Ps9_Hashable", "dismiss"]
+- ["Ps9_Hashable", "doneButton"]
+- ["Ps9_Hashable", "emailField"]
+- ["Ps9_Hashable", "errorMessage"]
+- ["Ps9_Hashable", "forgotPasswordButton"]
+- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "initiateLogin"]
+- !private ["Ps9_Hashable", "isHidden"]
+- ["Ps9_Hashable", "modifyErrorMessage"]
+- ["Ps9_Hashable", "passwordField"]
+- !private ["Ps9_Hashable", "print"]
+- !private ["Ps9_Hashable", "set"]
+- ["Ps9_Hashable", "standard"]
+- !private ["Ps9_Hashable", "text"]
+- ["Ps9_Hashable", "viewDidLoad"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sb"
+- !private "PSo15CALayerDelegate"
+- "Ps7CVarArg"
+- !private "Vs9Character"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Sd"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "Sf"
+- "Ps8Hashable"
+- "SQ"
+- !private "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- "CSo7NSCoder"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "PSo26NSExtensionRequestHandling"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- "C6digout26OnboardLoginViewController"
+- "Sq"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "CSo23UIActivityIndicatorView"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo18UIContentContainer"
+- !private "PSo30UIContentSizeCategoryAdjusting"
+- !private "CSo9UIControl"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
+- !private "PSo10UIKeyInput"
+- !private "CSo7UILabel"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- "PSo16UIStateRestoring"
+- !private "CSo11UITextField"
+- !private "PSo11UITextInput"
+- !private "PSo17UITextInputTraits"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- !private "V10Foundation3URL"
+- !private "P9Alamofire14URLConvertible"
+- !private "Sc"
+- "C6digout18UserAccountManager"
+- "CSo12UserDefaults"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Users/DanBurkhardt/Git/Digout/Digout-Bridging-Header.h"
+- "/Users/DanBurkhardt/Git/Digout/Q4M.framework/Headers/MQALogger.h"
+- "/Users/DanBurkhardt/Git/Digout/Q4M.framework/Headers/APLLogging.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Users/DanBurkhardt/Git/Digout/Q4M.framework/Headers/APLSetting.h"
+- "/Users/DanBurkhardt/Git/Digout/Q4M.framework/Headers/MQASettings.h"
+- "/Users/DanBurkhardt/Git/Digout/Digout/MQAExceptionHandler.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonCryptor.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonCryptoError.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonDigest.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonHMAC.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonKeyDerivation.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.1.sdk/usr/include/CommonCrypto/CommonSymmetricKeywrap.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Users/DanBurkhardt/Git/Digout/Carthage/Build/iOS/Alamofire.framework/Modules/Alamofire.swiftmodule/arm.swiftmodule"
+- "/Users/DanBurkhardt/Git/Digout/Carthage/Build/iOS/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/DanBurkhardt/Git/Digout/Carthage/Build/iOS/Alamofire.framework/Headers/Alamofire.h"
+- "/Users/DanBurkhardt/Git/Digout/Carthage/Build/iOS/Alamofire.framework/Modules/module.modulemap"
+- "/Users/DanBurkhardt/Git/Digout/Carthage/Build/iOS/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/arm.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/MapKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreAudio.swiftmodule"
+interface-hash: "420d4cb2cf4e37c353ebd6c68052acae"

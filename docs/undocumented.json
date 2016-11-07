@@ -1,0 +1,866 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/APIInfo.swift",
+      "line": 11,
+      "symbol": "APIInfo",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/APIInfo.swift",
+      "line": 16,
+      "symbol": "APIInfo.accountsURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/APIInfo.swift",
+      "line": 21,
+      "symbol": "APIInfo.digoutRequestURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 15,
+      "symbol": "storyboard",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 17,
+      "symbol": "initialViewControllerRoot",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 20,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 24,
+      "symbol": "AppDelegate.defaults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 26,
+      "symbol": "AppDelegate.api",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 28,
+      "symbol": "AppDelegate.userHasOnboardedKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 30,
+      "symbol": "AppDelegate.onboardSetup",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.application(_:willFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 86,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 91,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 96,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 100,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift",
+      "line": 104,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 13,
+      "symbol": "DigoutRequestManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 16,
+      "symbol": "DigoutRequestManager.apiInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 17,
+      "symbol": "DigoutRequestManager.request",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 18,
+      "symbol": "DigoutRequestManager.defaults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 19,
+      "symbol": "DigoutRequestManager.userAcctManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift",
+      "line": 20,
+      "symbol": "DigoutRequestManager.utilities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift",
+      "line": 12,
+      "symbol": "GlobalDefaults",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift",
+      "line": 15,
+      "symbol": "GlobalDefaults.styles",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift",
+      "line": 17,
+      "symbol": "GlobalDefaults.styles.standardBlue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift",
+      "line": 23,
+      "symbol": "GlobalDefaults.setLightStatusbar()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift",
+      "line": 28,
+      "symbol": "GlobalDefaults.setDarkStatusBar()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/HamburgerViewController.swift",
+      "line": 11,
+      "symbol": "HamburgerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/HamburgerViewController.swift",
+      "line": 13,
+      "symbol": "HamburgerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/HamburgerViewController.swift",
+      "line": 19,
+      "symbol": "HamburgerViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/LocalMappingData.swift",
+      "line": 11,
+      "symbol": "LocalMappingData",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/LocalMappingData.swift",
+      "line": 13,
+      "symbol": "LocalMappingData.requestorPins",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 11,
+      "symbol": "OnboardLoginViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 17,
+      "symbol": "OnboardLoginViewController.passwordField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 19,
+      "symbol": "OnboardLoginViewController.errorMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 21,
+      "symbol": "OnboardLoginViewController.forgotPasswordButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 25,
+      "symbol": "OnboardLoginViewController.activityIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 27,
+      "symbol": "OnboardLoginViewController.doneButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 31,
+      "symbol": "OnboardLoginViewController.backButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 41,
+      "symbol": "OnboardLoginViewController.accountManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 47,
+      "symbol": "OnboardLoginViewController.checkForFieldCompletion()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 61,
+      "symbol": "OnboardLoginViewController.modifyErrorMessage(message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 65,
+      "symbol": "OnboardLoginViewController.clearErrorMessage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 69,
+      "symbol": "OnboardLoginViewController.initiateLogin()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift",
+      "line": 105,
+      "symbol": "OnboardLoginViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 12,
+      "symbol": "OnboardSignupViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 18,
+      "symbol": "OnboardSignupViewController.emailField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 20,
+      "symbol": "OnboardSignupViewController.passwordField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 22,
+      "symbol": "OnboardSignupViewController.confirmPasswordField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 24,
+      "symbol": "OnboardSignupViewController.errorMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 26,
+      "symbol": "OnboardSignupViewController.activityIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 28,
+      "symbol": "OnboardSignupViewController.doneButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 36,
+      "symbol": "OnboardSignupViewController.defaults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 62,
+      "symbol": "OnboardSignupViewController.backButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 112,
+      "symbol": "OnboardSignupViewController.modifyErrorMessage(message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 116,
+      "symbol": "OnboardSignupViewController.clearErrorMessage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift",
+      "line": 130,
+      "symbol": "OnboardSignupViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardViewController.swift",
+      "line": 11,
+      "symbol": "OnboardViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardViewController.swift",
+      "line": 30,
+      "symbol": "OnboardViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardViewController.swift",
+      "line": 41,
+      "symbol": "OnboardViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardViewController.swift",
+      "line": 45,
+      "symbol": "OnboardViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardingSetup.swift",
+      "line": 13,
+      "symbol": "OnboardingSetup",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/OnboardingSetup.swift",
+      "line": 16,
+      "symbol": "OnboardingSetup.setupTestConstraints(firstPage:testView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 13,
+      "symbol": "RequestViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 16,
+      "symbol": "RequestViewController.mapView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 18,
+      "symbol": "RequestViewController.finishButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 20,
+      "symbol": "RequestViewController.pinPlacementFinished(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 25,
+      "symbol": "RequestViewController.settings(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 29,
+      "symbol": "RequestViewController.settingsOutlet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 31,
+      "symbol": "RequestViewController.cancelButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 33,
+      "symbol": "RequestViewController.cancelPinPlacement(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 48,
+      "symbol": "RequestViewController.manager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 49,
+      "symbol": "RequestViewController.localPinArray",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 50,
+      "symbol": "RequestViewController.requestManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 55,
+      "symbol": "RequestViewController.submitDigoutRequest()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 82,
+      "symbol": "RequestViewController.setupRevealController()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 92,
+      "symbol": "RequestViewController.handleLongPress(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 117,
+      "symbol": "RequestViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 154,
+      "symbol": "RequestViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift",
+      "line": 160,
+      "symbol": "RequestViewController.mapView(_:didUpdate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RightToLeftSegue.swift",
+      "line": 12,
+      "symbol": "RightToLeftSegue",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/RightToLeftSegue.swift",
+      "line": 14,
+      "symbol": "RightToLeftSegue.perform()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/URLRequest.swift",
+      "line": 13,
+      "symbol": "URLRequest",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 13,
+      "symbol": "UserAccountManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 16,
+      "symbol": "UserAccountManager.apiInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 17,
+      "symbol": "UserAccountManager.request",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 18,
+      "symbol": "UserAccountManager.defaults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 19,
+      "symbol": "UserAccountManager.utilities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift",
+      "line": 157,
+      "symbol": "String.sha256()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/UserObjectModel.swift",
+      "line": 11,
+      "symbol": "UserObjectModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/Utilities.swift",
+      "line": 11,
+      "symbol": "Utilities",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/Utilities.swift",
+      "line": 14,
+      "symbol": "Utilities.getEpochTime()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 27,
+      "symbol": "ViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 50,
+      "symbol": "ViewController.loginMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 52,
+      "symbol": "ViewController.buttonStack",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 54,
+      "symbol": "ViewController.heyMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 56,
+      "symbol": "ViewController.returnToMain(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 61,
+      "symbol": "ViewController.settingsButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 99,
+      "symbol": "ViewController.buttonStackParent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 103,
+      "symbol": "ViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 123,
+      "symbol": "ViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 131,
+      "symbol": "ViewController.unhideLoginInfo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift",
+      "line": 140,
+      "symbol": "ViewController.hideLoginInfo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 12,
+      "symbol": "VolunteerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 15,
+      "symbol": "VolunteerViewController.manager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 17,
+      "symbol": "VolunteerViewController.userLocation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 19,
+      "symbol": "VolunteerViewController.userLocationUpdated",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 25,
+      "symbol": "VolunteerViewController.magicButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 34,
+      "symbol": "VolunteerViewController.mapView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 36,
+      "symbol": "VolunteerViewController.backButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 46,
+      "symbol": "VolunteerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 82,
+      "symbol": "VolunteerViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 88,
+      "symbol": "VolunteerViewController.saveUserLocation(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 103,
+      "symbol": "VolunteerViewController.mapView(_:rendererFor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 110,
+      "symbol": "VolunteerViewController.mapView(_:didUpdate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 114,
+      "symbol": "VolunteerViewController.mapViewDidFinishLoadingMap(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 118,
+      "symbol": "VolunteerViewController.mapViewDidFinishRenderingMap(_:fullyRendered:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 124,
+      "symbol": "VolunteerViewController.mapViewDidStopLocatingUser(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 128,
+      "symbol": "VolunteerViewController.mapView(_:didSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 144,
+      "symbol": "VolunteerViewController.locationManager(_:didUpdateLocations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift",
+      "line": 158,
+      "symbol": "VolunteerViewController.placeMapPins()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/DanBurkhardt/Git/Digout"
+}

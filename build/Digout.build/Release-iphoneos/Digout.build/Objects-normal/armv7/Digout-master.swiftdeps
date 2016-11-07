@@ -1,0 +1,22 @@
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "b2b866084b824ceaaf824ad8eeb2ecbb"
+build_time: [531805981, 163892000]
+inputs:
+  "/Users/DanBurkhardt/Git/Digout/Digout/GlobalDefaults.swift": !dirty [530727796, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/URLRequest.swift": !dirty [531774710, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/UserObjectModel.swift": !dirty [527706623, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/OnboardLoginViewController.swift": !dirty [531784767, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/VolunteerViewController.swift": !dirty [531385689, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/UserAccountManager.swift": !dirty [531775159, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/Utilities.swift": !dirty [531666291, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/RightToLeftSegue.swift": !dirty [530978729, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/DigoutRequestManager.swift": !dirty [531774710, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/RequestViewController.swift": !dirty [531805382, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/OnboardSignupViewController.swift": !dirty [531783990, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/OnboardingSetup.swift": !dirty [530900014, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/ViewController.swift": !dirty [530894580, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/AppDelegate.swift": !dirty [531800602, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/APIInfo.swift": !dirty [531660835, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/HamburgerViewController.swift": !dirty [531802641, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/OnboardViewController.swift": !dirty [531621644, 0]
+  "/Users/DanBurkhardt/Git/Digout/Digout/LocalMappingData.swift": !dirty [530894580, 0]
