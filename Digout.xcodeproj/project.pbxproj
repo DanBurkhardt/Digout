@@ -20,8 +20,8 @@
 		1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
 		1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63B061C3BF4029E5EE5AE2FB /* Pods_DigoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285E74B7FC61CD6D3C557AE4 /* Pods_DigoutUITests.framework */; };
 		76ADBA2E1DC1A53600AF99CC /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */; };
+		C5573E6125E7E934390B089D /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E65C2AFFE8B7D2840A50FC /* Pods_Digout.framework */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
 		C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1061C651E4900897C55 /* AVFoundation.framework */; };
@@ -53,8 +53,7 @@
 		C9A302D31C651C7700A2EB7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A302D11C651C7700A2EB7F /* LaunchScreen.storyboard */; };
 		C9A302DE1C651C7700A2EB7F /* DigoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302DD1C651C7700A2EB7F /* DigoutTests.swift */; };
 		C9A302E91C651C7700A2EB7F /* DigoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A302E81C651C7700A2EB7F /* DigoutUITests.swift */; };
-		E3283D626D2513E8EE8561BB /* Pods_DigoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0728CF06FF5181F2307189A3 /* Pods_DigoutTests.framework */; };
-		E49E81CFE5D53B897CB901C6 /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A6EE08CB61A9A305B2A22E /* Pods_Digout.framework */; };
+		C9D7B0A91DD0251100741C31 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7B0A81DD0251100741C31 /* HamburgerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0728CF06FF5181F2307189A3 /* Pods_DigoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		078B1CEBBC35BA1EFF3CD925 /* Pods-Digout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.release.xcconfig"; sourceTree = "<group>"; };
 		1A00BFF61C66339C005CC28D /* LocalMappingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMappingData.swift; sourceTree = "<group>"; };
 		1A3F88431C65F2AE00FE6BBE /* UserObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObjectModel.swift; sourceTree = "<group>"; };
 		1A58F5E21C65BA7E00FFA70A /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -100,15 +99,8 @@
 		1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		1AEA4E841DC03F220029AA3A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		282F5A03896BE1CF5D7FD1B7 /* Pods-DigoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.release.xcconfig"; sourceTree = "<group>"; };
-		285E74B7FC61CD6D3C557AE4 /* Pods_DigoutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigoutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B3F533D7F105667C1929C6E /* Pods-DigoutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		66A6EE08CB61A9A305B2A22E /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E65C2AFFE8B7D2840A50FC /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
-		88D86645B993B8DB257EA600 /* Pods-Digout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.release.xcconfig"; sourceTree = "<group>"; };
-		9A00A48ADCA9B32FAEE82C88 /* Pods-DigoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9C0FF14B8F305C758126FEA8 /* Pods-DigoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests.release.xcconfig"; sourceTree = "<group>"; };
-		9C80B1DDE7CDF9A3BCDB23B0 /* Pods-Digout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.debug.xcconfig"; sourceTree = "<group>"; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C903F1041C651E4300897C55 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C903F1061C651E4900897C55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +140,8 @@
 		C9A302E41C651C7700A2EB7F /* digout.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = digout.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A302E81C651C7700A2EB7F /* DigoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigoutUITests.swift; sourceTree = "<group>"; };
 		C9A302EA1C651C7700A2EB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D7B0A81DD0251100741C31 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		D194A59C937305045470FA44 /* Pods-Digout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digout/Pods-Digout.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +168,7 @@
 				C903F1071C651E4900897C55 /* AVFoundation.framework in Frameworks */,
 				C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */,
 				C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */,
-				E49E81CFE5D53B897CB901C6 /* Pods_Digout.framework in Frameworks */,
+				C5573E6125E7E934390B089D /* Pods_Digout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +176,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3283D626D2513E8EE8561BB /* Pods_DigoutTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B061C3BF4029E5EE5AE2FB /* Pods_DigoutUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,15 +210,11 @@
 			name = Global;
 			sourceTree = "<group>";
 		};
-		1E21ACA2F6D9863A6850AB6D /* Pods */ = {
+		41039FB5A26CD9DB3BBDF2B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9C80B1DDE7CDF9A3BCDB23B0 /* Pods-Digout.debug.xcconfig */,
-				88D86645B993B8DB257EA600 /* Pods-Digout.release.xcconfig */,
-				9A00A48ADCA9B32FAEE82C88 /* Pods-DigoutTests.debug.xcconfig */,
-				9C0FF14B8F305C758126FEA8 /* Pods-DigoutTests.release.xcconfig */,
-				5B3F533D7F105667C1929C6E /* Pods-DigoutUITests.debug.xcconfig */,
-				282F5A03896BE1CF5D7FD1B7 /* Pods-DigoutUITests.release.xcconfig */,
+				D194A59C937305045470FA44 /* Pods-Digout.debug.xcconfig */,
+				078B1CEBBC35BA1EFF3CD925 /* Pods-Digout.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -251,9 +239,7 @@
 				C903F1061C651E4900897C55 /* AVFoundation.framework */,
 				C903F1041C651E4300897C55 /* AudioToolbox.framework */,
 				C903F1021C651E3900897C55 /* AssetsLibrary.framework */,
-				66A6EE08CB61A9A305B2A22E /* Pods_Digout.framework */,
-				0728CF06FF5181F2307189A3 /* Pods_DigoutTests.framework */,
-				285E74B7FC61CD6D3C557AE4 /* Pods_DigoutUITests.framework */,
+				24E65C2AFFE8B7D2840A50FC /* Pods_Digout.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,6 +261,7 @@
 				C91F08DC1DC2ACC500BAFABF /* MapVCs */,
 				C91F08DB1DC2ACA300BAFABF /* OnboardingVCs */,
 				C9A302CA1C651C7700A2EB7F /* ViewController.swift */,
+				C9D7B0A81DD0251100741C31 /* HamburgerViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -334,7 +321,7 @@
 				C9A302E71C651C7700A2EB7F /* DigoutUITests */,
 				C9A302C61C651C7700A2EB7F /* Products */,
 				C903F0FF1C651D8D00897C55 /* Frameworks */,
-				1E21ACA2F6D9863A6850AB6D /* Pods */,
+				41039FB5A26CD9DB3BBDF2B3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,13 +375,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9A302ED1C651C7700A2EB7F /* Build configuration list for PBXNativeTarget "Digout" */;
 			buildPhases = (
-				1EA3A9A153328A15CE73B11B /* [CP] Check Pods Manifest.lock */,
+				9DEBE3FB6013DB98D7B4BD6F /* Check Pods Manifest.lock */,
 				C9A302C11C651C7700A2EB7F /* Sources */,
 				C9A302C21C651C7700A2EB7F /* Frameworks */,
 				C9A302C31C651C7700A2EB7F /* Resources */,
 				1AEA4E8A1DC03F5C0029AA3A /* Embed Frameworks */,
-				934A38129C7F26866B82BB85 /* [CP] Embed Pods Frameworks */,
-				D5EA5447155702FB204C1E51 /* [CP] Copy Pods Resources */,
+				8B032D95E36066D7B07B851D /* Embed Pods Frameworks */,
+				D1A5C3A08C70395941D23874 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,12 +396,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9A302F01C651C7700A2EB7F /* Build configuration list for PBXNativeTarget "DigoutTests" */;
 			buildPhases = (
-				AE232260F8EF624DA6691DAE /* [CP] Check Pods Manifest.lock */,
 				C9A302D51C651C7700A2EB7F /* Sources */,
 				C9A302D61C651C7700A2EB7F /* Frameworks */,
 				C9A302D71C651C7700A2EB7F /* Resources */,
-				A3343DB11630DC6DE2FCF2FA /* [CP] Embed Pods Frameworks */,
-				443D4DA1AB4A7774571D53A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -430,11 +414,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9A302F31C651C7700A2EB7F /* Build configuration list for PBXNativeTarget "DigoutUITests" */;
 			buildPhases = (
-				B29C03D227FC00F9420397CB /* [CP] Check Pods Manifest.lock */,
 				C9A302E01C651C7700A2EB7F /* Sources */,
 				C9A302E11C651C7700A2EB7F /* Frameworks */,
 				C9A302E21C651C7700A2EB7F /* Resources */,
-				6F99B916FE6186F899C5EC80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -523,59 +505,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1EA3A9A153328A15CE73B11B /* [CP] Check Pods Manifest.lock */ = {
+		8B032D95E36066D7B07B851D /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		443D4DA1AB4A7774571D53A7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F99B916FE6186F899C5EC80 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		934A38129C7F26866B82BB85 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,29 +520,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Digout/Pods-Digout-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3343DB11630DC6DE2FCF2FA /* [CP] Embed Pods Frameworks */ = {
+		9DEBE3FB6013DB98D7B4BD6F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigoutTests/Pods-DigoutTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE232260F8EF624DA6691DAE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,29 +535,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B29C03D227FC00F9420397CB /* [CP] Check Pods Manifest.lock */ = {
+		D1A5C3A08C70395941D23874 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D5EA5447155702FB204C1E51 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +573,7 @@
 				C9A302CB1C651C7700A2EB7F /* ViewController.swift in Sources */,
 				C9A302C91C651C7700A2EB7F /* AppDelegate.swift in Sources */,
 				1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */,
+				C9D7B0A91DD0251100741C31 /* HamburgerViewController.swift in Sources */,
 				C91F08D41DC29B4A00BAFABF /* OnboardViewController.swift in Sources */,
 				1A00BFF71C66339C005CC28D /* LocalMappingData.swift in Sources */,
 			);
@@ -807,7 +715,7 @@
 		};
 		C9A302EE1C651C7700A2EB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C80B1DDE7CDF9A3BCDB23B0 /* Pods-Digout.debug.xcconfig */;
+			baseConfigurationReference = D194A59C937305045470FA44 /* Pods-Digout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -839,7 +747,7 @@
 		};
 		C9A302EF1C651C7700A2EB7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88D86645B993B8DB257EA600 /* Pods-Digout.release.xcconfig */;
+			baseConfigurationReference = 078B1CEBBC35BA1EFF3CD925 /* Pods-Digout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -870,7 +778,6 @@
 		};
 		C9A302F11C651C7700A2EB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A00A48ADCA9B32FAEE82C88 /* Pods-DigoutTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6F9773F85D;
@@ -885,7 +792,6 @@
 		};
 		C9A302F21C651C7700A2EB7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C0FF14B8F305C758126FEA8 /* Pods-DigoutTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6F9773F85D;
@@ -900,7 +806,6 @@
 		};
 		C9A302F41C651C7700A2EB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B3F533D7F105667C1929C6E /* Pods-DigoutUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DigoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -914,7 +819,6 @@
 		};
 		C9A302F51C651C7700A2EB7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 282F5A03896BE1CF5D7FD1B7 /* Pods-DigoutUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DigoutUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

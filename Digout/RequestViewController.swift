@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SWRevealViewController
 
 class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -21,6 +22,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Submit the digout request to the backend
         self.submitDigoutRequest()
     }
+    @IBAction func settings(_ sender: Any) {
+        //self.settingsOutlet.target = self.revealViewController()
+        //self.settingsOutlet.action = "revealToggle:"
+        print("Settings touched")
+    }
+    @IBOutlet weak var settingsOutlet: UIButton!
     
     @IBOutlet weak var cancelButton: UIButton!
     
@@ -72,6 +79,14 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }// END CREATE DIGOUT REQUEST
     
+    func setupRevealController(){
+        if self.revealViewController() != nil {
+            
+            self.settingsOutlet.addTarget(self.revealViewController(), action: "revealToggle:", for: UIControlEvents.touchUpInside)
+            
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
     
     
     func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
@@ -101,7 +116,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     // MARK: Default Class Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupRevealController()
         // Do any additional setup after loading the view.
         
         // Do any additional setup after loading the view.

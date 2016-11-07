@@ -88,7 +88,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc4-LK-Gje" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7pV-A0-0lx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="-1030"/>
+            <point key="canvasLocation" x="3026" y="-1357"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V1n-uG-u3A">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-1H-cbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="PVc-87-viP" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X79-sJ-gWA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Hi-ev-yXG" kind="relationship" relationship="rootViewController" id="Yi5-Ns-vU0"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1434" y="-1215"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="pYc-0v-LtZ">
@@ -152,6 +169,14 @@
                                     <action selector="cancelPinPlacement:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="1xq-g2-HLF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lck-gI-vmd">
+                                <rect key="frame" x="7" y="28" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hamburger"/>
+                                <connections>
+                                    <action selector="settings:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="ZIC-zy-Eft"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -168,10 +193,13 @@
                             <constraint firstItem="UVV-wi-RG4" firstAttribute="top" secondItem="iHp-hj-vwZ" secondAttribute="bottom" id="wMT-OY-fPA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="M5D-vD-w68"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cancelButton" destination="bTO-KN-n87" id="Obc-aR-gaJ"/>
                         <outlet property="finishButton" destination="bdY-Wx-OZg" id="lPf-Df-Po8"/>
                         <outlet property="mapView" destination="UVV-wi-RG4" id="Zit-Ki-A9A"/>
+                        <outlet property="settingsOutlet" destination="lck-gI-vmd" id="tZS-M5-mLu"/>
                         <segue destination="9dC-9I-TR4" kind="unwind" unwindAction="returnToMain:" id="MRn-VD-yml"/>
                         <segue destination="9dC-9I-TR4" kind="unwind" unwindAction="returnToMain:" id="fuN-Xm-l2k"/>
                     </connections>
@@ -179,7 +207,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgs-dl-e0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9dC-9I-TR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="-1030"/>
+            <point key="canvasLocation" x="2279" y="-1215"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="sh2-So-mwH">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" id="EXm-Fs-Vsq" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xQK-4L-40Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="sj0-Ru-YC8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ExH-FK-tBn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="vD7-du-b8K" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="ane-T3-9jL"/>
+                        <segue destination="PVc-87-viP" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="QOX-mz-BaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtK-Bz-fY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="-1022"/>
+        </scene>
+        <!--Hamburger View Controller-->
+        <scene sceneID="VsJ-57-fiS">
+            <objects>
+                <viewController storyboardIdentifier="rearVC" id="vD7-du-b8K" customClass="HamburgerViewController" customModule="digout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5nv-LL-17w"/>
+                        <viewControllerLayoutGuide type="bottom" id="R6T-rx-7za"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M0T-RJ-fUy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Hamburger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8v-mH-0c9">
+                                <rect key="frame" x="16" y="44" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjC-Lu-r7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="-243"/>
         </scene>
         <!--Onboard View Controller-->
         <scene sceneID="5nd-T2-CCg">
@@ -459,7 +536,7 @@
                         <outlet property="errorMessage" destination="LBI-Mz-Q8l" id="ClR-GJ-8MG"/>
                         <outlet property="passwordField" destination="1Zu-m3-mfC" id="EIa-Dc-kG2"/>
                         <outlet property="usernameField" destination="XfC-ja-fJ6" id="EdP-NO-RpO"/>
-                        <segue destination="4Hi-ev-yXG" kind="showDetail" identifier="navToHome" id="6Ug-C4-u89"/>
+                        <segue destination="EXm-Fs-Vsq" kind="showDetail" identifier="navHome" id="sIc-ub-aSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hP-1k-h6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -577,7 +654,7 @@
                         <outlet property="emailField" destination="yiR-WX-KNb" id="LRa-Zo-WSg"/>
                         <outlet property="errorMessage" destination="o95-y8-Qbj" id="jSG-QF-WD5"/>
                         <outlet property="passwordField" destination="q6X-Xt-WIU" id="M2t-1l-nuw"/>
-                        <segue destination="4Hi-ev-yXG" kind="showDetail" identifier="navToHome" id="3k1-GB-6iX"/>
+                        <segue destination="EXm-Fs-Vsq" kind="showDetail" identifier="navToHome" id="pfe-sz-jOU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-tS-xyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,12 +666,13 @@
         <image name="back" width="128" height="128"/>
         <image name="checkround" width="500" height="500"/>
         <image name="down" width="128" height="128"/>
+        <image name="hamburger" width="256" height="256"/>
         <image name="onboardingbg2" width="500" height="180"/>
         <image name="pen" width="256" height="256"/>
         <image name="wandCircle" width="500" height="500"/>
         <image name="xround" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3k1-GB-6iX"/>
+        <segue reference="sIc-ub-aSU"/>
     </inferredMetricsTieBreakers>
 </document>

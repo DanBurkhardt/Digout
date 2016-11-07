@@ -84,10 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Digout/Onboard.framework"
+  install_framework "Pods-Digout/SWRevealViewController.framework"
   install_framework "Pods-Digout/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Digout/Onboard.framework"
+  install_framework "Pods-Digout/SWRevealViewController.framework"
   install_framework "Pods-Digout/SwiftyJSON.framework"
 fi

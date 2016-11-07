@@ -9,7 +9,6 @@
 import UIKit
 import AVKit
 import AVFoundation
-import Onboard
 
 
 
@@ -41,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //*********************************
+        //***************************************
         // SET NEW ROOT VIEW CONTROLLER IF AUTH'D
-        //*********************************
+        //***************************************
         
         if (defaults.object(forKey: "userIsAuthenticated") != nil){
             
@@ -51,46 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "requestViewController")
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController")
         
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
         
         
-        //*********************************
-        // ONBOARD COCOAPOD SETUP
-        //*********************************
-        /*
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        //        self.window!.backgroundColor = UIColor.whiteColor()
-        // Override point for customization after application launch.
-        
-        
-        self.setupNormalRootVC(false)
-
-        
-        // Determine if the user has completed onboarding yet or not
-        let userHasOnboardedAlready = UserDefaults.standard.bool(forKey: userHasOnboardedKey);
-        
-        
-        // If the user has already onboarded, setup the normal root view controller for the application
-        // without animation like you normally would if you weren't doing any onboarding
-        
-        if userHasOnboardedAlready {
-            //self.window!.rootViewController = self.generateOnboardingViewController()
-            
-            setupNormalRootVC(false)
-        }
-            
-            // Otherwise the user hasn't onboarded yet, so set the root view controller for the application to the
-            // onboarding view controller generated and returned by this method.
-        else {
-            self.window!.rootViewController = generateOnboardingViewController()
-        }
-        
-        self.window!.makeKeyAndVisible()
-        */
         
         //*********************************
         // MOBILE QUALITY ASSURANCE SETUP
@@ -113,102 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    
-    
-    // MARK: Onboard Cocoapod Setup Methods
-    
-    func setupNormalRootVC(_ animated : Bool) {
-        // Here I'm just creating a generic view controller to represent the root of my application.
-        let mainVC = UIViewController()
-        mainVC.title = "RootView"
-        
-        // If we want to animate it, animate the transition - in this case we're fading, but you can do it
-        // however you want.
-        if animated {
-            UIView.transition(with: self.window!, duration: 0.5, options:.transitionCrossDissolve, animations: { () -> Void in
-                self.window!.rootViewController = initialViewControllerRoot as? UIViewController
-                }, completion:nil)
-        }
-            
-            // Otherwise we just want to set the root view controller normally.
-        else {
-            self.window?.rootViewController = initialViewControllerRoot as? UIViewController;
-        }
-    }
-    
-    
-    func generateOnboardingViewController() -> OnboardingViewController {
-        // Generate the first page...
-        
-        
-        let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "", body: "", image: UIImage(named:
-            ""), buttonText: "Ok") {
-            self.handleOnboardingCompletion()
-        }
-        
-        let testView = UIView()
-        testView.backgroundColor = UIColor.black
-        testView.translatesAutoresizingMaskIntoConstraints = false
-        
-        firstPage.view.addSubview(testView)
-        
-        var constraints = self.onboardSetup.setupTestConstraints(firstPage: firstPage, testView: testView)
-        
-        for constraint in constraints{
-            firstPage.view.addConstraint(constraint)
-        }
-        
-        
-        
-        
-        // Generate the second page...
-        let secondPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to my app", image: UIImage(named:
-            "snow"), buttonText: "") {}
-        
-        // Generate the third page, and when the user hits the button we want to handle that the onboarding
-        // process has been completed.
-        let thirdPage: OnboardingContentViewController = OnboardingContentViewController(title: "welcome", body: "to the future", image: UIImage(named:
-            "wand"), buttonText: "Get Started") {
-                
-                // Callback func on the final page of the onboarding process
-                self.handleOnboardingCompletion()
-        }
- 
-        
-        
-        // process has been completed.
-        
-        let bounds: CGRect = UIScreen.main.bounds
-        let ScreenSize = bounds.size.width
-        let blockImages = ["mtnblock","flagblock","bsktballblock"]
-        
-        //TEMPORARY FUNCS GO HERE
-        
-        // Video
-        let bundle = Bundle.main
-        let moviePath = bundle.path(forResource: "snow", ofType: "mp4")
-        let movieURL = URL(fileURLWithPath: moviePath!)
-        
-        let onboardingVC = OnboardingViewController(backgroundVideoURL: movieURL, contents: [firstPage])
-        
-        onboardingVC?.shouldMaskBackground = false
-        onboardingVC?.allowSkipping = true
-        
-        
-        return onboardingVC!
-    }
-    
-    func handleOnboardingCompletion() {
-        // Now that we are done onboarding, we can set in our NSUserDefaults that we've onboarded now, so in the
-        // future when we launch the application we won't see the onboarding again.
-        UserDefaults.standard.set(true, forKey: userHasOnboardedKey)
-        
-        // Setup the normal root view controller of the application, and set that we want to do it animated so that
-        // the transition looks nice from onboarding to normal app.
-        setupNormalRootVC(true)
-    }
-    
     
     
     // MARK: Default App Delegate Methods
