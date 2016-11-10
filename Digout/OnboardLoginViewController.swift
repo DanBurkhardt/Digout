@@ -78,9 +78,12 @@ class OnboardLoginViewController: UIViewController {
             if success == true {
                 self.activityIndicator.isHidden = true
                 self.defaults.set(true, forKey: "userIsAuthenticated")
+                self.performSegue(withIdentifier: "navToHome", sender: self)
             }else{
                 self.activityIndicator.isHidden = true
                 self.defaults.set(false, forKey: "userIsAuthenticated")
+                // Temporary until login is implemented
+                self.performSegue(withIdentifier: "navToHome", sender: self)
             }
         }
     }

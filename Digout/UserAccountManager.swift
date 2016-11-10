@@ -130,7 +130,11 @@ class UserAccountManager {
     
     ///Function for retriving the user profile object locally
     func getUserLogin() -> [String:String] {
-        return defaults.object(forKey: "userLogin") as! [String:String]
+        if let login = defaults.object(forKey: "userLogin") as! [String:String]? {
+            return login
+        }
+        // Temporary fix to prevent crashing when in an invalid state
+        return ["email":"", "passhash":""]
     }
 
 

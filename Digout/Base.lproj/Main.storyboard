@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsq-NM-5DK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsq-NM-5DK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -93,7 +93,6 @@
         <!--Navigation Controller-->
         <scene sceneID="V1n-uG-u3A">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-1H-cbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="PVc-87-viP" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X79-sJ-gWA">
@@ -104,6 +103,7 @@
                         <segue destination="4Hi-ev-yXG" kind="relationship" relationship="rootViewController" id="Yi5-Ns-vU0"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-1H-cbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="-1022"/>
         </scene>
@@ -536,7 +536,7 @@
                         <outlet property="errorMessage" destination="LBI-Mz-Q8l" id="ClR-GJ-8MG"/>
                         <outlet property="passwordField" destination="1Zu-m3-mfC" id="EIa-Dc-kG2"/>
                         <outlet property="usernameField" destination="XfC-ja-fJ6" id="EdP-NO-RpO"/>
-                        <segue destination="EXm-Fs-Vsq" kind="showDetail" identifier="navHome" id="sIc-ub-aSU"/>
+                        <segue destination="EXm-Fs-Vsq" kind="showDetail" identifier="navToHome" id="sIc-ub-aSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hP-1k-h6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
