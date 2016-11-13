@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SWRevealViewController
+import SwiftyJSON
 
 class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -43,15 +44,22 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.localPinArray = [CLLocationCoordinate2D]()
     }
     
+    @IBAction func getPins(_ sender: Any) {
+        self.getPins()
+    }
+    
+    
     
     //MARK: Class Variables
     let manager = CLLocationManager()
     var localPinArray = [CLLocationCoordinate2D]()
-    var requestManager = DigoutRequestManager()
+    let requestManager = DigoutRequestManager()
+    let styles = GlobalDefaults.styles()
+    let lmapData = LocalMappingData()
+    let defaults = UserDefaults.standard
     
     
     //MARK: Programmer defined functions
-    
     func submitDigoutRequest(){
         
         self.requestManager.createDigoutRequest(locations: localPinArray, rating: 3){ (success) in
@@ -110,6 +118,40 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         annotation.coordinate = touchMapCoordinate
         
         mapView.addAnnotation(annotation)
+    }
+    
+    //MARK: Functions for getting and placing pins
+    
+    func getPins(){
+        self.lmapData.getPins { (success) in
+            
+            if success == false {
+                print("TEST: pins gotten")
+                
+                let pins = self.defaults.object(forKey: "responseData") as! Data
+                
+                let jsonData = JSON(pins)
+                
+                print(jsonData.description)
+                
+            }
+        }
+    }
+    
+    func placeMapPins(){
+        
+        /*
+        for pin in lMapData.requestorPins{
+            
+            let annotation = MKPointAnnotation()
+            
+            print("Placing map pin")
+            annotation.title = "this crossing is clear!"
+            
+            annotation.coordinate = pin
+            
+            mapView.addAnnotation(annotation)
+        }*/
     }
     
     

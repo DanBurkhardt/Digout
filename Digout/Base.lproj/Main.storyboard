@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsq-NM-5DK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsq-NM-5DK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,7 +88,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc4-LK-Gje" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7pV-A0-0lx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3513" y="-1241"/>
+            <point key="canvasLocation" x="2542" y="-1729"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V1n-uG-u3A">
@@ -113,7 +113,7 @@
                 <viewControllerPlaceholder id="wNG-fu-EPv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGv-VR-OUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-1527"/>
+            <point key="canvasLocation" x="781" y="-1666"/>
         </scene>
         <!--requestViewController-->
         <scene sceneID="tnw-Mn-k2f">
@@ -177,6 +177,17 @@
                                     <action selector="settings:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="ZIC-zy-Eft"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQY-vR-BPj">
+                                <rect key="frame" x="135" y="608" width="105" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="RS0-NR-IaO"/>
+                                    <constraint firstAttribute="height" constant="30" id="y8i-LY-5G4"/>
+                                </constraints>
+                                <state key="normal" title="Get Request"/>
+                                <connections>
+                                    <action selector="getPins:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="h3a-yM-WwY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -188,8 +199,10 @@
                             <constraint firstItem="UVV-wi-RG4" firstAttribute="leading" secondItem="OFg-6f-f2o" secondAttribute="leadingMargin" constant="-20" id="Y5U-vT-NOE"/>
                             <constraint firstItem="iHp-hj-vwZ" firstAttribute="top" secondItem="Ahb-xV-QCj" secondAttribute="bottom" id="Yid-SY-oCa"/>
                             <constraint firstItem="iHp-hj-vwZ" firstAttribute="leading" secondItem="OFg-6f-f2o" secondAttribute="leadingMargin" constant="-20" id="Zhq-bp-Jti"/>
+                            <constraint firstItem="QQY-vR-BPj" firstAttribute="centerX" secondItem="OFg-6f-f2o" secondAttribute="centerX" id="cdU-cG-IgV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bdY-Wx-OZg" secondAttribute="trailing" constant="-12" id="f5m-mo-yEH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iHp-hj-vwZ" secondAttribute="trailing" constant="-20" id="jHg-c3-hSd"/>
+                            <constraint firstItem="rBJ-f5-JP2" firstAttribute="top" secondItem="QQY-vR-BPj" secondAttribute="bottom" constant="29" id="suZ-Cz-VZ0"/>
                             <constraint firstItem="UVV-wi-RG4" firstAttribute="top" secondItem="iHp-hj-vwZ" secondAttribute="bottom" id="wMT-OY-fPA"/>
                         </constraints>
                     </view>
@@ -207,7 +220,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgs-dl-e0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9dC-9I-TR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2543" y="-1022"/>
+            <point key="canvasLocation" x="2541.5999999999999" y="-1022.3388305847077"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="sh2-So-mwH">
@@ -309,7 +322,6 @@
                                     <color key="titleColor" red="0.090196078430000007" green="0.4941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signupButton:" destination="jsq-NM-5DK" eventType="touchUpInside" id="i2A-dX-aBT"/>
                                     <segue destination="ibc-WN-jxK" kind="show" identifier="navSignupView" id="W0j-o3-jPe"/>
                                 </connections>
                             </button>

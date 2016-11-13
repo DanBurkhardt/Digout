@@ -15,12 +15,12 @@ class APIInfo {
     // User object is passed within the body
     var accountsURL = "https://digout-py.mybluemix.net/api/account"
     
+    //var accountsURL = "http://localhost:6005/logintest?"
+    
     // Endpoint for all request submission and retrieval
     // use a POST for submitting a new request
     // use a GET for retrieving a request
     var digoutRequestURL = "https://digout-py.mybluemix.net/api/request"
     
     var userAuthenticationString = "userIsAuthenticated"
-    
-    
     }

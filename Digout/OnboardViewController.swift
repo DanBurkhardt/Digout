@@ -13,15 +13,9 @@ class OnboardViewController: UIViewController {
     ///MARK: Class variables
     let defaults = UserDefaults.standard
     let apiInfo = APIInfo()
+    let  request = URLRequest()
 
-    
-    ///MARK: Outlets and actions
-    @IBAction func signupButton(_ sender: AnyObject) {
-         self.performSegue(withIdentifier: "navSignupView", sender: self)
-    }
-    
-    
-    
+
     ///MARK: Programmer defined functions
     
     
@@ -37,6 +31,10 @@ class OnboardViewController: UIViewController {
             print("USER IS AUTHENTICATED")
             self.performSegue(withIdentifier: "navHome", sender: self)
         }
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

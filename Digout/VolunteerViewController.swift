@@ -17,7 +17,9 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var userLocation = CLLocationCoordinate2D()
     
     var userLocationUpdated = false
-
+    var lMapData = LocalMappingData()
+    var styles = GlobalDefaults.styles()
+    var defaults = UserDefaults.standard
     
     
     //MARK: UI Obhect Outlets and Actions
@@ -106,6 +108,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         polylineRenderer.lineWidth = 5
         return polylineRenderer
     }
+    
     // MARK: MapView Delegate Methods
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         self.mapView.showAnnotations([userLocation], animated: true)
