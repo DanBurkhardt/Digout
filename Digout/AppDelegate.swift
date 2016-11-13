@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let userHasOnboardedKey = "user_has_onboarded"
     
-    let onboardSetup = OnboardingSetup()
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

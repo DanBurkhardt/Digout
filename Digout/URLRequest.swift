@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Alamofire
 
 class URLRequest {
     
@@ -39,7 +40,7 @@ class URLRequest {
             //TODO: return a boolean status based on the error code
             print(response.response)
             let string = response.description
-            print(string)
+            print("response: \(string)")
             print(response.data)
             
             // Edit this to complete for both conditions

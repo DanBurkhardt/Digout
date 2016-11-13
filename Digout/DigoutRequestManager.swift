@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import SwiftyJSON
+import Alamofire
 
 class DigoutRequestManager{
     
@@ -32,6 +33,7 @@ class DigoutRequestManager{
         digoutRequestObject["email"].string = userAcct["email"]
         digoutRequestObject["timestamp"].double = utilities.getEpochTime()
         
+        
         // Make an empty array of JSON objects
         var coordinateArray = [JSON]()
         // Pull all of the long lat pairs out of the provided array
@@ -53,7 +55,17 @@ class DigoutRequestManager{
         print("Digout request object")
         print(digoutRequestObject.description)
         
-        completion(false)
+        //Post the request
+        self.request.postRequest(apiInfo.digoutRequestURL, JSON: digoutRequestObject){ (success) in
+        
+            if success == true{
+                completion(true)
+            }else{
+                
+                completion(false)
+            }
+            
+        }
     }
     
     //MARK: Request retrieval functions
@@ -70,3 +82,5 @@ class DigoutRequestManager{
      */
     
 }
+
+

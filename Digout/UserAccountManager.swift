@@ -55,11 +55,18 @@ class UserAccountManager {
         
         // posts the user profile object to the server
         self.request.postRequest(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
+            
             print("posting user profile object")
             print(userProfileObject)
+            
+            //TODO: Return here and build conditionals based on each completion status
+            // For now, proceed no matter what the outcome is
+            self.storeUserLogin(email: email, passhash: passhash)
+            
             completion(success)
         }
     }//END CREATE USER FUNCTION
+    
     
     ///Function for logging in a user
     func authenticateUser(email: String, rawPassword: String, completion: @escaping (_ success: Bool) -> Void){
@@ -119,12 +126,14 @@ class UserAccountManager {
     
     ///Function for storing the user profile object locally
     func storeUserLogin(email: String, passhash: String){
+        
         // Create and store dictionary of user login details
         let userLogin = ["email": email, "passhash": passhash]
+        
         defaults.set(userLogin, forKey: "userLogin")
         
         // Also add a bool locally to enable the user to cache login status
-        defaults.set(true, forKey: "userIsLoggedIn")
+        defaults.set(true, forKey: self.apiInfo.userAuthenticationString)
     }
     
     

@@ -12,6 +12,7 @@ class OnboardViewController: UIViewController {
 
     ///MARK: Class variables
     let defaults = UserDefaults.standard
+    let apiInfo = APIInfo()
 
     
     ///MARK: Outlets and actions
@@ -31,7 +32,7 @@ class OnboardViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        if (defaults.object(forKey: "userIsAuthenticated") != nil){
+        if (defaults.object(forKey: self.apiInfo.userAuthenticationString) != nil){
             
             print("USER IS AUTHENTICATED")
             self.performSegue(withIdentifier: "navHome", sender: self)

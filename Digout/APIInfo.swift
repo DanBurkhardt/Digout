@@ -20,5 +20,7 @@ class APIInfo {
     // use a GET for retrieving a request
     var digoutRequestURL = "https://digout-py.mybluemix.net/api/request"
     
+    var userAuthenticationString = "userIsAuthenticated"
+    
     
     }
