@@ -23,21 +23,20 @@ class URLRequest {
             
             //TODO: build the ability to check for error code
             //TODO: return a boolean status based on the error code
-            print(response.response)
+            //print(response.response)
             
             let string = response.description
-        
             print(string)
             
             
-            let jsonData = response.result
-            print(jsonData)
-            
             print(response.data)
             
-            
-            // Set the type as Data and store locally
-            self.defaults.set(response.data, forKey: "responseData")
+            if let JSON = response.result.value {
+                //print("JSON: \(JSON)")
+                
+                // Set the type as Data and store locally
+                self.defaults.set(response.result.value, forKey: "responseData")
+            }
             
             
             // Edit this to complete for both conditions

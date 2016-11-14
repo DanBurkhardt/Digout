@@ -19,9 +19,8 @@ class LocalMappingData {
     let defaults = UserDefaults.standard
     
     func getPins( completion: @escaping (_ success: Bool) -> Void) {
-        
         var obj: JSON = [:]
-        obj["email"].string = "test@test.com"
+        obj["email"].string = "testDan@test.com"
         
         self.request.getRequest(apiData.digoutRequestURL, JSON: obj){ (success) in
             
@@ -29,14 +28,10 @@ class LocalMappingData {
             
             // Use a failing completion for now
             if success == false{
-                print("success was false, fetching")
-                let localData = self.defaults.object(forKey: "responseData") as! Data
+                //print("success was false, fetching")
+                let localData = self.defaults.object(forKey: "responseData") as! NSDictionary
                 
-                let data: JSON = JSON(localData)
-                
-                print("Printing:")
-                print(data.dictionary)
-                
+                // Pass back false completion for now
                 completion(false)
             }
             

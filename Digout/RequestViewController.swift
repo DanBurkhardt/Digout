@@ -23,6 +23,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Submit the digout request to the backend
         self.submitDigoutRequest()
     }
+    
     @IBAction func settings(_ sender: Any) {
         
     }
@@ -42,12 +43,22 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // clear local array
         self.localPinArray = [CLLocationCoordinate2D]()
+        
+        self.cancelButton.isHidden = true
+        self.finishButton.isHidden = true
     }
     
     @IBAction func getPins(_ sender: Any) {
+        self.loadIndicator.isHidden = false
         self.getPins()
+        
+        let pins = self.mapView.annotations
+        for pin in pins{
+            self.mapView.removeAnnotation(pin)
+        }
     }
     
+    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
     
     //MARK: Class Variables
@@ -128,30 +139,51 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             if success == false {
                 print("TEST: pins gotten")
                 
-                let pins = self.defaults.object(forKey: "responseData") as! Data
+                let pins = self.defaults.object(forKey: "responseData") as! NSDictionary
                 
                 let jsonData = JSON(pins)
                 
-                print(jsonData.description)
-                
+                self.placeMapPins(rawData: jsonData)
             }
         }
     }
     
-    func placeMapPins(){
+    func placeMapPins(rawData: JSON){
         
-        /*
-        for pin in lMapData.requestorPins{
+        let pins = rawData["request_locations"].arrayValue
+        var placed = 0
+        
+        for pin in pins{
+            print("Placing map pin")
+            
+            var locationCoordinate = CLLocationCoordinate2D()
+            locationCoordinate.latitude = pin["lat"].double!
+            locationCoordinate.longitude = pin["long"].double!
+
+            //annotation.title = "this crossing is clear!"
             
             let annotation = MKPointAnnotation()
-            
-            print("Placing map pin")
-            annotation.title = "this crossing is clear!"
-            
-            annotation.coordinate = pin
-            
+            // Add to map annotation
+            annotation.coordinate = locationCoordinate
             mapView.addAnnotation(annotation)
-        }*/
+            placed += 1
+            
+            if placed == (pins.count - 1){
+                
+                // Hide UI elements
+                self.cancelButton.isHidden = true
+                self.finishButton.isHidden = true
+                self.loadIndicator.isHidden = true
+                
+                let alert = UIAlertController(title: "Loaded!", message:"Pins last submitted by the user \(rawData["email"].string) have been loaded", preferredStyle: .alert)
+                let action = UIAlertAction(title: "mmk", style: .default) { _ in
+                    // Put here any code that you would like to execute when
+                    // the user taps that OK button
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true){}
+            }
+        }
     }
     
     
@@ -159,6 +191,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRevealController()
+        self.loadIndicator.isHidden = true
         // Do any additional setup after loading the view.
         
         // Do any additional setup after loading the view.
