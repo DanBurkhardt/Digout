@@ -174,6 +174,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 self.cancelButton.isHidden = true
                 self.finishButton.isHidden = true
                 self.loadIndicator.isHidden = true
+                self.cancelButton.isHidden = false
                 
                 let alert = UIAlertController(title: "Loaded!", message:"Pins last submitted by the user \(rawData["email"].string) have been loaded", preferredStyle: .alert)
                 let action = UIAlertAction(title: "mmk", style: .default) { _ in
