@@ -45,6 +45,7 @@ class OnboardLoginViewController: UIViewController {
     
     /// Checks to make sure all fields are complete
     func checkForFieldCompletion(){
+        
         // Checking for completion
         if self.emailField.text == ""{
             modifyErrorMessage(message: "email cannot be blank")
@@ -101,7 +102,8 @@ class OnboardLoginViewController: UIViewController {
     ///MARK: Default Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.activityIndicator.isHidden = true
+        clearErrorMessage()
         // Do any additional setup after loading the view.
     }
 

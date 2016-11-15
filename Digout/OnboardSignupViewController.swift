@@ -41,8 +41,6 @@ class OnboardSignupViewController: UIViewController {
     func checkForFieldCompletion(){
         //TODO: add logic for checking that all fields are filled out
         
-        self.activityIndicator.isHidden = false
-        
         // Checking for completion
         if self.usernameField.text == ""{
             modifyErrorMessage(message: "username cannot be blank")
@@ -79,12 +77,14 @@ class OnboardSignupViewController: UIViewController {
         if passwordField.text != confirmPasswordField.text{
             self.modifyErrorMessage(message: "passwords do not match")
         }else{
+            clearErrorMessage()
             makeUserObject()
         }
     }
 
     /// Uses the `UserAccountManager` class to prepare and submit a user profile object
     func makeUserObject(){
+        self.activityIndicator.isHidden = false
         
         // Submit the user profile object
         self.accountManager.createUserObject(username: usernameField.text!, email: emailField.text!, rawPassword: passwordField.text!){ (success) in
@@ -93,7 +93,7 @@ class OnboardSignupViewController: UIViewController {
             
             if success == true {
                 
-                    self.activityIndicator.isHidden = true
+                self.activityIndicator.isHidden = true
                 
             }else if success == false{
                 
@@ -103,7 +103,6 @@ class OnboardSignupViewController: UIViewController {
                 
                 // Temporarily set to enable further development
                 self.performSegue(withIdentifier: "navToHome", sender: self)
-                self.activityIndicator.isHidden = true
             }
         }
     }
@@ -124,6 +123,7 @@ class OnboardSignupViewController: UIViewController {
         super.viewDidLoad()
 
         self.activityIndicator.isHidden = true
+        clearErrorMessage()
         // Do any additional setup after loading the view.
     }
 

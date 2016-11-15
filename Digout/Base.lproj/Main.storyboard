@@ -189,7 +189,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-f9-Hpv">
-                                <rect key="frame" x="170" y="563" width="37" height="37"/>
+                                <rect key="frame" x="169" y="563" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="ETC-b6-E2e"/>
                                     <constraint firstAttribute="height" constant="37" id="Wkf-Du-2k5"/>
@@ -588,9 +588,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-To-toY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-To-toY">
                                 <rect key="frame" x="99" y="584" width="177" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Uqq-I2-FOB"/>
+                                    <constraint firstAttribute="width" constant="177" id="obT-jU-eXw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Done" backgroundImage="onboardingbg2">
                                     <color key="titleColor" red="0.090196078430000007" green="0.4941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -630,8 +633,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-ab-Un0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-ab-Un0">
                                 <rect key="frame" x="101" y="429" width="172" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="4Jv-hg-Pfi"/>
+                                    <constraint firstAttribute="height" constant="36" id="HvH-Aa-KlE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="forgot password :(">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -653,7 +660,7 @@
                                     <action selector="backButton:" destination="XWt-lT-lHs" eventType="touchUpInside" id="vdv-LS-6hb"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-j3-83i">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-j3-83i">
                                 <rect key="frame" x="168" y="473" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="T3M-ei-tHI"/>
@@ -666,9 +673,13 @@
                         <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oAT-j3-83i" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="BbG-Fz-rKD"/>
+                            <constraint firstItem="oAT-j3-83i" firstAttribute="top" secondItem="Oxf-ab-Un0" secondAttribute="bottom" constant="8" id="JqF-e7-T9Z"/>
                             <constraint firstItem="1Ub-G4-dcM" firstAttribute="top" secondItem="Kwd-xy-bXy" secondAttribute="bottom" constant="8" id="Nxf-Yl-Rm9"/>
-                            <constraint firstItem="oAT-j3-83i" firstAttribute="top" secondItem="Oxf-ab-Un0" secondAttribute="bottom" constant="8" id="XE7-FM-q6f"/>
+                            <constraint firstItem="Oxf-ab-Un0" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="TJI-xC-4V4"/>
                             <constraint firstItem="1Ub-G4-dcM" firstAttribute="leading" secondItem="dcc-Yg-ygE" secondAttribute="leadingMargin" id="dKJ-9r-PiD"/>
+                            <constraint firstItem="9fh-To-toY" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="ocQ-bF-hgu"/>
+                            <constraint firstItem="9fh-To-toY" firstAttribute="top" secondItem="oAT-j3-83i" secondAttribute="bottom" constant="74" id="tPY-aB-jMP"/>
+                            <constraint firstItem="23u-nv-msa" firstAttribute="top" secondItem="9fh-To-toY" secondAttribute="bottom" constant="20" id="wrL-X0-xOS"/>
                         </constraints>
                     </view>
                     <connections>
