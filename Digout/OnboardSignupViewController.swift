@@ -48,6 +48,8 @@ class OnboardSignupViewController: UIViewController {
             modifyErrorMessage(message: "username cannot be blank")
         }else if self.emailField.text == ""{
             modifyErrorMessage(message: "email cannot be blank")
+        }else if !checkEmail(email: self.emailField.text!){
+            modifyErrorMessage(message: "email must be a valid email address")
         }else if self.passwordField.text == ""{
             modifyErrorMessage(message: "password field cannot be blank")
         }else if self.confirmPasswordField.text == ""{
@@ -64,6 +66,12 @@ class OnboardSignupViewController: UIViewController {
         self.dismiss(animated: true) { () -> Void in
             print("dimissed")
         }
+    }
+    
+    /// Ensures email is actually an email address
+    func checkEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
     
     /// Compares passwords for verification
