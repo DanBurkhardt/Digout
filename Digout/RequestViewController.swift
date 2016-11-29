@@ -52,6 +52,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.loadIndicator.isHidden = false
         self.getPins()
         
+        // Remove all visible pins on the map
         let pins = self.mapView.annotations
         for pin in pins{
             self.mapView.removeAnnotation(pin)
@@ -136,21 +137,31 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func getPins(){
         self.lmapData.getPins { (success) in
             
-            if success == false {
-                print("TEST: pins gotten")
+            if success == true {
+                print("pins loaded")
                 
                 let pins = self.defaults.object(forKey: "responseData") as! NSDictionary
                 
                 let jsonData = JSON(pins)
+                 //print(jsonData)
                 
                 self.placeMapPins(rawData: jsonData)
+                
+            }else{
+                
+                print("pins were not loaded")
             }
         }
     }
     
     func placeMapPins(rawData: JSON){
         
-        let pins = rawData["request_locations"].arrayValue
+        print("resulting pins:::")
+        
+        let pins = rawData["results"][0]["request_locations"].arrayValue
+        
+        print(pins)
+        
         var placed = 0
         
         for pin in pins{

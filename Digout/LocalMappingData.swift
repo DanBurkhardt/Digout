@@ -19,20 +19,28 @@ class LocalMappingData {
     let defaults = UserDefaults.standard
     
     func getPins( completion: @escaping (_ success: Bool) -> Void) {
+        
         var obj: JSON = [:]
         
+        // Pull out local email stored and form obj
         obj["email"].string = (defaults.object(forKey: "userEmail") as! String)
         
-        self.request.getRequest(apiData.digoutRequestURL, JSON: obj){ (success) in
+        // Fire off request
+        self.request.getRequest(apiData.digoutRequestURL, data: obj){ (success) in
             
-            print("Local mapping get pins: \(success)")
+            print("Local mapping get pins success: \(success)")
             
             // Use a failing completion for now
-            if success == false{
-                //print("success was false, fetching")
-                let localData = self.defaults.object(forKey: "responseData") as! NSDictionary
+            if success{
                 
-                // Pass back false completion for now
+                let localData = self.defaults.object(forKey: "responseData") as! NSDictionary
+                //print(localData)
+                
+                completion(true)
+                
+            }else if !success{
+                
+                
                 completion(false)
             }
             

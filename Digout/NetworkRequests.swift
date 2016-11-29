@@ -20,33 +20,53 @@ class NetworkRequests {
     var errorData: JSON = [:]
     
     /// A generic function that takes a URL and a SwiftyJSON object, executing a GET request on that oject
-    func getRequest(_ url: String, JSON: JSON, completion: @escaping (_ success: Bool) -> Void) {
-        print("get request")
+    func getRequest(_ url: String, data: JSON, completion: @escaping (_ success: Bool) -> Void) {
+        print("getting request..")
         
-        Alamofire.request(url, method: .get, parameters: JSON.dictionary).responseJSON { response in
+        Alamofire.request(url, method: .get, parameters: data.dictionary).responseJSON { response in
             
             //TODO: build the ability to check for error code
             //TODO: return a boolean status based on the error code
             //print(response.response)
             
-            let string = response.description
-            print(string)
+            print(response)
             
-            
-            print(response.data)
-            
-            if let JSON = response.result.value {
-                //print("JSON: \(JSON)")
                 
-                // Set the type as Data and store locally
-                self.defaults.set(response.result.value, forKey: "responseData")
-            }
+                if let responseValue = response.result.value {
+                    
+                    var dict = responseValue as! NSDictionary
+                    var jsonObj = JSON(dict)
+                    
+                    // For now, use the indication of a timestamp to check for non-error response
+                    //TODO: replace this when jc implements the error code
+                    if jsonObj[0]["timestamp"].string != ""{
+                        
+                        print("get request was successful")
+                        // Set the type as Data and store locally
+                        self.defaults.set(response.result.value, forKey: "responseData")
+                        
+                        completion(true)
+                    }else{
+                        
+                        // Print for debugging and return
+                        print("get request was not successful")
+                        print(response)
+                        print(response.result)
+                        completion(false)
+                    }
+                
+                }else{
+                    
+                    print("JSON data could not be found or stored in response")
+                    // Edit this to complete for both conditions
+                    completion(false)
+                }
             
+    
             
-            // Edit this to complete for both conditions
-            completion(false)
-        }
-    }
+        }//END ALAMOFIRE TASK
+        
+    }// END FUNC
     
     /// A generic function that takes a URL and a SwiftyJSON object, executing a POST request on that oject
     func postRequest(_ url: String, JSON: JSON, completion: @escaping (_ success: Bool) -> Void) {
@@ -102,7 +122,6 @@ class NetworkRequests {
             //Uncomment to see raw server response
             let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print(dataString)
-            
             
             self.storeResponseData(data: data!)
             completion(true)

@@ -100,7 +100,7 @@ class UserAccountManager {
         userLoginObject["timestamp"].double = utilities.getEpochTime()
         
         // Attempts to authenticate the user
-        self.request.getRequest(apiInfo.accountsURL, JSON: userLoginObject) { (success) in
+        self.request.getRequest(apiInfo.accountsURL, data: userLoginObject) { (success) in
             print("attempting to authenticate user")
             if success == true{
                 // Store in defaults
@@ -130,7 +130,7 @@ class UserAccountManager {
         userLoginObject["timestamp"].double = utilities.getEpochTime()
         
         // Attempts to reauthenticate the user
-        self.request.getRequest(apiInfo.accountsURL, JSON: userLoginObject) { (success) in
+        self.request.getRequest(apiInfo.accountsURL, data: userLoginObject) { (success) in
             print("attempting to reauthenticate user")
             completion(success)
         }
