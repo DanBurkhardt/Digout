@@ -42,13 +42,13 @@ class OnboardSignupViewController: UIViewController {
     func checkForFieldCompletion(){
         //TODO: add logic for checking that all fields are filled out
         
-        self.activityIndicator.isHidden = false
-        
         // Checking for completion
         if self.usernameField.text == ""{
             modifyErrorMessage(message: "username cannot be blank")
         }else if self.emailField.text == ""{
             modifyErrorMessage(message: "email cannot be blank")
+        }else if !checkEmail(email: self.emailField.text!){
+            modifyErrorMessage(message: "email must be a valid email address")
         }else if self.passwordField.text == ""{
             modifyErrorMessage(message: "password field cannot be blank")
         }else if self.confirmPasswordField.text == ""{
@@ -67,17 +67,25 @@ class OnboardSignupViewController: UIViewController {
         }
     }
     
+    /// Ensures email is actually an email address
+    func checkEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
     /// Compares passwords for verification
     func comparePasswords(){
         if passwordField.text != confirmPasswordField.text{
             self.modifyErrorMessage(message: "passwords do not match")
         }else{
+            clearErrorMessage()
             makeUserObject()
         }
     }
 
     /// Uses the `UserAccountManager` class to prepare and submit a user profile object
     func makeUserObject(){
+        self.activityIndicator.isHidden = false
         
         // Submit the user profile object
         self.accountManager.createUserObject(username: usernameField.text!, email: emailField.text!, rawPassword: passwordField.text!){ (success) in
@@ -87,12 +95,14 @@ class OnboardSignupViewController: UIViewController {
             if success {
                 
                 self.activityIndicator.isHidden = true
-                
+            
                 // This is necessary in order to switch operations back to the main queue
                 // had this issue: http://stackoverflow.com/questions/26947608/waituntilalltasksarefinished-error-swift
                 OperationQueue.main.addOperation {
                     self.performSegue(withIdentifier: "navToHome", sender: self)
                 }
+                
+                self.activityIndicator.isHidden = true
                 
             }else if !(success){
                 
@@ -101,7 +111,6 @@ class OnboardSignupViewController: UIViewController {
                 let errorData: JSON = self.accountManager.errorData
                 let message = errorData["message"].string
                 self.errorMessage.text = message
-                
                 
             }
         }
@@ -123,6 +132,7 @@ class OnboardSignupViewController: UIViewController {
         super.viewDidLoad()
         
         self.activityIndicator.isHidden = true
+        clearErrorMessage()
         // Do any additional setup after loading the view.
     }
     

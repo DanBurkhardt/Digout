@@ -2,13 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/danielburkhardt/Git/Giganom/Digout/digout.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:digout.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Digout.xcodeproj">
