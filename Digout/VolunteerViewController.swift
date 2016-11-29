@@ -11,7 +11,6 @@ import MapKit
 
 class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    
     let manager = CLLocationManager()
     
     var userLocation = CLLocationCoordinate2D()
@@ -49,6 +48,10 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.async {
+            print("Hello")
+        }
         
         self.manager.delegate = self
         self.manager.desiredAccuracy = kCLLocationAccuracyBest

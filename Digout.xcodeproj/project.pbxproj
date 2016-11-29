@@ -20,7 +20,7 @@
 		1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
 		1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		76ADBA2E1DC1A53600AF99CC /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */; };
+		76ADBA2E1DC1A53600AF99CC /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* NetworkRequests.swift */; };
 		C5573E6125E7E934390B089D /* Pods_Digout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E65C2AFFE8B7D2840A50FC /* Pods_Digout.framework */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
 		C903F1051C651E4300897C55 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1041C651E4300897C55 /* AudioToolbox.framework */; };
@@ -98,7 +98,7 @@
 		1AEA4E841DC03F220029AA3A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		24E65C2AFFE8B7D2840A50FC /* Pods_Digout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		76ADBA2D1DC1A53600AF99CC /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 		C903F1021C651E3900897C55 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C903F1041C651E4300897C55 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C903F1061C651E4900897C55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -188,7 +188,7 @@
 		1A7D78F01C65985C007CAFE4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				76ADBA2D1DC1A53600AF99CC /* URLRequest.swift */,
+				76ADBA2D1DC1A53600AF99CC /* NetworkRequests.swift */,
 				C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */,
 				C95A6D121DCDF91200D26DFC /* DigoutRequestManager.swift */,
 				C95A6D141DCE0AB900D26DFC /* Utilities.swift */,
@@ -552,7 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */,
-				76ADBA2E1DC1A53600AF99CC /* URLRequest.swift in Sources */,
+				76ADBA2E1DC1A53600AF99CC /* NetworkRequests.swift in Sources */,
 				1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */,
 				C91F08DA1DC2A92800BAFABF /* OnboardLoginViewController.swift in Sources */,
 				1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */,

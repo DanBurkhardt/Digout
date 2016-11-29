@@ -13,7 +13,7 @@ class OnboardViewController: UIViewController {
     ///MARK: Class variables
     let defaults = UserDefaults.standard
     let apiInfo = APIInfo()
-    let  request = URLRequest()
+    let request = NetworkRequests()
 
 
     ///MARK: Programmer defined functions

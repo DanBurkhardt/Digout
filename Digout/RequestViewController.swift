@@ -62,12 +62,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     
     //MARK: Class Variables
-    let manager = CLLocationManager()
     var localPinArray = [CLLocationCoordinate2D]()
     let requestManager = DigoutRequestManager()
     let styles = GlobalDefaults.styles()
     let lmapData = LocalMappingData()
     let defaults = UserDefaults.standard
+    let manager = CLLocationManager()
     
     
     //MARK: Programmer defined functions
@@ -197,25 +197,29 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Do any additional setup after loading the view.
         
-        self.manager.delegate = self
-        self.manager.desiredAccuracy = kCLLocationAccuracyBest
         
-        var status = CLLocationManager.authorizationStatus()
-        if status == .notDetermined || status == .denied || status == .authorizedWhenInUse{
-            print("status was not approved for location services")
+        // Adding to main queue explicitly due to a bug where this did not work
+        DispatchQueue.main.async {
             
-            self.manager.requestAlwaysAuthorization()
+            self.manager.delegate = self
+            self.manager.desiredAccuracy = kCLLocationAccuracyBest
+            
+            var status = CLLocationManager.authorizationStatus()
+            if status == .notDetermined || status == .denied || status == .authorizedWhenInUse{
+                print("status was not approved for location services")
+                
+                self.manager.requestAlwaysAuthorization()
+                self.manager.startUpdatingLocation()
+            }
+            
+            self.manager.startUpdatingHeading()
             self.manager.startUpdatingLocation()
+            
+            // Setup Mapview
+            self.mapView.delegate = self
+            self.mapView.mapType = MKMapType.standard
+            self.mapView.showsUserLocation = true
         }
-        
-        self.manager.startUpdatingHeading()
-        self.manager.startUpdatingLocation()
-        
-        
-        // Setup Mapview
-        self.mapView.delegate = self
-        self.mapView.mapType = MKMapType.standard
-        self.mapView.showsUserLocation = true
 
         
         self.view.backgroundColor = styles.standardBlue

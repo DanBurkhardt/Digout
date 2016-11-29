@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SwiftyJSON
+import MapKit
 
 class OnboardSignupViewController: UIViewController {
 
@@ -83,19 +84,25 @@ class OnboardSignupViewController: UIViewController {
             
             print("process has returned for user account creation, status: \(success)")
             
-            if success == true {
-                
-                    self.activityIndicator.isHidden = true
-                
-            }else if success == false{
+            if success {
                 
                 self.activityIndicator.isHidden = true
                 
-                //TODO: present the error to the user
+                // This is necessary in order to switch operations back to the main queue
+                // had this issue: http://stackoverflow.com/questions/26947608/waituntilalltasksarefinished-error-swift
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "navToHome", sender: self)
+                }
                 
-                // Temporarily set to enable further development
-                self.performSegue(withIdentifier: "navToHome", sender: self)
+            }else if !(success){
+                
                 self.activityIndicator.isHidden = true
+                
+                let errorData: JSON = self.accountManager.errorData
+                let message = errorData["message"].string
+                self.errorMessage.text = message
+                
+                
             }
         }
     }
@@ -114,9 +121,13 @@ class OnboardSignupViewController: UIViewController {
     ///MARK: Default Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.activityIndicator.isHidden = true
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //self.performSegue(withIdentifier: "navToHome", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

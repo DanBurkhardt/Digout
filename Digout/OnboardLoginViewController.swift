@@ -78,12 +78,17 @@ class OnboardLoginViewController: UIViewController {
             if success == true {
                 self.activityIndicator.isHidden = true
                 self.defaults.set(true, forKey: "userIsAuthenticated")
-                self.performSegue(withIdentifier: "navToHome", sender: self)
+                
+                // This is necessary in order to switch operations back to the main queue
+                // had this issue: http://stackoverflow.com/questions/26947608/waituntilalltasksarefinished-error-swift
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "navToHome", sender: self)
+                }
             }else{
                 self.activityIndicator.isHidden = true
                 self.defaults.set(false, forKey: "userIsAuthenticated")
-                // Temporary until login is implemented
-                self.performSegue(withIdentifier: "navToHome", sender: self)
+                
+                //TODO: check for error code status
             }
         }
     }

@@ -15,7 +15,7 @@ class DigoutRequestManager{
     
     //MARK: Class variables
     let apiInfo = APIInfo()
-    let request = URLRequest()
+    let request = NetworkRequests()
     let defaults = UserDefaults.standard
     let userAcctManager = UserAccountManager()
     let utilities = Utilities()
@@ -56,7 +56,7 @@ class DigoutRequestManager{
         print(digoutRequestObject.description)
         
         //Post the request
-        self.request.postRequest(apiInfo.digoutRequestURL, JSON: digoutRequestObject){ (success) in
+        self.request.postRequestWithBody(apiInfo.digoutRequestURL, JSON: digoutRequestObject){ (success) in
         
             if success == true{
                 completion(true)

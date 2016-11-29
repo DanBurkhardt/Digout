@@ -14,13 +14,14 @@ class LocalMappingData {
     
     var requestorPins: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     
-    let request = URLRequest()
+    let request = NetworkRequests()
     let apiData = APIInfo()
     let defaults = UserDefaults.standard
     
     func getPins( completion: @escaping (_ success: Bool) -> Void) {
         var obj: JSON = [:]
-        obj["email"].string = "testDan@test.com"
+        
+        obj["email"].string = (defaults.object(forKey: "userEmail") as! String)
         
         self.request.getRequest(apiData.digoutRequestURL, JSON: obj){ (success) in
             

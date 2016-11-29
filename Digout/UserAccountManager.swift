@@ -14,10 +14,13 @@ class UserAccountManager {
     
     //MARK: Class variables
     let apiInfo = APIInfo()
-    let request = URLRequest()
+    let request = NetworkRequests()
     let defaults = UserDefaults.standard
     let utilities = Utilities()
-
+    
+    //MARK: Holders for data to be accessed after completion status
+    var responseData: JSON = [:]
+    var errorData: JSON = [:]
     
     //MARK: Functions concerning new user signups and login a user into the system
     ///Function for creating the user profile object
@@ -54,16 +57,28 @@ class UserAccountManager {
         userProfileObject["timestamp"].double = utilities.getEpochTime()
         
         // posts the user profile object to the server
-        self.request.postRequest(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
+        self.request.postRequestWithBody(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
             
             print("posting user profile object")
-            print(userProfileObject)
+            //print(userProfileObject)
             
-            //TODO: Return here and build conditionals based on each completion status
-            // For now, proceed no matter what the outcome is
-            self.storeUserLogin(email: email, passhash: passhash)
-            
-            completion(success)
+            if success{
+                
+                // Store things
+                self.storeUserLogin(email: email, passhash: passhash)
+                
+                // Retrieve data ref to pass along
+                self.responseData = self.request.getResponseData()
+
+                completion(true)
+                
+            }else if !(success){
+                
+                // Retrieve data ref to pass along
+                self.errorData = self.request.getErrorData()
+                
+                completion(false)
+            }
         }
     }//END CREATE USER FUNCTION
     
@@ -131,6 +146,7 @@ class UserAccountManager {
         let userLogin = ["email": email, "passhash": passhash]
         
         defaults.set(userLogin, forKey: "userLogin")
+        defaults.set(email, forKey: "userEmail")
         
         // Also add a bool locally to enable the user to cache login status
         defaults.set(true, forKey: self.apiInfo.userAuthenticationString)
