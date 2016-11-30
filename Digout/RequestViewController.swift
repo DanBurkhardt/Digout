@@ -21,7 +21,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func pinPlacementFinished(_ sender: AnyObject) {
         
         // Submit the digout request to the backend
-        self.submitDigoutRequest()
+        self.triggerRatingDialog()
     }
     
     @IBAction func settings(_ sender: Any) {
@@ -64,6 +64,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     //MARK: Class Variables
     var localPinArray = [CLLocationCoordinate2D]()
+    var rating = 0
     let requestManager = DigoutRequestManager()
     let styles = GlobalDefaults.styles()
     let lmapData = LocalMappingData()
@@ -72,9 +73,66 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     
     //MARK: Programmer defined functions
+    func triggerRatingDialog(){
+        let alertController = UIAlertController(title: nil, message: "Please rate the difficulty of your request", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        let rating5 = UIAlertAction(title: "5", style: .default) { (action) in
+            self.rating = 5
+            self.triggerConfirmationDialog()
+        }
+        alertController.addAction(rating5)
+        
+        let rating4 = UIAlertAction(title: "4", style: .default) { (action) in
+            self.rating = 4
+            self.triggerConfirmationDialog()
+        }
+        alertController.addAction(rating4)
+        
+        let rating3 = UIAlertAction(title: "3", style: .default) { (action) in
+            self.rating = 3
+            self.triggerConfirmationDialog()
+        }
+        alertController.addAction(rating3)
+        
+        let rating2 = UIAlertAction(title: "2", style: .default) { (action) in
+            self.rating = 2
+            self.triggerConfirmationDialog()
+        }
+        alertController.addAction(rating2)
+        
+        let rating1 = UIAlertAction(title: "1", style: .default) { (action) in
+            self.rating = 1
+            self.triggerConfirmationDialog()
+        }
+        alertController.addAction(rating1)
+        
+        self.present(alertController, animated: true) {
+        }
+    }
+    
+    func triggerConfirmationDialog(){
+        let alertController = UIAlertController(title: "Confirm request details:", message: "Crossings: \(localPinArray.count)\nDifficulty: \(rating)", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (action) in
+            self.submitDigoutRequest()
+        }
+        alertController.addAction(submitAction)
+        
+        self.present(alertController, animated: true) {
+        }
+    }
+    
     func submitDigoutRequest(){
         
-        self.requestManager.createDigoutRequest(locations: localPinArray, rating: 3){ (success) in
+        self.requestManager.createDigoutRequest(locations: localPinArray, rating: rating){ (success) in
             
             if success{
                 print("digout request success")

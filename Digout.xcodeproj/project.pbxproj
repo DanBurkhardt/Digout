@@ -450,7 +450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */;
+			buildConfigurationList = C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -825,7 +825,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "digout" */ = {
+		C9A302C01C651C7700A2EB7F /* Build configuration list for PBXProject "Digout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9A302EB1C651C7700A2EB7F /* Debug */,
