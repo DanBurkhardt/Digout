@@ -23,7 +23,11 @@ class NetworkRequests {
     func getRequest(_ url: String, data: JSON, completion: @escaping (_ success: Bool) -> Void) {
         print("getting request..")
         
-        Alamofire.request(url, method: .get, parameters: data.dictionary).responseJSON { response in
+        // Take this data and add the token to the request when it exists
+        var addedToken = self.addTokenToRequest(data: data)
+        var dictionary = addedToken.dictionary
+        
+        Alamofire.request(url, method: .get, parameters: dictionary).responseJSON { response in
             
             //TODO: build the ability to check for error code
             //TODO: return a boolean status based on the error code
@@ -76,7 +80,10 @@ class NetworkRequests {
     func postRequest(_ url: String, JSON: JSON, completion: @escaping (_ success: Bool) -> Void) {
         print("post request")
         
-        let params : Parameters = JSON.dictionary!
+        
+        // Take this data and add the token to the request when it exists
+        var addedToken = self.addTokenToRequest(data: JSON)
+        var params = addedToken.dictionary
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
             
@@ -98,6 +105,8 @@ class NetworkRequests {
     func postRequestWithBody(_ url: String, postJSON: JSON, completion: @escaping (_ success: Bool) -> Void){
         
         print("posting request with HTTPBody")
+        // Take this data and add the token to the request when it exists
+        var tokenAddedParams = self.addTokenToRequest(data: postJSON)
         
         let formedURL:NSURL = NSURL(string: url)!
         let session = URLSession.shared
@@ -107,7 +116,7 @@ class NetworkRequests {
         request.httpMethod = "POST"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
-        let paramString = postJSON.description
+        let paramString = tokenAddedParams.description
         request.httpBody = paramString.data(using: String.Encoding.utf8)
         
         
@@ -134,12 +143,22 @@ class NetworkRequests {
         }
         
         task.resume()
-        
-        
     }
     
     
     ///MARK: Data Storage and Retrieval Functions
+    func addTokenToRequest(data: JSON)-> JSON{
+        
+        var tempDict = data
+        let userToken = defaults.object(forKey: "userToken")
+        
+        if userToken != nil{
+            tempDict["token"].string  = userToken as! String
+            print("Token added to request: \(userToken)")
+        }
+        
+        return tempDict
+    }
     
     /// Stores a data object locally by wrapping as SwiftyJSON
     func storeResponseData(data: Data){
