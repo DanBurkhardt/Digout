@@ -37,6 +37,9 @@ class NetworkRequests {
                     var dict = responseValue as! NSDictionary
                     var jsonObj = JSON(dict)
                     
+                    // Set the response info on the class
+                    self.responseData = jsonObj
+                    
                     // For now, use the indication of a timestamp to check for non-error response
                     //TODO: replace this when jc implements the error code
                     if jsonObj[0]["timestamp"].string != ""{
@@ -46,6 +49,7 @@ class NetworkRequests {
                         self.defaults.set(response.result.value, forKey: "responseData")
                         
                         completion(true)
+                        
                     }else{
                         
                         // Print for debugging and return

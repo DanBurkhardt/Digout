@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OnboardLoginViewController: UIViewController {
 
@@ -85,21 +86,18 @@ class OnboardLoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "navToHome", sender: self)
                 }
             }else{
-                self.activityIndicator.isHidden = true
-                
-                //TODO: check for error code status
+                OperationQueue.main.addOperation {
+                    self.activityIndicator.isHidden = true
+                    
+                    print("message from acct manager")
+                    let errorData: JSON = self.accountManager.errorData
+                    let errorMsg = JSON.parse(errorData.description)
+                    
+                    self.errorMessage.text = errorMsg["message"].string
+                }
             }
         }
     }
-
-    //TODO: Make function for calling user accounts class for authentication with a completion handler
-    //TODO: Add activity indicator "show" function to unhide overlay while processing
-    //TODO: Add activity indicator "hide" function to hide overlay after the processing is complete
-    
-    
-    //TODO: Make function for "Login completion" that sets a bool in defaults and perform nav to home viewcontroller
-    
-    
     
     
     ///MARK: Default Class Functions

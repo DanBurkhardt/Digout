@@ -62,18 +62,19 @@ class UserAccountManager {
             print("posting user profile object")
 
             // Retrieve data ref to pass along
-            self.responseData = self.request.getResponseData()
+            self.responseData = JSON.parse(self.request.getResponseData().description)
             print("response")
             print(self.responseData)
             
             if success{
                 
                 
-                let acctID = self.responseData["accountid"].string
-                if acctID != nil {
+                let userToken = self.responseData["token"].string
+                
+                if userToken != nil {
                     
                     // Store things
-                    self.storeUserLogin(email: email, passhash: passhash)
+                    self.storeUserLogin(email: email, passhash: passhash, token: userToken!)
                     completion(true)
                     
                 }else{
@@ -116,12 +117,30 @@ class UserAccountManager {
         // Attempts to authenticate the user
         self.request.getRequest(apiInfo.accountsURL, data: userLoginObject) { (success) in
             print("attempting to authenticate user")
+            
+            // Retrieve data ref to pass along
+            self.responseData = JSON.parse(self.request.getResponseData().description)
+            print("response")
+            print(self.responseData)
+            
             if success == true{
-                // Store in defaults
-                self.storeUserLogin(email: email, passhash: passhash)
                 
-                // Complete the entire process by returning a bool to the parent function
-                completion(true)
+                let userToken = self.responseData["token"].string
+                
+                if userToken != nil {
+                    
+                    // Store things
+                    self.storeUserLogin(email: email, passhash: passhash, token: userToken!)
+                    completion(true)
+                    
+                }else{
+                    
+                    print("error response")
+                    self.errorData = self.responseData
+                    print(self.errorData)
+                    completion(false)
+                }
+
             }else{
                 // Error should have been displayed or passed in another way
                 // Return the status
@@ -154,13 +173,14 @@ class UserAccountManager {
     //MARK: Functions for interacting with the local system
     
     ///Function for storing the user profile object locally
-    func storeUserLogin(email: String, passhash: String){
+    func storeUserLogin(email: String, passhash: String, token: String){
         
         // Create and store dictionary of user login details
         let userLogin = ["email": email, "passhash": passhash]
         
         defaults.set(userLogin, forKey: "userLogin")
         defaults.set(email, forKey: "userEmail")
+        defaults.set(token, forKey: "userToken")
         
         // Also add a bool locally to enable the user to cache login status
         defaults.set(true, forKey: self.apiInfo.userAuthenticationString)

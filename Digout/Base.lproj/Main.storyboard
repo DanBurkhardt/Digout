@@ -399,7 +399,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up for Digout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRD-53-UCG">
-                                <rect key="frame" x="80.5" y="174" width="214" height="37"/>
+                                <rect key="frame" x="81" y="174" width="214" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="XdJ-gQ-tIm"/>
                                     <constraint firstAttribute="width" constant="214" id="hmh-UO-HQd"/>
@@ -423,7 +423,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8o8-ce-GLe">
-                                <rect key="frame" x="59.5" y="282" width="256" height="1"/>
+                                <rect key="frame" x="60" y="282" width="256" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="E4t-7b-qRH"/>
@@ -431,7 +431,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-ja-fJ6">
-                                <rect key="frame" x="59.5" y="261" width="256" height="18"/>
+                                <rect key="frame" x="60" y="261" width="256" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="PA2-TR-wWZ"/>
                                     <constraint firstAttribute="width" constant="256" id="vKE-Za-8MI"/>
@@ -635,15 +635,8 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error placeholder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o95-y8-Qbj">
-                                <rect key="frame" x="57" y="500" width="261" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-ab-Un0">
-                                <rect key="frame" x="101" y="429" width="172" height="36"/>
+                                <rect key="frame" x="101" y="407" width="172" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="4Jv-hg-Pfi"/>
                                     <constraint firstAttribute="height" constant="36" id="HvH-Aa-KlE"/>
@@ -677,16 +670,28 @@
                                     <constraint firstAttribute="height" constant="37" id="zdB-Lo-Xlr"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error placeholder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o95-y8-Qbj">
+                                <rect key="frame" x="57" y="507" width="261" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="261" id="ndt-Yo-uiw"/>
+                                    <constraint firstAttribute="height" constant="69" id="w1O-0A-H2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oAT-j3-83i" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="BbG-Fz-rKD"/>
-                            <constraint firstItem="oAT-j3-83i" firstAttribute="top" secondItem="Oxf-ab-Un0" secondAttribute="bottom" constant="8" id="JqF-e7-T9Z"/>
+                            <constraint firstItem="oAT-j3-83i" firstAttribute="top" secondItem="Oxf-ab-Un0" secondAttribute="bottom" constant="30" id="JqF-e7-T9Z"/>
                             <constraint firstItem="1Ub-G4-dcM" firstAttribute="top" secondItem="Kwd-xy-bXy" secondAttribute="bottom" constant="8" id="Nxf-Yl-Rm9"/>
                             <constraint firstItem="Oxf-ab-Un0" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="TJI-xC-4V4"/>
                             <constraint firstItem="1Ub-G4-dcM" firstAttribute="leading" secondItem="dcc-Yg-ygE" secondAttribute="leadingMargin" id="dKJ-9r-PiD"/>
+                            <constraint firstItem="o95-y8-Qbj" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="dRJ-dk-PKr"/>
                             <constraint firstItem="9fh-To-toY" firstAttribute="centerX" secondItem="dcc-Yg-ygE" secondAttribute="centerX" id="ocQ-bF-hgu"/>
                             <constraint firstItem="9fh-To-toY" firstAttribute="top" secondItem="oAT-j3-83i" secondAttribute="bottom" constant="74" id="tPY-aB-jMP"/>
+                            <constraint firstItem="9fh-To-toY" firstAttribute="top" secondItem="o95-y8-Qbj" secondAttribute="bottom" constant="8" id="ujm-0m-1oX"/>
                             <constraint firstItem="23u-nv-msa" firstAttribute="top" secondItem="9fh-To-toY" secondAttribute="bottom" constant="20" id="wrL-X0-xOS"/>
                         </constraints>
                     </view>
@@ -714,6 +719,6 @@
         <image name="xround" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sIc-ub-aSU"/>
+        <segue reference="pfe-sz-jOU"/>
     </inferredMetricsTieBreakers>
 </document>
