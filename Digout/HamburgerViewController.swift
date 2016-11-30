@@ -9,7 +9,18 @@
 import UIKit
 
 class HamburgerViewController: UIViewController {
-
+    
+    var defaults = UserDefaults.standard
+    let apiInfo = APIInfo()
+    
+    @IBAction func logout(_ sender: Any) {
+        defaults.removeObject(forKey: "userEmail")
+        defaults.removeObject(forKey: "userLogin")
+        defaults.removeObject(forKey: self.apiInfo.userAuthenticationString)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

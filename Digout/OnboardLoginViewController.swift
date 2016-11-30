@@ -78,7 +78,6 @@ class OnboardLoginViewController: UIViewController {
             
             if success == true {
                 self.activityIndicator.isHidden = true
-                self.defaults.set(true, forKey: "userIsAuthenticated")
                 
                 // This is necessary in order to switch operations back to the main queue
                 // had this issue: http://stackoverflow.com/questions/26947608/waituntilalltasksarefinished-error-swift
@@ -87,7 +86,6 @@ class OnboardLoginViewController: UIViewController {
                 }
             }else{
                 self.activityIndicator.isHidden = true
-                self.defaults.set(false, forKey: "userIsAuthenticated")
                 
                 //TODO: check for error code status
             }
