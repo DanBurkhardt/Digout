@@ -56,7 +56,7 @@ class DigoutRequestManager{
         print(digoutRequestObject.description)
         
         //Post the request
-        self.request.postRequestWithBody(apiInfo.digoutRequestURL, JSON: digoutRequestObject){ (success) in
+        self.request.postRequestWithBody(apiInfo.digoutRequestURL, postJSON: digoutRequestObject){ (success) in
         
             if success == true{
                 completion(true)

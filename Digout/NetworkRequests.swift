@@ -91,7 +91,7 @@ class NetworkRequests {
     }
     
     
-    func postRequestWithBody(_ url: String, JSON: JSON, completion: @escaping (_ success: Bool) -> Void){
+    func postRequestWithBody(_ url: String, postJSON: JSON, completion: @escaping (_ success: Bool) -> Void){
         
         print("posting request with HTTPBody")
         
@@ -103,7 +103,7 @@ class NetworkRequests {
         request.httpMethod = "POST"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
-        let paramString = JSON.description
+        let paramString = postJSON.description
         request.httpBody = paramString.data(using: String.Encoding.utf8)
         
         
@@ -113,17 +113,18 @@ class NetworkRequests {
                 print("error posting request")
                 print(error)
                 
-                self.storeErrorData(data: data!)
-                
                 completion(false)
                 return
             }
             
             //Uncomment to see raw server response
-            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(dataString)
+            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as! String
+            //print("dataString")
             
-            self.storeResponseData(data: data!)
+            //print("storing response as JSON")
+            self.responseData = JSON(dataString)
+            //print(self.responseData)
+            
             completion(true)
             
         }
@@ -139,6 +140,8 @@ class NetworkRequests {
     /// Stores a data object locally by wrapping as SwiftyJSON
     func storeResponseData(data: Data){
         self.responseData = JSON(data)
+        
+        print("stored response data: \(self.responseData)")
     }
     
     /// Stores an error response object locally by wrapping as SwiftyJSON
@@ -149,6 +152,9 @@ class NetworkRequests {
     /// Returns the response from the URL Request
     func getResponseData()->JSON{
         return self.responseData
+        
+        print("fetched response data: \(self.responseData)")
+
     }
     
     // Returns the error response

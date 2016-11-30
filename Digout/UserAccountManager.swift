@@ -57,20 +57,34 @@ class UserAccountManager {
         userProfileObject["timestamp"].double = utilities.getEpochTime()
         
         // posts the user profile object to the server
-        self.request.postRequestWithBody(apiInfo.accountsURL, JSON: userProfileObject) { (success) in
+        self.request.postRequestWithBody(apiInfo.accountsURL, postJSON: userProfileObject) { (success) in
             
             print("posting user profile object")
-            //print(userProfileObject)
+
+            // Retrieve data ref to pass along
+            self.responseData = self.request.getResponseData()
+            print("response")
+            print(self.responseData)
             
             if success{
                 
-                // Store things
-                self.storeUserLogin(email: email, passhash: passhash)
                 
-                // Retrieve data ref to pass along
-                self.responseData = self.request.getResponseData()
-
-                completion(true)
+                let acctID = self.responseData["accountid"].string
+                if acctID != nil {
+                    
+                    // Store things
+                    self.storeUserLogin(email: email, passhash: passhash)
+                    completion(true)
+                    
+                }else{
+                    
+                    print("error response")
+                    self.errorData = self.responseData
+                    print(self.errorData)
+                    completion(false)
+                }
+                
+                
                 
             }else if !(success){
                 

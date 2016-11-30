@@ -488,9 +488,9 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="error msg" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBI-Mz-Q8l">
-                                <rect key="frame" x="57" y="470" width="261" height="59"/>
+                                <rect key="frame" x="57" y="470" width="261" height="106"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="9Gg-pT-Wry"/>
+                                    <constraint firstAttribute="height" constant="106" id="9Gg-pT-Wry"/>
                                     <constraint firstAttribute="width" constant="261" id="EZw-zv-Hxv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>

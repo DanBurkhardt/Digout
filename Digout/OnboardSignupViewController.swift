@@ -93,12 +93,10 @@ class OnboardSignupViewController: UIViewController {
             print("process has returned for user account creation, status: \(success)")
             
             if success {
-                
-                self.activityIndicator.isHidden = true
-            
                 // This is necessary in order to switch operations back to the main queue
                 // had this issue: http://stackoverflow.com/questions/26947608/waituntilalltasksarefinished-error-swift
                 OperationQueue.main.addOperation {
+                    self.activityIndicator.isHidden = true
                     self.performSegue(withIdentifier: "navToHome", sender: self)
                 }
                 
@@ -106,12 +104,15 @@ class OnboardSignupViewController: UIViewController {
                 
             }else if !(success){
                 
-                self.activityIndicator.isHidden = true
-                
-                let errorData: JSON = self.accountManager.errorData
-                let message = errorData["message"].string
-                self.errorMessage.text = message
-                
+                OperationQueue.main.addOperation {
+                    self.activityIndicator.isHidden = true
+                    
+                    print("message from acct manager")
+                    let errorData: JSON = self.accountManager.errorData
+                    let errorMsg = JSON.parse(errorData.description)
+                    
+                    self.errorMessage.text = errorMsg["message"].string
+                }
             }
         }
     }
