@@ -146,7 +146,9 @@ class NetworkRequests {
     }
     
     
-    ///MARK: Data Storage and Retrieval Functions
+    ///MARK: Data Storage, Retrieval and Misc Functions
+    
+    /// Adds the locally stored token to all requests if stored
     func addTokenToRequest(data: JSON)-> JSON{
         
         var tempDict = data
@@ -155,6 +157,8 @@ class NetworkRequests {
         if userToken != nil{
             tempDict["token"].string  = userToken as! String
             print("Token added to request: \(userToken)")
+        }else{
+            print("local token value was nil")
         }
         
         return tempDict
