@@ -431,33 +431,46 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             let timeEstimate = (15 * numberOfItemsInRequest!)
             cell.estimatedTimeLabel.text = "Estimated time: \(timeEstimate)mins"
             
-            // Only update the distance for the first item in the array
+  
             
-            // Use this to compute the user's relative location to the location
-            // of the first item in the result array
-            let userLocation = self.mapView.userLocation.location
+            var status = CLLocationManager.authorizationStatus()
+            if status == .denied || status == .notDetermined || status == .authorizedWhenInUse{
+                print("user location status could not be determined, not labelling cell")
+                cell.distanceLabel.text = ""
                 
-            // Convert the raw values of the item
-            let firstItemLat = requestItem["request_locations"][0]["lat"].double
-            let firstItemLong = requestItem["request_locations"][0]["long"].double
+            }else{
                 
-            var firstItemLocation = CLLocation(latitude: firstItemLat!, longitude: firstItemLong!)
+                // Use this to compute the user's relative location to the location
+                // of the first item in the result array
+                let userLocation = self.mapView.userLocation.location
                 
-            let estDistanceMeters: CLLocationDistance = (userLocation?.distance(from: firstItemLocation))!
-            let estDistanceMiles = estDistanceMeters / 1609.344
-                
-            var estTotalDistance = Int(estDistanceMiles)
-            var totalDistanceType = "mi"
-                
-            if estDistanceMiles < 0.5{
-                let feet = estDistanceMiles * 5280
+                // Convert the raw values of the item
+                if let firstItemLat = requestItem["request_locations"][0]["lat"].double{
                     
-                estTotalDistance = Int(feet)
-                totalDistanceType = "ft"
+                    let firstItemLong = requestItem["request_locations"][0]["long"].double
+                    
+                    var firstItemLocation = CLLocation(latitude: firstItemLat, longitude: firstItemLong!)
+                    
+                    let estDistanceMeters: CLLocationDistance = (userLocation?.distance(from: firstItemLocation))!
+                    let estDistanceMiles = estDistanceMeters / 1609.344
+                    
+                    var estTotalDistance = Int(estDistanceMiles)
+                    var totalDistanceType = "mi"
+                    
+                    if estDistanceMiles < 0.5{
+                        let feet = estDistanceMiles * 5280
+                        
+                        estTotalDistance = Int(feet)
+                        totalDistanceType = "ft"
+                    }
+                    
+                    //print("estimated distance between points: \(estTotalDistance)\(totalDistanceType)")
+                    cell.distanceLabel.text = "\(estTotalDistance)\(totalDistanceType)"
+                    
+                    
+                }
+                
             }
-                    
-                //print("estimated distance between points: \(estTotalDistance)\(totalDistanceType)")
-            cell.distanceLabel.text = "\(estTotalDistance)\(totalDistanceType)"
             
         }
         
