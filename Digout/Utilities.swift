@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Utilities {
     
@@ -17,6 +18,5 @@ class Utilities {
         
         return timeInterval
     }
-    
     
 }

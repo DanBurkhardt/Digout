@@ -37,9 +37,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // remove all pins except user
         let userLocation = mapView.userLocation
-        
         mapView.removeAnnotations(mapView.annotations)
-        
         mapView.addAnnotation(userLocation)
         
         // clear local array
@@ -47,6 +45,8 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         self.cancelButton.isHidden = true
         self.finishButton.isHidden = true
+        self.navLayoutView.isHidden = false
+        
     }
     
     @IBAction func getPins(_ sender: Any) {
@@ -94,10 +94,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     let defaults = UserDefaults.standard
     let manager = CLLocationManager()
     let globalDesign = GlobalDesign()
+    let utilites = Utilities()
     
     // variables for holding loaded request data
     var numberOfRequests = 0
     var nearbyRequests: JSON = [:]
+    var currentRequest: JSON = [:]
     
     //MARK: Programmer defined functions
     func triggerRatingDialog(){
@@ -157,6 +159,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
+    /// Compiles all pins placed on the map along with other gathered other information into a single request
     func submitDigoutRequest(){
         
         self.requestManager.createDigoutRequest(locations: localPinArray, rating: rating){ (success) in
@@ -193,7 +196,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
-    
     func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
         
         if gestureRecognizer.state != .began {return}
@@ -219,6 +221,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     //MARK: Functions for getting and placing pins
     
+    /// Function for retrieving pins from a remote server
     func getPins(){
         self.lmapData.getPins { (success) in
             
@@ -239,11 +242,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
+    /// Generic function for displaying any array of pins passed in on the map
     func placeMapPins(rawData: JSON){
         
         print("resulting pins:::")
         
-        let pins = rawData["results"][0]["request_locations"].arrayValue
+        let pins = rawData["request_locations"].arrayValue
         
         print(pins)
         
@@ -271,7 +275,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 self.finishButton.isHidden = true
                 self.loadIndicator.isHidden = true
                 self.cancelButton.isHidden = false
-                
+                /*
                 let alert = UIAlertController(title: "Loaded!", message:"Pins last submitted by the user \(rawData["email"].string) have been loaded", preferredStyle: .alert)
                 let action = UIAlertAction(title: "mmk", style: .default) { _ in
                     // Put here any code that you would like to execute when
@@ -279,10 +283,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 }
                 alert.addAction(action)
                 self.present(alert, animated: true){}
+                 */
             }
         }
     }
     
+    /// Sets up the main navigation view
     func setupNavView(){
         // Setup tableview
         self.nearbyTableView.delegate = self
@@ -303,6 +309,14 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         gesture.delegate = self
     }
     
+    /// Sets up any user information to be presented in the main UI views
+    func setupUserInfo(){
+        if let username = self.defaults.object(forKey: "username"){
+            self.navLayoutUsernameLabel.text = username as? String
+        }
+    }
+    
+    /// Loads all nearby requests upon first opening to present in the tableview
     func loadNearbyRequests(){
         
         // build new function in the future in lmapdata
@@ -315,7 +329,14 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 let pins = self.defaults.object(forKey: "responseData") as! NSDictionary
                 
                 self.nearbyRequests = JSON(pins)
-                self.numberOfRequests = (self.nearbyRequests["results"].array?.count)!
+                
+                if let reqNumber = self.nearbyRequests["results"].array?.count{
+                    self.numberOfRequests = (self.nearbyRequests["results"].array?.count)!
+                }else{
+                    self.numberOfRequests = 0
+                }
+                
+                
                 self.navLayoutOpenRequestLabel.text = "Open requests: \(String(self.numberOfRequests))"
                 
                 print("nearby requests JSON: \(self.nearbyRequests)")
@@ -327,6 +348,19 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             }
         }
         
+    }
+    
+    /// Displays the request tapped within the main tableview
+    func displayTappedRequest(){
+        // Remove all visible pins on the map
+        let pins = self.mapView.annotations
+        for pin in pins{
+            self.mapView.removeAnnotation(pin)
+        }
+        
+        self.navLayoutView.isHidden = true
+        
+        placeMapPins(rawData: self.currentRequest)
     }
     
     func navViewDragged(gesture: UIPanGestureRecognizer){
@@ -367,7 +401,13 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     // MARK: TableView Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var tappedReq = self.nearbyRequests["results"][indexPath.row]
         
+        // Grab the current request
+        self.currentRequest = tappedReq
+        
+        // Perform all necessary tasks associated with this request
+        self.displayTappedRequest()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -379,11 +419,46 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let requestItem = self.nearbyRequests["results"][row]
         print("request item: \(requestItem)")
         
+        let numberOfItemsInRequest = requestItem["request_locations"].array?.count
+        
         // Double check for existance before force casting and presenting to the user
         if let requestUser = requestItem["username"].string{
             let user = requestUser as! String
             cell.requestedByLabel.text = "requested by @\(user)"
             cell.distanceLabel.text = "900ft"
+            
+            // for now, providing a hard-coded value for the time estimate to completion
+            let timeEstimate = (15 * numberOfItemsInRequest!)
+            cell.estimatedTimeLabel.text = "Estimated time: \(timeEstimate)mins"
+            
+            // Only update the distance for the first item in the array
+            
+            // Use this to compute the user's relative location to the location
+            // of the first item in the result array
+            let userLocation = self.mapView.userLocation.location
+                
+            // Convert the raw values of the item
+            let firstItemLat = requestItem["request_locations"][0]["lat"].double
+            let firstItemLong = requestItem["request_locations"][0]["long"].double
+                
+            var firstItemLocation = CLLocation(latitude: firstItemLat!, longitude: firstItemLong!)
+                
+            let estDistanceMeters: CLLocationDistance = (userLocation?.distance(from: firstItemLocation))!
+            let estDistanceMiles = estDistanceMeters / 1609.344
+                
+            var estTotalDistance = Int(estDistanceMiles)
+            var totalDistanceType = "mi"
+                
+            if estDistanceMiles < 0.5{
+                let feet = estDistanceMiles * 5280
+                    
+                estTotalDistance = Int(feet)
+                totalDistanceType = "ft"
+            }
+                    
+                //print("estimated distance between points: \(estTotalDistance)\(totalDistanceType)")
+            cell.distanceLabel.text = "\(estTotalDistance)\(totalDistanceType)"
+            
         }
         
         return cell
@@ -393,6 +468,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         return self.numberOfRequests
     }
+
     
     // MARK: Default Class Methods
     override func viewDidLoad() {

@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import MapKit
 
-class OnboardSignupViewController: UIViewController {
+class OnboardSignupViewController: UIViewController, UITextFieldDelegate {
 
     ///MARK: Outlets & Actions
     
@@ -126,6 +126,16 @@ class OnboardSignupViewController: UIViewController {
         self.errorMessage.text = ""
     }
     
+    /// MARK: UITextField Functions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        print("user finished entering data, checking for completion")
+        checkForFieldCompletion()
+        
+        return false
+    }
+    
     
     
     ///MARK: Default Class Functions
@@ -134,6 +144,8 @@ class OnboardSignupViewController: UIViewController {
         
         self.activityIndicator.isHidden = true
         clearErrorMessage()
+        
+        self.confirmPasswordField.delegate = self
         // Do any additional setup after loading the view.
     }
     

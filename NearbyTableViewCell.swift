@@ -14,6 +14,8 @@ class NearbyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var requestedByLabel: UILabel!
 
+    @IBOutlet weak var estimatedTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class OnboardLoginViewController: UIViewController {
+class OnboardLoginViewController: UIViewController, UITextFieldDelegate {
 
     ///MARK: Outlets & Actions
     
@@ -99,12 +99,24 @@ class OnboardLoginViewController: UIViewController {
         }
     }
     
+    /// MARK: UITextField Functions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        print("user finished entering data, checking for completion")
+        checkForFieldCompletion()
+        
+        return false
+    }
     
     ///MARK: Default Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator.isHidden = true
         clearErrorMessage()
+        
+        // Setup delegate for keyboard return/dismissal and processing
+        self.passwordField.delegate = self
         // Do any additional setup after loading the view.
     }
 
