@@ -74,7 +74,7 @@ class UserAccountManager {
                 if userToken != nil {
                     
                     // Store things
-                    self.storeUserLogin(email: email, passhash: passhash, token: userToken!)
+                    self.storeUserLogin(username: username, email: email, passhash: passhash, token: userToken!)
                     completion(true)
                     
                 }else{
@@ -130,7 +130,7 @@ class UserAccountManager {
                 if userToken != nil {
                     
                     // Store things
-                    self.storeUserLogin(email: email, passhash: passhash, token: userToken!)
+                    self.storeUserLogin(username: nil, email: email, passhash: passhash, token: userToken!)
                     completion(true)
                     
                 }else{
@@ -173,7 +173,7 @@ class UserAccountManager {
     //MARK: Functions for interacting with the local system
     
     ///Function for storing the user profile object locally
-    func storeUserLogin(email: String, passhash: String, token: String){
+    func storeUserLogin(username: String?, email: String, passhash: String, token: String){
         
         // Create and store dictionary of user login details
         let userLogin = ["email": email, "passhash": passhash]
@@ -181,6 +181,11 @@ class UserAccountManager {
         defaults.set(userLogin, forKey: "userLogin")
         defaults.set(email, forKey: "userEmail")
         defaults.set(token, forKey: "userToken")
+        
+        // Check if there is a username returned, if so set it locally
+        if username != nil{
+            defaults.set(username, forKey: "username")
+        }
         
         // Also add a bool locally to enable the user to cache login status
         defaults.set(true, forKey: self.apiInfo.userAuthenticationString)

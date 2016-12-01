@@ -8,7 +8,6 @@ target 'Digout' do
 pod 'SwiftyJSON'
 pod 'SWRevealViewController', '~> 2.3'
 
-
 end
 
 target 'DigoutTests' do

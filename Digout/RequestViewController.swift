@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 import SWRevealViewController
 import SwiftyJSON
+import QuartzCore
 
-class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Class outlets and actions
     @IBOutlet weak var mapView: MKMapView!
@@ -59,8 +60,30 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
+    @IBAction func hideNavViewButton(_ sender: Any) {
+        // This is a temporary way to hide the nav view in order to be able to proceed with testing
+        self.navLayoutView.isHidden = true
+    }
+    
+    @IBAction func unhideNavLayoutView(_ sender: Any) {
+        self.navLayoutView.isHidden = false
+        self.nearbyTableView.reloadData()
+    }
+    
+    
+    
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
+    /// The main nav layout view
+    @IBOutlet weak var navLayoutView: UIView!
+    
+    @IBOutlet weak var navLayoutTableviewContainer: UIView!
+    
+    @IBOutlet weak var nearbyTableView: UITableView!
+    
+    @IBOutlet weak var navLayoutUsernameLabel: UILabel!
+    
+    @IBOutlet weak var navLayoutOpenRequestLabel: UILabel!
     
     //MARK: Class Variables
     var localPinArray = [CLLocationCoordinate2D]()
@@ -69,7 +92,11 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     let lmapData = LocalMappingData()
     let defaults = UserDefaults.standard
     let manager = CLLocationManager()
+    let globalDesign = GlobalDesign()
     
+    // variables for holding loaded request data
+    var numberOfRequests = 0
+    var nearbyRequests: JSON = [:]
     
     //MARK: Programmer defined functions
     func submitDigoutRequest(){
@@ -198,6 +225,116 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
     }
     
+    func setupNavView(){
+        // Setup tableview
+        self.nearbyTableView.delegate = self
+        self.nearbyTableView.dataSource = self
+        
+        // Customize UI of the nav view
+        self.navLayoutView.layer.cornerRadius = 5
+        self.navLayoutTableviewContainer.layer.cornerRadius = 5
+        self.navLayoutView.layer.masksToBounds = true
+        self.navLayoutTableviewContainer.layer.masksToBounds = true
+        self.navLayoutView.backgroundColor = globalDesign.lightBlueColor
+        
+        
+        // Setup Gesture recognition
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(navViewDragged(gesture:)))
+        self.navLayoutView.addGestureRecognizer(gesture)
+        self.navLayoutView.isUserInteractionEnabled = true
+        gesture.delegate = self
+    }
+    
+    func loadNearbyRequests(){
+        
+        // build new function in the future in lmapdata
+        // for now, spoof as if the user's requests are the nearby requests
+        self.lmapData.getPins { (success) in
+            
+            if success == true {
+                print("nearbyRequests loaded")
+                
+                let pins = self.defaults.object(forKey: "responseData") as! NSDictionary
+                
+                self.nearbyRequests = JSON(pins)
+                self.numberOfRequests = (self.nearbyRequests["results"].array?.count)!
+                self.navLayoutOpenRequestLabel.text = "Open requests: \(String(self.numberOfRequests))"
+                
+                print("nearby requests JSON: \(self.nearbyRequests)")
+                
+                self.nearbyTableView.reloadData()
+            }else{
+                
+                print("nearby requests were not loaded")
+            }
+        }
+        
+    }
+    
+    func navViewDragged(gesture: UIPanGestureRecognizer){
+        
+        if gesture.state == UIGestureRecognizerState.began || gesture.state == UIGestureRecognizerState.changed {
+            
+            //let translation = gesture.translation(in: self.view)
+            //print(translation)
+            
+            //var topMargin = (self.view.center.y)
+            
+            /*
+            print("self.view.center.y: \(topMargin)")
+            print("view height: \(gesture.view!.frame.height)")
+            print("view min y: \(gesture.view!.frame.minY)")
+            print("view center y: \(gesture.view!.center.y)")
+            print("view height :\(gesture.view!.frame.height)")
+            let height = gesture.view!.frame.height
+            let halfHeight = height / 2.0
+            print("view height half: \(halfHeight)")
+            
+            
+            if(gesture.view!.frame.minY > topMargin) {
+                
+                gesture.view!.center = CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y + translation.y)
+                
+            }else {
+                
+                gesture.view!.center = CGPoint(x: gesture.view!.center.x, y: topMargin)
+            }
+            
+            // Reset translation point
+            gesture.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+            */
+        }
+        
+    }
+    
+    // MARK: TableView Methods
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell: NearbyTableViewCell = self.nearbyTableView.dequeueReusableCell(withIdentifier: "nearbyCell")! as! NearbyTableViewCell
+        
+        var row = indexPath.row
+        
+        let requestItem = self.nearbyRequests["results"][row]
+        print("request item: \(requestItem)")
+        
+        // Double check for existance before force casting and presenting to the user
+        if let requestUser = requestItem["username"].string{
+            let user = requestUser as! String
+            cell.requestedByLabel.text = "requested by @\(user)"
+            cell.distanceLabel.text = "900ft"
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.numberOfRequests
+    }
     
     // MARK: Default Class Methods
     override func viewDidLoad() {
@@ -206,12 +343,11 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.loadIndicator.isHidden = true
         // Do any additional setup after loading the view.
         
-        // Do any additional setup after loading the view.
-        
         
         // Adding to main queue explicitly due to a bug where this did not work
         DispatchQueue.main.async {
             
+            // Setup all mapping frameworks
             self.manager.delegate = self
             self.manager.desiredAccuracy = kCLLocationAccuracyBest
             
@@ -231,14 +367,19 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             self.mapView.mapType = MKMapType.standard
             self.mapView.showsUserLocation = true
         }
-
         
-        self.view.backgroundColor = styles.standardBlue
-        
+        // Setup mapping interaction
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(RequestViewController.handleLongPress(_:)))
         
         longPressGestureRecognizer.minimumPressDuration = 0.5
         self.mapView.addGestureRecognizer(longPressGestureRecognizer)
+
+        // Setup for the Nav View and TableView
+        self.view.backgroundColor = styles.standardBlue
+        self.setupNavView()
+        self.loadNearbyRequests()
+        
+        
     }
     
 
