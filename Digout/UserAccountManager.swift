@@ -37,7 +37,6 @@ class UserAccountManager {
         let passhash = rawPassword.sha256()
         userProfileObject["passhash"].string = passhash
         
-        
         // Add the advertising identifier to the profile object
         let myIDFA: String?
         // Check if Advertising Tracking is Enabled
@@ -67,8 +66,6 @@ class UserAccountManager {
             print(self.responseData)
             
             if success{
-                
-                
                 let userToken = self.responseData["token"].string
                 
                 if userToken != nil {
@@ -84,8 +81,6 @@ class UserAccountManager {
                     print(self.errorData)
                     completion(false)
                 }
-                
-                
                 
             }else if !(success){
                 
@@ -150,25 +145,6 @@ class UserAccountManager {
         }
     }//END USER AUTHENTICATION FUNCTION
     
-    ///Function for reauthenticating the saved user (if the login token expires)
-    func reauthenticateUser(completion: @escaping (_ success: Bool) -> Void) {
-        let savedUserLogin = self.getUserLogin()
-        
-        // Empty JSON object
-        var userLoginObject: JSON = [:]
-        
-        // Initial object fields
-        userLoginObject["email"].string = savedUserLogin["email"]
-        userLoginObject["passhash"].string = savedUserLogin["passhash"]
-        userLoginObject["timestamp"].double = utilities.getEpochTime()
-        
-        // Attempts to reauthenticate the user
-        self.request.getRequest(apiInfo.accountsURL, data: userLoginObject) { (success) in
-            print("attempting to reauthenticate user")
-            completion(success)
-        }
-    }//END USER REAUTHENTICATION FUNCTION
-    
     
     //MARK: Functions for interacting with the local system
     
@@ -197,27 +173,11 @@ class UserAccountManager {
         if let login = defaults.object(forKey: "userLogin") as! [String:String]? {
             return login
         }
+        //TODO: Get user info from defaults as strings and form the dictionary
         // Temporary fix to prevent crashing when in an invalid state
         return ["email":"", "passhash":""]
     }
-
-
     
-    /* Noted after our team planning meeting on 10/1
-     Signup Object contents
-     username
-     email
-     passhash
-     timestamp (epoch)
-     idfa (advertising ID)
-     
-     Signin Object
-     email
-     passhash
-     timestamp (epoch)
-     
-     */
-
 }
 
 extension String {

@@ -13,10 +13,8 @@ class Utilities {
     
     // epoch getter
     func getEpochTime() -> Double {
-        
         let timeInterval = NSDate().timeIntervalSince1970
-        
         return timeInterval
     }
-    
+
 }

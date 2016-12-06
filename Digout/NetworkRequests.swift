@@ -28,16 +28,10 @@ class NetworkRequests {
         var dictionary = addedToken.dictionary
         
         Alamofire.request(url, method: .get, parameters: dictionary).responseJSON { response in
-            
-            //TODO: build the ability to check for error code
-            //TODO: return a boolean status based on the error code
-            //print(response.response)
-            
+
             print(response)
-            
                 
                 if let responseValue = response.result.value {
-                    
                     var dict = responseValue as! NSDictionary
                     var jsonObj = JSON(dict)
                     
@@ -64,16 +58,11 @@ class NetworkRequests {
                     }
                 
                 }else{
-                    
                     print("JSON data could not be found or stored in response")
                     // Edit this to complete for both conditions
                     completion(false)
                 }
-            
-    
-            
         }//END ALAMOFIRE TASK
-        
     }// END FUNC
     
     /// A generic function that takes a URL and a SwiftyJSON object, executing a POST request on that oject
@@ -112,13 +101,11 @@ class NetworkRequests {
         let session = URLSession.shared
         
         var request = URLRequest.init(url: formedURL as URL)
-    
         request.httpMethod = "POST"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         let paramString = tokenAddedParams.description
         request.httpBody = paramString.data(using: String.Encoding.utf8)
-        
         
         let task = session.dataTask(with: request) { (data, response, error) in
             
@@ -139,7 +126,6 @@ class NetworkRequests {
             //print(self.responseData)
             
             completion(true)
-            
         }
         
         task.resume()

@@ -211,12 +211,9 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // Push into the local array of pins
         localPinArray.append(touchMapCoordinate)
         
+        // Form the annotation
         let annotation = MKPointAnnotation()
-        
-        //annotation.title = "test"
-        
         annotation.coordinate = touchMapCoordinate
-        
         mapView.addAnnotation(annotation)
     }
     
@@ -270,21 +267,11 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             placed += 1
             
             if placed == (pins.count - 1){
-                
                 // Hide UI elements
                 self.cancelButton.isHidden = true
                 self.finishButton.isHidden = true
                 self.loadIndicator.isHidden = true
                 self.cancelButton.isHidden = false
-                /*
-                let alert = UIAlertController(title: "Loaded!", message:"Pins last submitted by the user \(rawData["email"].string) have been loaded", preferredStyle: .alert)
-                let action = UIAlertAction(title: "mmk", style: .default) { _ in
-                    // Put here any code that you would like to execute when
-                    // the user taps that OK button
-                }
-                alert.addAction(action)
-                self.present(alert, animated: true){}
-                 */
             }
         }
     }
@@ -319,16 +306,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     /// Loads all nearby requests upon first opening to present in the tableview
     func loadNearbyRequests(){
-        
         // build new function in the future in lmapdata
         // for now, spoof as if the user's requests are the nearby requests
         self.lmapData.getPins { (success) in
-            
             if success == true {
                 print("nearbyRequests loaded")
-                
                 let pins = self.defaults.object(forKey: "responseData") as! NSDictionary
-                
                 self.nearbyRequests = JSON(pins)
                 
                 if let reqNumber = self.nearbyRequests["results"].array?.count{
@@ -337,14 +320,10 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     self.numberOfRequests = 0
                 }
                 
-                
                 self.navLayoutOpenRequestLabel.text = "Open requests: \(String(self.numberOfRequests))"
-                
                 print("nearby requests JSON: \(self.nearbyRequests)")
-                
                 self.nearbyTableView.reloadData()
             }else{
-                
                 print("nearby requests were not loaded")
             }
         }
@@ -415,7 +394,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: NearbyTableViewCell = self.nearbyTableView.dequeueReusableCell(withIdentifier: "nearbyCell")! as! NearbyTableViewCell
-        
         var row = indexPath.row
         
         let requestItem = self.nearbyRequests["results"][row]
@@ -432,9 +410,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             // for now, providing a hard-coded value for the time estimate to completion
             let timeEstimate = (15 * numberOfItemsInRequest!)
             cell.estimatedTimeLabel.text = "Estimated time: \(timeEstimate)mins"
-            
-  
-            
             var status = CLLocationManager.authorizationStatus()
             if status == .denied || status == .notDetermined || status == .authorizedWhenInUse{
                 print("user location status could not be determined, not labelling cell")
@@ -472,9 +447,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     */
                     
                 }
-                
             }
-            
         }
         
         return cell
@@ -528,8 +501,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.view.backgroundColor = styles.standardBlue
         self.setupNavView()
         self.loadNearbyRequests()
-        
-        
     }
     
 
@@ -543,15 +514,4 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.mapView.showAnnotations([userLocation], animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
