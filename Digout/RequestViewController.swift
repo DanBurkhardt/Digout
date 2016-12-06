@@ -50,14 +50,15 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     @IBAction func getPins(_ sender: Any) {
-        self.loadIndicator.isHidden = false
-        self.getPins()
         
         // Remove all visible pins on the map
         let pins = self.mapView.annotations
         for pin in pins{
             self.mapView.removeAnnotation(pin)
         }
+        
+        self.loadIndicator.isHidden = false
+        self.getPins()
     }
     
     @IBAction func hideNavViewButton(_ sender: Any) {
@@ -353,6 +354,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     /// Displays the request tapped within the main tableview
     func displayTappedRequest(){
         // Remove all visible pins on the map
+        
         let pins = self.mapView.annotations
         for pin in pins{
             self.mapView.removeAnnotation(pin)
@@ -451,6 +453,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     
                     var firstItemLocation = CLLocation(latitude: firstItemLat, longitude: firstItemLong!)
                     
+                    /*
                     let estDistanceMeters: CLLocationDistance = (userLocation?.distance(from: firstItemLocation))!
                     let estDistanceMiles = estDistanceMeters / 1609.344
                     
@@ -466,7 +469,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                     
                     //print("estimated distance between points: \(estTotalDistance)\(totalDistanceType)")
                     cell.distanceLabel.text = "\(estTotalDistance)\(totalDistanceType)"
-                    
+                    */
                     
                 }
                 

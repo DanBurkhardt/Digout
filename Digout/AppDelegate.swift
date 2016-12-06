@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set MQA uncaught exception handler for crashes
         NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
-        */
+    */
         
         return true
     }

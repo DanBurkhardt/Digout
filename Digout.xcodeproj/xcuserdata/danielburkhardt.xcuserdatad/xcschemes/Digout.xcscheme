@@ -17,7 +17,7 @@
                BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
                BuildableName = "digout.app"
                BlueprintName = "Digout"
-               ReferencedContainer = "container:digout.xcodeproj">
+               ReferencedContainer = "container:Digout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "C9A302D81C651C7700A2EB7F"
                BuildableName = "digout.temp_caseinsensitive_rename.xctest"
                BlueprintName = "DigoutTests"
-               ReferencedContainer = "container:digout.xcodeproj">
+               ReferencedContainer = "container:Digout.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "C9A302E31C651C7700A2EB7F"
                BuildableName = "digout.temp_caseinsensitive_rename.xctest"
                BlueprintName = "DigoutUITests"
-               ReferencedContainer = "container:digout.xcodeproj">
+               ReferencedContainer = "container:Digout.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
             BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:digout.xcodeproj">
+            ReferencedContainer = "container:Digout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
             BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:digout.xcodeproj">
+            ReferencedContainer = "container:Digout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "C9A302C41C651C7700A2EB7F"
             BuildableName = "digout.app"
             BlueprintName = "Digout"
-            ReferencedContainer = "container:digout.xcodeproj">
+            ReferencedContainer = "container:Digout.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
