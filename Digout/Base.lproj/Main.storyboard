@@ -209,7 +209,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="343" height="63"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TnR-uJ-srw" id="ZGX-Q9-VjW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="63"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapLoc" translatesAutoresizingMaskIntoConstraints="NO" id="hMi-Zt-NPE">
@@ -344,7 +344,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gJu-ew-10A" secondAttribute="trailing" id="0MF-9x-5cV"/>
                             <constraint firstItem="rBJ-f5-JP2" firstAttribute="top" secondItem="gJu-ew-10A" secondAttribute="bottom" id="1Jm-ho-2TD"/>
-                            <constraint firstItem="rBJ-f5-JP2" firstAttribute="top" secondItem="UVV-wi-RG4" secondAttribute="bottom" constant="338" id="1Wf-xz-S69"/>
+                            <constraint firstItem="rBJ-f5-JP2" firstAttribute="top" secondItem="UVV-wi-RG4" secondAttribute="bottom" constant="338" identifier="mapViewBottomConstraint" id="1Wf-xz-S69"/>
                             <constraint firstItem="bTO-KN-n87" firstAttribute="leading" secondItem="OFg-6f-f2o" secondAttribute="leadingMargin" constant="-13" id="4qo-Fh-ntB"/>
                             <constraint firstItem="gu1-f9-Hpv" firstAttribute="centerX" secondItem="OFg-6f-f2o" secondAttribute="centerX" id="6XN-lf-6nU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UVV-wi-RG4" secondAttribute="trailing" constant="-16" id="FLN-Pi-QH4"/>

@@ -46,7 +46,8 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.cancelButton.isHidden = true
         self.finishButton.isHidden = true
         self.navLayoutView.isHidden = false
-        
+        self.shrinkMap()
+        self.mapView.showAnnotations([mapView.userLocation], animated: true)
     }
     
     @IBAction func getPins(_ sender: Any) {
@@ -64,11 +65,15 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func hideNavViewButton(_ sender: Any) {
         // This is a temporary way to hide the nav view in order to be able to proceed with testing
         self.navLayoutView.isHidden = true
+        
+        self.expandMapFullscreen()
     }
     
     @IBAction func unhideNavLayoutView(_ sender: Any) {
         self.navLayoutView.isHidden = false
         self.nearbyTableView.reloadData()
+        
+        self.shrinkMap()
     }
     
     
@@ -89,6 +94,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     //MARK: Class Variables
     var localPinArray = [CLLocationCoordinate2D]()
     var rating = 0
+    var defaultMapViewBottomConstraint = 338
     let requestManager = DigoutRequestManager()
     let styles = GlobalDefaults.styles()
     let lmapData = LocalMappingData()
@@ -203,6 +209,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         self.finishButton.isHidden = false
         self.cancelButton.isHidden = false
+        self.expandMapFullscreen()
         
         // Get the pin dropped
         let touchPoint = gestureRecognizer.location(in: self.mapView)
@@ -272,6 +279,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 self.finishButton.isHidden = true
                 self.loadIndicator.isHidden = true
                 self.cancelButton.isHidden = false
+                self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             }
         }
     }
@@ -379,13 +387,50 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         }
         
     }
+    // MARK: Animation Functions
     
-    // MARK: TableView Methods
+    /// Expands mapview to fullscreen
+    func expandMapFullscreen(){
+        
+        self.cancelButton.isHidden = false
+        
+        for constraint in view.constraints as [NSLayoutConstraint]{
+            if constraint.identifier == "mapViewBottomConstraint"{
+                constraint.constant = 0
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    /// Restores the map view size to default
+    func shrinkMap(){
+        for constraint in view.constraints as [NSLayoutConstraint]{
+            if constraint.identifier == "mapViewBottomConstraint"{
+                constraint.constant = CGFloat(self.defaultMapViewBottomConstraint)
+            }
+        }
+        
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func userTappedMap(_ gestureRecognizer : UIGestureRecognizer){
+        self.expandMapFullscreen()
+        self.navLayoutView.isHidden = true
+    }
+    
+    // MARK: TableView Delegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var tappedReq = self.nearbyRequests["results"][indexPath.row]
         
         // Grab the current request
         self.currentRequest = tappedReq
+        
+        self.expandMapFullscreen()
         
         // Perform all necessary tasks associated with this request
         self.displayTappedRequest()
@@ -493,9 +538,12 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Setup mapping interaction
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(RequestViewController.handleLongPress(_:)))
-        
         longPressGestureRecognizer.minimumPressDuration = 0.5
         self.mapView.addGestureRecognizer(longPressGestureRecognizer)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RequestViewController.userTappedMap(_:)))
+        self.mapView.addGestureRecognizer(tapGestureRecognizer)
+
 
         // Setup for the Nav View and TableView
         self.view.backgroundColor = styles.standardBlue
