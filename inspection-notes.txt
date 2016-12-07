@@ -1,0 +1,26 @@
+Code Inspection Summary
+
+Reader: Dan
+Recorder: Bayard
+
+Inspectors: John and Jon
+
+
+In RequestViewController:
+
+The ratings dialog generating function triggerRatingDialog and triggerConfirmationDialog do not need to be here and are potentially useful elsewhere and will be moved to a different class in the future.
+
+There were some boilerplate comments that did not need to be there. They have been removed.
+
+The table view function is large and not related to the rest of the view. It can be encapsulated with some effort, but it has not been yet.
+
+
+In UserAccountManager:
+
+There was a completely unused reauthenticate function. It was removed because of YAGNI
+
+There are a lot of force casts (mainly elsewhere in the code, but due to this class) because of the way user data was stored in UserDefaults. We can avoid this by storing individual values instead of dictionaries, but the change is fairly involved so is not yet complete. This also requires changing the way user data is retrieved.
+
+
+In NetworkRequests:
+The user data storage force casting issue also applies here, but again the change is quite involved so is not complete.

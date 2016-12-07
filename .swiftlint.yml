@@ -1,0 +1,15 @@
+included:
+  - Digout
+disabled_rules:
+  - trailing_whitespace
+  - vertical_whitespace
+  - opening_brace
+  - line_length
+  - trailing_newline
+  - statement_position
+  - mark
+  - todo
+  - colon
+  - type_name
+  - return_arrow_whitespace
+  - control_statement
