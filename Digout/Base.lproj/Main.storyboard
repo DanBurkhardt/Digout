@@ -127,7 +127,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UVV-wi-RG4">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="UVV-wi-RG4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="265"/>
                             </mapView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-hj-vwZ">
@@ -195,8 +195,19 @@
                                     <constraint firstAttribute="height" constant="37" id="Wkf-Du-2k5"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-ew-10A">
-                                <rect key="frame" x="0.0" y="321" width="375" height="346"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hG-6o-BGE">
+                                <rect key="frame" x="337" y="72" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="X5t-rx-3h5"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xi4-WX-uiZ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="wand"/>
+                                <connections>
+                                    <action selector="unhideNavLayoutView:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="Vwg-Ey-Mc3"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-ew-10A">
+                                <rect key="frame" x="0.0" y="103" width="375" height="346"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UM2-bj-LIz">
                                         <rect key="frame" x="8" y="112" width="359" height="221"/>
@@ -209,7 +220,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="343" height="63"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TnR-uJ-srw" id="ZGX-Q9-VjW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="63"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapLoc" translatesAutoresizingMaskIntoConstraints="NO" id="hMi-Zt-NPE">
@@ -328,17 +339,6 @@
                                     <constraint firstItem="m0O-K0-RZw" firstAttribute="top" secondItem="gJu-ew-10A" secondAttribute="top" constant="8" id="oIO-7M-ZKx"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hG-6o-BGE">
-                                <rect key="frame" x="337" y="72" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="X5t-rx-3h5"/>
-                                    <constraint firstAttribute="height" constant="30" id="Xi4-WX-uiZ"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="wand"/>
-                                <connections>
-                                    <action selector="unhideNavLayoutView:" destination="4Hi-ev-yXG" eventType="touchUpInside" id="Vwg-Ey-Mc3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

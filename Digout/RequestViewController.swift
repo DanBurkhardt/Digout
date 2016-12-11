@@ -72,7 +72,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func unhideNavLayoutView(_ sender: Any) {
         self.navLayoutView.isHidden = false
         self.nearbyTableView.reloadData()
-        
         self.shrinkMap()
     }
     
@@ -534,6 +533,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             self.mapView.delegate = self
             self.mapView.mapType = MKMapType.standard
             self.mapView.showsUserLocation = true
+            //self.mapView.mapType = MKMapType.satellite
         }
         
         // Setup mapping interaction

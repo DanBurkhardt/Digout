@@ -61,12 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MOBILE QUALITY ASSURANCE SETUP
         //*********************************
         
-        /*
+        
         //Set the SDK mode Market vs QA for Production and Pre-Production
         #if Debug
             MQALogger.settings().mode = MQAMode.QA
         #elseif Release
-            MQALogger.settings().mode = MQAMode.Market
+            MQALogger.settings().mode = MQAMode.market
         #endif
         
         // Set the application key
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set MQA uncaught exception handler for crashes
         NSSetUncaughtExceptionHandler(exceptionHandlerPointer)
-    */
+    
         
         return true
     }

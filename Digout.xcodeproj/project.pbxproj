@@ -469,7 +469,7 @@
 				TargetAttributes = {
 					C9A302C41C651C7700A2EB7F = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 55579AAL4F;
+						DevelopmentTeam = 6F9773F85D;
 						LastSwiftMigration = 0810;
 					};
 					C9A302D81C651C7700A2EB7F = {
@@ -824,7 +824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 55579AAL4F;
+				DEVELOPMENT_TEAM = 6F9773F85D;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -832,6 +832,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -841,7 +842,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "-D Debug";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D Debug";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digoutapp;
 				PRODUCT_NAME = digout;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Digout-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -857,7 +858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 55579AAL4F;
+				DEVELOPMENT_TEAM = 6F9773F85D;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -865,6 +866,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Digout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -874,7 +876,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "-D Release";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D Release";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giganom.digoutapp;
 				PRODUCT_NAME = digout;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Digout-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
