@@ -20,8 +20,6 @@
 		1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
 		1AEA4E881DC03F5C0029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
 		1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
-		1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76ADBA2E1DC1A53600AF99CC /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADBA2D1DC1A53600AF99CC /* NetworkRequests.swift */; };
 		807255C481D4EFC8BA63D455 /* Pods_DigoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3F3C0E3538A774FCF6D4FF /* Pods_DigoutTests.framework */; };
 		C903F1031C651E3900897C55 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C903F1021C651E3900897C55 /* AssetsLibrary.framework */; };
@@ -82,7 +80,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1AEA4E8C1DC03F620029AA3A /* SwiftyJSON.framework in Embed Frameworks */,
 				1AEA4E891DC03F5C0029AA3A /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -161,7 +158,6 @@
 				C903F11B1C651E9000897C55 /* Security.framework in Frameworks */,
 				1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */,
 				C903F1191C651E8B00897C55 /* QuartzCore.framework in Frameworks */,
-				1AEA4E8B1DC03F620029AA3A /* SwiftyJSON.framework in Frameworks */,
 				C903F1171C651E8500897C55 /* MediaPlayer.framework in Frameworks */,
 				1AEA4E861DC03F220029AA3A /* Alamofire.framework in Frameworks */,
 				C903F1151C651E7E00897C55 /* CoreVideo.framework in Frameworks */,
