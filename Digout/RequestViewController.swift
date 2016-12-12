@@ -23,6 +23,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         
         // Submit the digout request to the backend
         self.triggerRatingDialog()
+    
     }
     
     @IBAction func settings(_ sender: Any) {
@@ -65,7 +66,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     @IBAction func hideNavViewButton(_ sender: Any) {
         // This is a temporary way to hide the nav view in order to be able to proceed with testing
         self.navLayoutView.isHidden = true
-        
         self.expandMapFullscreen()
     }
     
@@ -75,6 +75,16 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.shrinkMap()
     }
     
+    @IBAction func mapTypeButton(_ sender: Any) {
+        switch self.mapView.mapType{
+        case MKMapType.standard:
+                self.mapView.mapType = MKMapType.satellite
+        case MKMapType.satellite:
+                self.mapView.mapType = MKMapType.standard
+        default:
+                print("some issue with the map type")
+        }
+    }
     
     
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
@@ -174,8 +184,9 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 print("digout request success")
                 let alert = UIAlertController(title: "Saved!", message:"Your important crossings have been saved. We will alert you when a volunteer clears your path. Stay warm!", preferredStyle: .alert)
                 let action = UIAlertAction(title: "mmk", style: .default) { _ in
-                    // Put here any code that you would like to execute when
-                    // the user taps that OK button
+                    // Reload the table of requests
+                    self.restoreDefaultUIView()
+                    self.loadNearbyRequests()
                 }
                 alert.addAction(action)
                 self.present(alert, animated: true){}
@@ -420,6 +431,29 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func userTappedMap(_ gestureRecognizer : UIGestureRecognizer){
         self.expandMapFullscreen()
         self.navLayoutView.isHidden = true
+    }
+    
+    func restoreDefaultUIView(){
+        // Remove all visible pins on the map
+        let pins = self.mapView.annotations
+        for pin in pins{
+            self.mapView.removeAnnotation(pin)
+        }
+        self.finishButton.isHidden = true
+        self.cancelButton.isHidden = true
+        self.navLayoutView.isHidden = false
+        self.shrinkMap()
+        self.mapView.showAnnotations([self.mapView.userLocation], animated: true)
+        
+        switch self.mapView.mapType{
+        case MKMapType.standard:
+            self.mapView.mapType = MKMapType.satellite
+        case MKMapType.satellite:
+            self.mapView.mapType = MKMapType.standard
+        default:
+            print("some issue with the map type")
+        }
+
     }
     
     // MARK: TableView Delegate Methods
