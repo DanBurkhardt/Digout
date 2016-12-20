@@ -44,12 +44,8 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         // clear local array
         self.localPinArray = [CLLocationCoordinate2D]()
         
-        self.cancelButton.isHidden = true
-        self.finishButton.isHidden = true
-        self.navLayoutView.isHidden = false
-        self.shrinkMap()
-        self.mapView.showAnnotations([mapView.userLocation], animated: true)
-    }
+        self.restoreDefaultUIView()
+        }
     
     @IBAction func getPins(_ sender: Any) {
         
@@ -446,8 +442,6 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.mapView.showAnnotations([self.mapView.userLocation], animated: true)
         
         switch self.mapView.mapType{
-        case MKMapType.standard:
-            self.mapView.mapType = MKMapType.satellite
         case MKMapType.satellite:
             self.mapView.mapType = MKMapType.standard
         default:
@@ -583,6 +577,7 @@ class RequestViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.view.backgroundColor = styles.standardBlue
         self.setupNavView()
         self.loadNearbyRequests()
+        
     }
     
 
