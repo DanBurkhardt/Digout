@@ -147,6 +147,10 @@ class UserAccountManager {
     
     
     //MARK: Functions for interacting with the local system
+    struct localUserData{
+        let usernameKey = "username"
+        let userLoginKey = "userLogin"
+    }
     
     ///Function for storing the user profile object locally
     func storeUserLogin(username: String?, email: String, passhash: String, token: String){
@@ -167,7 +171,16 @@ class UserAccountManager {
         defaults.set(true, forKey: self.apiInfo.userAuthenticationString)
     }
     
+    /// Log the current user out of the device by removing all local data
+    func logout(){
+        defaults.removeObject(forKey: "userEmail")
+        defaults.removeObject(forKey: "userLogin")
+        defaults.removeObject(forKey: self.apiInfo.userAuthenticationString)
+        defaults.removeObject(forKey: "userLogin")
+        defaults.removeObject(forKey: "userToken")
+    }
     
+    //MARK: Accessor Functions
     ///Function for retriving the user profile object locally
     func getUserLogin() -> [String:String] {
         if let login = defaults.object(forKey: "userLogin") as! [String:String]? {
@@ -176,6 +189,16 @@ class UserAccountManager {
         //TODO: Get user info from defaults as strings and form the dictionary
         // Temporary fix to prevent crashing when in an invalid state
         return ["email":"", "passhash":""]
+    }
+    
+    ///Returns the locally stored username
+    func getUserName() -> String {
+        if let usernameData = defaults.object(forKey: "username"){
+            let username = usernameData as! String
+            return username
+        }else{
+            return ""
+        }
     }
     
 }

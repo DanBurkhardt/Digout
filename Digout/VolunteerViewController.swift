@@ -41,17 +41,23 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         }
     }
     
+    @IBOutlet weak var sidebarButtonOutlet: UIButton!
     
+    // MARK: Class setup functions
+    func setupRevealController(){
+        if self.revealViewController() != nil {
+            
+        self.sidebarButtonOutlet.addTarget(self.revealViewController(), action: "revealToggle:", for: UIControlEvents.touchUpInside)
+            
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
 
     // MARK: Default Class Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
-        DispatchQueue.main.async {
-            print("Hello")
-        }
+        self.setupRevealController()
         
         self.manager.delegate = self
         self.manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -68,7 +74,6 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         
             
         }
-        
         
         self.manager.startUpdatingHeading()
         self.manager.startUpdatingLocation()
