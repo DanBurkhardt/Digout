@@ -21,10 +21,11 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
     
     // UI Outlets and Actions
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var textInputOutlet: UITextField!
     
     @IBAction func cancelNewRequest(_ sender: Any) {
         print("request cancelled")
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: MapView Delegate Methods
@@ -47,11 +48,34 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
         self.mapView.delegate = self
         self.mapView.mapType = MKMapType.standard
         self.mapView.showsUserLocation = true
+        
+        // Setup mapping interaction
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewRequestLocationViewController.handleTap(_:)))
+        self.mapView.addGestureRecognizer(tapGestureRecognizer)
+
+    }
+    
+    func handleTap(_ gestureRecognizer : UIGestureRecognizer) {
+        print("tap handling")
+        
+        //if gestureRecognizer.state != .began {return}
+        
+        // Get the pin dropped
+        let touchPoint = gestureRecognizer.location(in: self.mapView)
+        let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        
+        print("coordinate \(touchMapCoordinate)")
+        
+        // Form the annotation
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = touchMapCoordinate
+        mapView.addAnnotation(annotation)
+
     }
 
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        self.mapView.showAnnotations([userLocation], animated: true)
+        self.mapView.showAnnotations([userLocation], animated: false)
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {

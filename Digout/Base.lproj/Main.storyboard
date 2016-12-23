@@ -320,10 +320,10 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" enter a location.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Gk-vy-wqN">
-                                <rect key="frame" x="33" y="145" width="309" height="43"/>
+                                <rect key="frame" x="16" y="166" width="343" height="43"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="309" id="JQf-if-gqV"/>
+                                    <constraint firstAttribute="width" constant="343" id="JQf-if-gqV"/>
                                     <constraint firstAttribute="height" constant="43" id="rNV-lj-flO"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -340,12 +340,13 @@
                             <constraint firstItem="1Gk-vy-wqN" firstAttribute="centerX" secondItem="Bg4-ua-dkH" secondAttribute="centerX" id="hdG-Ft-cRO"/>
                             <constraint firstAttribute="trailing" secondItem="gok-fx-wDu" secondAttribute="trailing" id="hgP-ag-L6w"/>
                             <constraint firstItem="V9i-Ae-Kle" firstAttribute="leading" secondItem="Bg4-ua-dkH" secondAttribute="leading" id="o32-nV-XCM"/>
-                            <constraint firstItem="1Gk-vy-wqN" firstAttribute="top" secondItem="gok-fx-wDu" secondAttribute="bottom" constant="81" id="oWz-hE-hhr"/>
+                            <constraint firstItem="1Gk-vy-wqN" firstAttribute="top" secondItem="gok-fx-wDu" secondAttribute="bottom" constant="102" id="oWz-hE-hhr"/>
                             <constraint firstAttribute="trailing" secondItem="V9i-Ae-Kle" secondAttribute="trailing" id="qU3-zG-vj4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="V9i-Ae-Kle" id="c7t-BT-lHN"/>
+                        <outlet property="textInputOutlet" destination="1Gk-vy-wqN" id="yTn-lc-ihC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnc-Kt-7yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1252,6 +1253,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddc-iH-bSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2532" y="-285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UDl-CG-jhj">
+            <objects>
+                <viewController id="nZK-UU-y3t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FEo-2v-Aiy"/>
+                        <viewControllerLayoutGuide type="bottom" id="VaV-2Q-8bF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6nj-I4-ckn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WhP-21-CeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
