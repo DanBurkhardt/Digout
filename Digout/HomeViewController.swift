@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import SwiftyJSON
 
-class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
 
     // Class Variables
     let manager = CLLocationManager()
@@ -20,6 +20,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     var styles = GlobalDefaults.styles()
     var defaults = UserDefaults.standard
     let digoutLocationsManager = LocationsManager()
+    var userHasSavedLocations = true
     
     //Digout Location Data Vars
     var numberOfStoredLocations = 0
@@ -30,6 +31,39 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var sidebarButtonOutlet: UIButton!
     @IBOutlet weak var digoutLocationCollectionView: UICollectionView!
+    
+    // Diaglog UI
+    @IBOutlet weak var dialogBlurView: UIView!
+    @IBOutlet weak var dialogBackgroundView: UIView!
+    @IBOutlet weak var dialogTitleLabel: UILabel!
+    @IBOutlet weak var dialogMessageLabel: UILabel!
+    @IBOutlet weak var dialogCancelButtonOutlet: UIButton!
+    
+    @IBOutlet weak var rightDialogImage: UIImageView!
+    @IBOutlet weak var rightDialogLabel: UILabel!
+    @IBOutlet weak var leftDialogLabel: UILabel!
+    @IBOutlet weak var leftDialogImage: UIImageView!
+    
+    @IBAction func rightDialogButton(_ sender: Any) {
+        print("right dialog button")
+        
+        if self.rightDialogLabel.text == "Request Service" {
+            self.setupSecondDialogView()
+        }else if rightDialogLabel.text == "Use My Current Location"{
+            // Nav to map view here
+            print("nav to map view")
+            self.performSegue(withIdentifier: "navLocationVC", sender: self)
+        }
+    }
+    @IBAction func leftDialogButton(_ sender: Any) {
+        print("left dialog button")
+    }
+    @IBAction func dialogCancelButton(_ sender: Any) {
+        self.cancelWelcomeProcess()
+        self.setupFirstDialogView()
+    }
+    
+    
     
     // MARK: Class setup functions
     func setupRevealController(){
@@ -59,13 +93,14 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         print(test)
         
         if storedLocations != nil{
+            self.userHasSavedLocations = true
             
             self.storedLocationsObject = storedLocations!
             self.numberOfStoredLocations = (storedLocations!["locations"].array?.count)!
-            
             // Reload data after getting stored information
             self.digoutLocationCollectionView.reloadData()
         }else{
+            self.userHasSavedLocations = false
             print("no locations were stored")
         }
     }
@@ -80,6 +115,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.digoutLocationsManager.addNewLocation(locationObject: emptyObject)
     }
     
+    // MARK: UISetup Functions
     func setupCollectionView(){
         self.digoutLocationCollectionView.dataSource = self
         self.digoutLocationCollectionView.delegate = self
@@ -102,15 +138,63 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.manager.startUpdatingHeading()
         self.manager.startUpdatingLocation()
         
-        
         // Setup Mapview
         self.mapView.delegate = self
         self.mapView.mapType = MKMapType.standard
         self.mapView.showsUserLocation = true
         self.view.backgroundColor = styles.standardBlue
-
     }
     
+    func setupDialogUI(){
+        // Blur view setup
+        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.dialogBlurView.bounds
+        self.dialogBlurView.addSubview(blurEffectView)
+        
+        // Dialog Box setup
+        self.dialogBackgroundView.layer.cornerRadius = 10
+        self.dialogBackgroundView.layer.masksToBounds = true
+    }
+    
+    func setupFirstDialogView(){
+        self.dialogTitleLabel.text = "Welcome to Digout"
+        self.dialogMessageLabel.text = "Are you requesting service, or are you a service provider?"
+        self.leftDialogLabel.text = "Service Provider"
+        self.rightDialogLabel.text = "Request Service"
+        
+        self.rightDialogImage.image = UIImage(named: "shovel")
+        self.leftDialogImage.image = UIImage(named: "people")
+    }
+
+    func setupSecondDialogView(){
+        self.dialogTitleLabel.text = "Let's Get Started"
+        self.dialogMessageLabel.text = "In order to make a new request, you need to add at least one digout location."
+        self.leftDialogLabel.text = "Use Another Location"
+        self.rightDialogLabel.text = "Use My Current Location"
+        
+        self.rightDialogImage.image = UIImage(named: "gps")
+        self.leftDialogImage.image = UIImage(named: "map")
+    }
+    
+    // MARK: Dialogue View Functions
+    func showWelcomeDialog(){
+        // Look at how to animate fading
+        UIView.animate(withDuration: 1.0) {
+            //self.dialogBlurView.isHidden = false
+            self.dialogBackgroundView.isHidden = false
+            self.dialogCancelButtonOutlet.isHidden = false
+        }
+    }
+    
+    func cancelWelcomeProcess(){
+        // Look at how to animate fading
+        UIView.animate(withDuration: 1.0) {
+            //self.dialogBlurView.isHidden = true
+            self.dialogBackgroundView.isHidden = true
+            self.dialogCancelButtonOutlet.isHidden = true
+        }
+    }
     
     // MARK: Default Class Methods
     override func viewDidLoad() {
@@ -120,6 +204,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
         self.setupRevealController()
         self.setupMapView()
         self.setupCollectionView()
+        self.setupDialogUI()
         
         // Debugging functions
         //self.testStoreLocations()
@@ -136,6 +221,18 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
 
     
     //MARK: CollectionViewDelegate Functions
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch userHasSavedLocations {
+        case false:
+            print("user has no saved locations")
+            self.showWelcomeDialog()
+        default:
+            print("Item tapped:")
+            print(self.storedLocationsObject["locations"].arrayValue[indexPath.row])
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.numberOfStoredLocations == 0{
             return 1
@@ -143,6 +240,7 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             return self.numberOfStoredLocations
         }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: DigoutLocationCell = self.digoutLocationCollectionView.dequeueReusableCell(withReuseIdentifier: "digoutLocationCell", for:  indexPath) as! DigoutLocationCell
@@ -180,12 +278,15 @@ class VolunteerViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 // Set information on the cell
                 cell.cellLabel.text = "Digout"
             }else{
+                
                 // Set information on the cell
                 let locationsArray = self.storedLocationsObject["locations"].arrayValue
                 let locationLabel = locationsArray[indexPath.row]["locationDetails"]["label"].string
                 // Add it to cell
                 cell.cellLabel.text = locationLabel
             }
+            
+            cell.tag = 0
             
             return cell
             

@@ -15,7 +15,7 @@
 		1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F5E41C65BB6200FFA70A /* APIInfo.swift */; };
 		1A7D78ED1C656A1B007CAFE4 /* Q4M.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */; };
 		1A7D78EF1C658D50007CAFE4 /* GlobalDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */; };
-		1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */; };
+		1A7D78F51C65ABA3007CAFE4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D78F41C65ABA3007CAFE4 /* HomeViewController.swift */; };
 		1AEA4E861DC03F220029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
 		1AEA4E871DC03F220029AA3A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */; };
 		1AEA4E881DC03F5C0029AA3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEA4E841DC03F220029AA3A /* Alamofire.framework */; };
@@ -42,6 +42,7 @@
 		C91F08DA1DC2A92800BAFABF /* OnboardLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08D91DC2A92800BAFABF /* OnboardLoginViewController.swift */; };
 		C91F08DE1DC2B3E100BAFABF /* RightToLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08DD1DC2B3E100BAFABF /* RightToLeftSegue.swift */; };
 		C91F08E21DC38E5200BAFABF /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */; };
+		C92D3C361E0CCAC60029C30F /* NewRequestLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D3C351E0CCAC60029C30F /* NewRequestLocationViewController.swift */; };
 		C95A6D131DCDF91200D26DFC /* DigoutRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A6D121DCDF91200D26DFC /* DigoutRequestManager.swift */; };
 		C95A6D151DCE0AB900D26DFC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A6D141DCE0AB900D26DFC /* Utilities.swift */; };
 		C9619E121C6D83D900A46153 /* snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9619E111C6D83D900A46153 /* snow.mp4 */; };
@@ -103,7 +104,7 @@
 		1A58F5E41C65BB6200FFA70A /* APIInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		1A7D78EC1C656A1B007CAFE4 /* Q4M.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Q4M.framework; sourceTree = "<group>"; };
 		1A7D78EE1C658D50007CAFE4 /* GlobalDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefaults.swift; sourceTree = "<group>"; };
-		1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
+		1A7D78F41C65ABA3007CAFE4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1AEA4E841DC03F220029AA3A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1AEA4E851DC03F220029AA3A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		36E247B8F88BD577D221BBB3 /* Pods-DigoutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigoutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigoutUITests/Pods-DigoutUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		C91F08D91DC2A92800BAFABF /* OnboardLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardLoginViewController.swift; sourceTree = "<group>"; };
 		C91F08DD1DC2B3E100BAFABF /* RightToLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeftSegue.swift; sourceTree = "<group>"; };
 		C91F08E11DC38E5200BAFABF /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
+		C92D3C351E0CCAC60029C30F /* NewRequestLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRequestLocationViewController.swift; sourceTree = "<group>"; };
 		C95A6D121DCDF91200D26DFC /* DigoutRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigoutRequestManager.swift; sourceTree = "<group>"; };
 		C95A6D141DCE0AB900D26DFC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C9619E111C6D83D900A46153 /* snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snow.mp4; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				C91F08DC1DC2ACC500BAFABF /* MapVCs */,
 				C91F08DB1DC2ACA300BAFABF /* OnboardingVCs */,
 				C9D7B0A81DD0251100741C31 /* HamburgerViewController.swift */,
+				C92D3C351E0CCAC60029C30F /* NewRequestLocationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -329,7 +332,7 @@
 		C91F08DC1DC2ACC500BAFABF /* MapVCs */ = {
 			isa = PBXGroup;
 			children = (
-				1A7D78F41C65ABA3007CAFE4 /* VolunteerViewController.swift */,
+				1A7D78F41C65ABA3007CAFE4 /* HomeViewController.swift */,
 				1A58F5E21C65BA7E00FFA70A /* RequestViewController.swift */,
 			);
 			name = MapVCs;
@@ -676,7 +679,7 @@
 				1A3F88441C65F2AE00FE6BBE /* UserObjectModel.swift in Sources */,
 				C9995F5D1E0B3D9300F9E59B /* GlobalKeys.swift in Sources */,
 				C91F08DA1DC2A92800BAFABF /* OnboardLoginViewController.swift in Sources */,
-				1A7D78F51C65ABA3007CAFE4 /* VolunteerViewController.swift in Sources */,
+				1A7D78F51C65ABA3007CAFE4 /* HomeViewController.swift in Sources */,
 				1A4E600B1DEFB0C6005CE83F /* NearbyTableViewCell.swift in Sources */,
 				C91F08E21DC38E5200BAFABF /* UserAccountManager.swift in Sources */,
 				C95A6D151DCE0AB900D26DFC /* Utilities.swift in Sources */,
@@ -690,6 +693,7 @@
 				1A58F5E51C65BB6200FFA70A /* APIInfo.swift in Sources */,
 				C9D7B0A91DD0251100741C31 /* HamburgerViewController.swift in Sources */,
 				C9995F5B1E0B3C5400F9E59B /* LocationsManager.swift in Sources */,
+				C92D3C361E0CCAC60029C30F /* NewRequestLocationViewController.swift in Sources */,
 				C91F08D41DC29B4A00BAFABF /* OnboardViewController.swift in Sources */,
 				C9995F571E0B26B200F9E59B /* HamburgerTopMenuCell.swift in Sources */,
 				1A00BFF71C66339C005CC28D /* LocalMappingData.swift in Sources */,
