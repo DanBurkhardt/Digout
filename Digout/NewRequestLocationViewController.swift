@@ -25,7 +25,7 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
     
     @IBAction func cancelNewRequest(_ sender: Any) {
         print("request cancelled")
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "unwindToHome", sender: nil)
     }
     
     // MARK: MapView Delegate Methods

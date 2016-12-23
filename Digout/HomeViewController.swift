@@ -52,6 +52,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }else if rightDialogLabel.text == "Use My Current Location"{
             // Nav to map view here
             print("nav to map view")
+            self.cancelWelcomeProcess()
             self.performSegue(withIdentifier: "navLocationVC", sender: self)
         }
     }
@@ -61,6 +62,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBAction func dialogCancelButton(_ sender: Any) {
         self.cancelWelcomeProcess()
         self.setupFirstDialogView()
+    }
+    
+    @IBAction func unwindToHome(segue: UIStoryboardSegue){
+        print("navigation unwound to home")
     }
     
     
@@ -193,6 +198,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             //self.dialogBlurView.isHidden = true
             self.dialogBackgroundView.isHidden = true
             self.dialogCancelButtonOutlet.isHidden = true
+            self.setupFirstDialogView()
         }
     }
     
@@ -208,7 +214,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         // Debugging functions
         //self.testStoreLocations()
-        //self.digoutLocationsManager.deleteStoredLocations()
+        self.digoutLocationsManager.deleteStoredLocations()
         
         // Load all stored locations
         self.getStoredDigoutLocations()
