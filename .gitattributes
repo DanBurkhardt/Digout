@@ -1,1 +1,3 @@
 *makefile linguist-language=Swift
+build/Digout.build/Release-iphoneos/Digout.build/Objects-normal/* linguist-vendored
+
