@@ -19,6 +19,9 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
     var userLocationUpdated = false
     let styles = GlobalDesign()
     
+    // Passed Variables From Previous VC
+    public var useCurrentLocation = false
+    
     // UI Outlets and Actions
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var textInputOutlet: UITextField!
@@ -46,36 +49,47 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
         
         // Setup Mapview
         self.mapView.delegate = self
-        self.mapView.mapType = MKMapType.standard
+        self.mapView.mapType = MKMapType.hybrid
         self.mapView.showsUserLocation = true
         
+        // Enable by default
+        self.enableMapInput()
+    }
+    
+    
+    func enableMapInput(){
         // Setup mapping interaction
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewRequestLocationViewController.handleTap(_:)))
         self.mapView.addGestureRecognizer(tapGestureRecognizer)
-
     }
+
     
     func handleTap(_ gestureRecognizer : UIGestureRecognizer) {
         print("tap handling")
-        
-        //if gestureRecognizer.state != .began {return}
         
         // Get the pin dropped
         let touchPoint = gestureRecognizer.location(in: self.mapView)
         let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
-        print("coordinate \(touchMapCoordinate)")
-        
         // Form the annotation
         let annotation = MKPointAnnotation()
         annotation.coordinate = touchMapCoordinate
         mapView.addAnnotation(annotation)
-
+    }
+    
+    func disableMapInput(){
+        let recognizers = self.mapView.gestureRecognizers
+        for recognizer in recognizers!{
+            self.mapView.removeGestureRecognizer(recognizer)
+        }
     }
 
-    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        self.mapView.showAnnotations([userLocation], animated: false)
+        if !userLocationUpdated{
+            self.mapView.showAnnotations([userLocation], animated: false)
+            // Only do this the first time the user location is updated
+            userLocationUpdated = true
+        }
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
@@ -86,6 +100,19 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
         print("Map rendering finished")
         //placeMapPins()
         
+        if self.useCurrentLocation{
+            // Disable manual pin dropping input
+            self.disableMapInput()
+            
+            // Form the annotation
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = self.mapView.userLocation.coordinate
+            mapView.addAnnotation(annotation)
+            
+        }else{
+            // enable input by default
+            self.textInputOutlet.becomeFirstResponder()
+        }
     }
     
     func mapViewDidStopLocatingUser(_ mapView: MKMapView) {
@@ -93,7 +120,6 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
         /*
         let currentAnnotation = view.annotation
         mapView.removeAnnotation(currentAnnotation!)
@@ -103,20 +129,17 @@ class NewRequestLocationViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         if userLocationUpdated == false{
             userLocation = manager.location!.coordinate
             print("locations = \(userLocation.latitude) \(userLocation.longitude)")
-            
-            // Pass coordinate for saving and set update to true
-            //saveUserLocation(userLocation)
-            userLocationUpdated = true
         }
     }
     
     // MARK: Default Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("passed variable: \(self.useCurrentLocation)")
         
         self.setupMapView()
         self.view.backgroundColor = self.styles.lightBlueColor

@@ -53,7 +53,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             // Nav to map view here
             print("nav to map view")
             self.cancelWelcomeProcess()
-            self.performSegue(withIdentifier: "navLocationVC", sender: self)
+            let locationVC = storyboard?.instantiateViewController(withIdentifier: "newRequestLocationVC") as! NewRequestLocationViewController
+            locationVC.useCurrentLocation = true
+            navigationController?.pushViewController(locationVC, animated: true)
         }
     }
     @IBAction func leftDialogButton(_ sender: Any) {
